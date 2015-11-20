@@ -1,0 +1,53 @@
+## 在TPLink路由器下的计算机(比如Ubuntu, 代号为Server)做如下操作:
+
+1.  sudo apt-get install openssh-client openssh-server
+
+
+2. 
+ssh服务启动：sudo /etc/init.d/ssh start
+ssh停止服务：sudo /etc/init.d/ssh stop
+ssh重启服务：sudo /etc/init.d/ssh restart
+
+
+3.
+ssh的配置文件位于/etc/ssh/sshd_config
+可以根据自己情况修改里面的配置，
+ssh的默认端口是22,也可以在里面改为自己想要的端口。
+修改完了重启sshd服务才能生效。
+
+
+4. 在路由器设置开放端口
+http://192.168.1.1/
+打开tp-link系统里面之后，找到 “转发规则”---“虚拟服务器”
+进入“添加新条目” 根据内部端口和需要映射的IP地址
+服务端口和内部端口均为22, 与ssh的端口一致.
+IP地址: Server的局域网IP, 如 192.168.1.xxx
+
+
+
+5. 
+首先注册一个免费的花生壳用户，将会获得一个免费的二级域名。
+进入到路由器的“动态DNS”选项，输入花生壳的用户名和密码，点击登录。
+并保存.
+
+
+6. 固定Server的IP地址
+进入到路由器中的"DHCP服务器"---->"静态地址保留"中，
+填写Server的MAC地址和局域网IP地址.
+MAC地址: ifconfig结果中的HWaddr (第一行)
+局域网IP地址:  ifconfig结果中的inet addr (第二行)
+
+
+7.
+查看Server的公网IP地址, 如百度"本机ip" 
+
+8.
+通过Server的公网IP访问：
+ssh username@公网IP
+
+
+
+
+
+
+
