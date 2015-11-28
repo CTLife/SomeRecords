@@ -1,0 +1,725 @@
+###############################################################################################################################################################
+################################################# 1. Download, Burn Image, Install and Check UBUNTU OS ########################################################
+###############################################################################################################################################################
+Backup data for installing new OS.  Download Ubuntu from http://www.ubuntu.com
+Burn Image Ubuntu into USB by using UltraISO or USB Installer.   Install Ubuntu by using USB directly.
+                                 
+After Install Ubuntu:
+     Check OS and Internet,  Clear Home dir, setting time and workspace, and so on.
+     Setting gedit:   Edit-->Preferences
+     sudo apt-get update   ##更新软件源. 这个命令，会访问源列表里的每个网址，并读取软件列表，然后保存在本地电脑。我们在新立得软件包管理器里看到的软件列表，都是通过update命令更新的。                                     
+     sudo apt-get upgrade  ##这个命令，会把本地已安装的软件，与刚下载的软件列表里对应软件进行对比，如果发现已安装的软件版本太低，就会提示你更新。  
+     sudo apt-get dist-upgrade   ##更新所有软件。
+
+    Solve the problem of  "E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)":
+        sudo killall apt
+        sudo killall apt-get
+        sudo killall synaptic
+
+   firefox火狐设置(解决打开很慢) :
+        在火狐地址栏中输入： about:config进入配置
+        browser.sessionhistory.max_total_viewers，双击该项，修改值为0。
+        右击鼠标－新建－布尔（boolean)项，输入： config.trim_on_minimize, 并设置为true。
+        找到network.http.proxy.pipelining，点击右键，“切换”其值成 true，找到network.dns.disableIPv6 ，右键，切换，值变为true。
+        找到browser.tabs.loadDivertedInBackground的值切换true
+        找到network.http.pipelining，点击右键，“切换”其值成 true.
+        找到network.http.pipelining.maxrequests并把它的值改的高一些，例如改成30(请求个数)。                                      
+        点右键，选择 “新建”—“整数”在弹出的对话框中输入 nglayout.initialpaint.delay并将其值改为“0”.
+
+   Ubuntu software center: 
+            Unarchiver for .rar files (non-free version) (unrar), 7zip, Adobe Flash plugin
+
+   Google hosts:  http://laod.cn/hosts/2015-google-hosts.html  
+       less  /etc/hosts                  ## copy contents and Add
+       sudo cp hosts  /etc/hosts         ## replace         
+       less  /etc/hosts                  ## check
+
+   搜狗输入法: 
+          sudo add-apt-repository ppa:fcitx-team/nightly
+          sudo apt-get update
+          sudo apt-get install  fcitx
+          sudo apt-get install  fcitx-config-gtk  fcitx-table-all  im-switch
+          Language Support --> Keyboard input method system --> fcitx --> Apply system-wide
+          http://pinyin.sogou.com/linux/?r=pinyin
+          download .deb file and install
+          Logout
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 2. Install Basic Softwares ##################################################################################
+###############################################################################################################################################################
+sudo  passwd  root    #set root password  (gata4mef2)
+su
+sudo apt-get install flashplugin-installer    
+sudo apt-get install aptitude
+sudo apt-get install gcc
+sudo apt-get install g++   (sudo aptitude install g++ )
+sudo apt-get install gfortran
+sudo apt-get install gccgo  (sudo aptitude install gccgo )
+sudo apt-get install vim   vim-common  vim-doc   vim-runtime
+sudo aptitude install cmake qtcreator      ##CMake和Qt Creator是Linux下开发C++程序的神器
+   gcc -v
+   g++ -v
+   gfortran -v
+   gccgo  -v
+   vim
+sudo apt-get install vpnc git  
+sudo apt-get install axel   ##axel是Linux命令行界面的多线程下载工具，比wget的好处就是可以指定多个线程同时在命令行终端里下载文件。
+Install google chrome:    www.google.com/chrome
+
+ubuntu禁用Guest用户:
+           sudo  vim   /usr/share/lightdm/lightdm.conf.d/50-no-guest.conf
+           添加:　　
+            [SeatDefaults]
+　           allow-guest=false
+
+         
+更新系统:   sudo  apt-get install aptitude
+              sudo aptitude install build-essential
+              sudo  apt-get    update
+              sudo  apt-get    upgrade
+              sudo  aptitude   update
+              sudo  aptitude   upgrade
+              Log Out
+              sudo apt-get install unace unrar lunzip lzip zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller                  
+
+安装剪贴板管理器:     sudo apt-get install glipper
+系统信息工具:         sudo apt-get install hardinfo
+
+sudo apt-get install  ubuntu-wallpapers-*   edgy-wallpapers  feisty-wallpapers  gutsy-wallpapers    #For convenience for users looking to download ALL the wallpapers                  
+
+打开“软件与更新”(Software & Updates)，确认在第一个选项“Ubuntu Software”中所有的子选项都被选中.
+    安装Ubuntu Restricted Extras. 这样可以安装许多由于法律原因而无法与操作系统绑定的重要软件包:
+    sudo apt-get install ubuntu-restricted-extras
+    sudo apt-get update
+    安装系统指示器SysPeek:
+        download .deb file from  http://www.ubuntuupdates.org/package/webupd8/vivid/main/base/syspeek  
+#and then restart.   
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 3. Install Softwares through Ubuntu Software Center ######################################################### 
+###############################################################################################################################################################
+These languages should be available: C, C++, Fortran, Go, Perl5, Python2, Python3.
+Install softwares via Ubuntu Software Center:
+            GParted Partition Editor
+            Inkscape Vector Graphics Editor
+            Meld Diff Viewer
+            Geany
+            GIMP Image Editor
+            VLC media player
+            Blender
+            Texmaker
+            PDL  ##Perl的数据数学和数据管理包
+            PyCAD
+            Stellarium
+            Periodic Table  ##View the periodic table of elements
+            Gabedit QC-GUI 
+            Avogadro 
+            GChemPaint Chemical Structures Editor
+            Molecules Viewer
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 4. Softwares for installing programming languages ########################################################### 
+###############################################################################################################################################################
+sudo  apt-get install aptitude
+sudo  aptitude  install qt4-dev-tools qt4-doc qt4-qtconfig qt4-demos qt4-designer qt4-dev-tools  qdevelop   
+sudo  apt-get update   (sudo  aptitude update)   
+sudo  apt-get upgrade  (sudo  aptitude safe-upgrade)
+sudo  apt-get dist-upgrade  (sudo  aptitude full-upgrade)
+sudo  apt-get install build-essential
+sudo  aptitude  install build-essential
+sudo  apt-get install make 
+搜索安装包命令:
+            由于有些安装包的名称中包含了版本号，比如“libcurl4-openssl-dev”，这样的名称是很不好记忆的，
+            所以通过“apt-cache search libcurl”命令就能很方便的查找到该安装包的全称，然后用“apt-get install libcurl4-openssl-dev”进行安装就行了。
+sudo apt-cache search libcurl
+sudo apt-get install libcurl4-openssl-dev    ## downlaod: apt-get download libcurl4-openssl-dev             apt-get source package
+sudo apt-get install python-pycurl   python-pycurl-dbg
+sudo apt-get install libmysqlclient15-dev
+sudo apt-get install libpcre3-dev
+sudo add-apt-repository universe
+sudo apt-get update
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install libstdc++6
+sudo aptitude install libssl1.0.0  libssl1.0.0-dbg     #For 1.0.0 Version,  apt-cache search libssl
+sudo aptitude install libssl-dev  libssl-doc  
+sudo apt-get install gcc-multilib
+sudo apt-get install g++-multilib
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 5. Install programming languages ######################################################################### 
+###############################################################################################################################################################
+Install dir:  $HOME/MyProgramFiles/2-Languages
+
+Install JAVA8:
+       Download jdk-8u60-linux-x64.tar.gz from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+       Add path into ".bashrc":
+          export  JAVA_HOME=$HOME/MyProgramFiles/2-Languages/jdk1.8.0_60     # No space before and after "="
+          export  JRE_HOME=${JAVA_HOME}/jre
+          export  CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+          export  PATH=${JAVA_HOME}/bin:$PATH
+
+Install GO:
+       Download  go1.5.linux-amd64.tar.gz  from  http://golangtc.com/
+       Add path into ".bashrc":
+	   export GOROOT=$HOME/MyProgramFiles/2-Languages/go
+	   export PATH=$GOROOT/bin:$PATH
+
+Install Julia:   export PATH=$HOME/MyProgramFiles/2-Languages/julia/bin:$PATH
+
+Logout  ##must
+
+Install Perl6 and Python3:
+    download perl6 (rakudo-star-2015.09.tar.gz) from http://rakudo.org/downloads/star/
+    download python3 (Python-3.5.tgz)    from https://www.python.org/
+    For perl6:
+           perl   Configure.pl   --backend=moar,jvm   --gen-moar     --prefix=$HOME/MyProgramFiles/2-Languages/Perl6                        
+           make
+           make install
+           export  PATH=$HOME/MyProgramFiles/2-Languages/Perl6/bin:$PATH
+    For python 3:
+            ./configure   --prefix=$HOME/MyProgramFiles/2-Languages/Python3
+             make
+             make install     ## Successfully installed pip-7.1.2 setuptools-18.2
+             export  PATH=$HOME/MyProgramFiles/2-Languages/Python3/bin:$PATH
+
+Logout (or source ~/.bashrc) and then:
+        perl6 -v
+        python3 -V
+        java    -version
+        javac   -version
+        go  version
+        which go 
+        which java
+        which javac
+        julia
+        perl -v
+        perl5 -v
+        python -V
+        python2 -V
+        python2.7  -V
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 6. Install Editor, IDE and Internet ######################################################################### 
+###############################################################################################################################################################
+Install dir:  $HOME/MyProgramFiles/3-EditorIDE,     $HOME/MyProgramFiles/4-Internet
+
+Sublime Text 3:  
+       sublime_text_3_build_3083_x64.tar.bz2
+       export  PATH=$HOME/MyProgramFiles/3-EditorIDE/sublime_text_3:$PATH
+
+Install  Juno:     export  PATH=$HOME/MyProgramFiles/3-EditorIDE/juno-linux64:$PATH 
+
+Install FileZilla3  and  SSLVPN_Linux_Plugin:
+export  PATH=$HOME/MyProgramFiles/4-Internet/FileZilla3/bin:$PATH 
+#export  PATH=$HOME/MyProgramFiles/4-Internet/SSLVPN_Linux_Plugin:$PATH 
+export  LD_LIBRARY_PATH=$HOME/MyProgramFiles/4-Internet/SSLVPN_Linux_Plugin/lib:$LD_LIBRARY_PATH
+export  LD_LIBRARY_PATH=$HOME/MyProgramFiles/4-Internet/SSLVPN_Linux_Plugin/lib64:$LD_LIBRARY_PATH
+
+#远程登录设置
+       sudo apt-get install openssh-server
+       启动sshserver命令：service ssh start   (or sudo service ssh start )
+                        或者sudo /etc/init.d/ssh  start
+       关闭sshserver命令：service ssh stop
+       重启sshserver命令：service ssh restart
+       默认端口是22
+
+       Ubuntu开启IPV6:  sudo apt-get install miredo
+       ubuntu txt 中文乱码 解决办法： gedit  --encoding=GB18030   filename.txt
+
+Logout
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 7. Install python2 packages ################################################################################# 
+###############################################################################################################################################################
+      sudo aptitude  install  libfreetype6  libfreetype6-dev  
+      sudo apt-get   install  tk-dev    libatlas-base-dev
+
+      sudo aptitude    install   libblas-common   libblas-dev   libblas-doc  libblas3  libgsl0-dbg  libgsl0ldbl  libcublas6.5  libclblas-bin  libclblas-dev  libclblas-doc  libclblas2   libclblas2-dbg liblas-dev  liblas2   ## apt-cache search  blas                                                 
+      sudo aptitude    install   libatlas-base-dev  libatlas-dev   libatlas-doc  libatlas-test   libatlas3-base  libatlas3gf-base  libblas-test  libblas3gf  liblas-bin  liblas-c-dev liblas-c3  liblas-dev  liblas3         ## apt-cache search  blas                                                 
+      sudo aptitude    install   liblapack-dev   liblapack-doc  liblapack3   liblapacke  liblapacke-dev        ## apt-cache search  lapack   
+      sudo aptitude    install   liblapack-doc-man    liblapack-pic     liblapack-test   libblas-test          ## apt-cache search  lapack 
+      sudo aptitude    install   python-cvxopt  python-openturns   python-openturns-dev  python-sparse   python-sparse-examples   python-symeig  python-symeig-dbg   ## apt-cache search  lapack 
+      sudo aptitude    install   libatlas-base-dev  libatlas-cpp-0.6-1v5   libatlas-cpp-0.6-1v5-dbg   libatlas-cpp-0.6-dev   libatlas-cpp-doc    ## apt-cache search  atlas    
+      sudo aptitude    install   libatlas-dev   libatlas-doc  libatlas-test  libatlas3-base                                                      ## apt-cache search  atlas    
+      sudo aptitude    install   libatlas3gf-base   libblas-test  libopenblas-base   libopenblas-dev                                             ## apt-cache search  atlas 
+
+      sudo apt-get install  python-dev libffi6  libffi6-dbg  libffi-dev openssl libssl-dev  libssl-doc libpng-dev   libicu-dev   libboost-all-dev            
+      sudo aptitude install  libbz2-dev  python-gtk2-dev python-pyside   libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev   docbook-xsl python-gtk2-doc 
+
+      sudo aptitude install python-setuptools
+      sudo  easy_install  pip   
+      sudo  pip install pyopenssl ndg-httpsclient pyasn1
+      sudo pip   install cython
+      sudo apt-get  install ipython
+             
+      sudo  pip install     six
+      sudo  pip   install   pysam
+      sudo  apt-get install  python-numpy
+      sudo  apt-get install  python-scipy
+      sudo  apt-get install  python-matplotlib  
+      sudo  apt-get install  python-sklearn    
+
+      sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+      sudo apt-get install build-essential python2.7-dev python-numpy python-matplotlib
+
+      sudo  -H  pip   install    htseq
+      sudo  aptitude  install primus  bumblebee  primus-libs-ia32:i386  libcuda1-340 libvdpau-dev nvidia-cuda-doc nvidia-cuda-gdb nvidia-opencl-icd-340 nvidia-prime nvidia-settings nvidia-visual-profiler python-pycuda-doc
+      sudo     aptitude   install    python-PyCUDA      ## 用aptitude能更好地解决依赖
+      sudo  pip  install  theano 
+
+      ##Add path to .bashrc:
+           ##export  PYTHONPATH=/usr/lib/python2.7/dist-packages:/usr/lib/python2.7:$PYTHONPATH
+      测试Theano安装情况,在ipython中输入以下两行代码：
+             import theano
+             theano.test()
+
+    验证BLAS是否安装成功。由于numpy是依赖BLAS的，如果BLAS没有安装成功，虽然numpy亦可以安装，但是无法使用BLAS的加速。
+    验证numpy是否真的成功依赖BLAS编译，用以下代码试验： 
+    >>> import six,numpy,scipy,matplotlib,sklearn,nose,HTSeq,pycuda,theano
+    >>> id(numpy.dot) == id(numpy.core.multiarray.dot) 
+    False 
+    结果为False表示成功依赖了BLAS加速，如果是Ture则表示用的是python自己的实现并没有加速。
+###############################################################################################################################################################    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 8. Packages for installing R (Before install R, as root)#####################################################
+###############################################################################################################################################################
+       sudo aptitude install libcurl4-openssl-dev  libreadline6-dev   libxt-dev 
+       sudo aptitude install libxml2 libxml2-dev libcurl4-openssl-dev curl
+       sudo aptitude install libX11-dev libXext-dev libXtst-dev libXrender-dev libxmu-dev libxmuu-dev 
+       sudo aptitude install libcairo2-dev     libxt-dev 
+       sudo aptitude -y install tcl-dev tk-dev
+       sudo aptitude -y install libicu-dev liblzma-dev
+       sudo aptitude -y install libpng12-dev libjpeg-dev libtiff5-dev libtiff5 libcairo2-dev
+       sudo apt-get install tcl tk  tcl-dev tk-dev
+       sudo apt-get install libffi-dev libssl-dev
+
+       locate   cairo.so
+       export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/babl-0.1:$LD_LIBRARY_PATH    ## （文件cairo.so的位置）
+       Logout
+
+       安装 LaTeX:
+              sudo aptitude install texlive-base  texstudio texlive-latex-base texlive-full  texlive-xetex   texlive-latex-recommended
+              sudo aptitude install  context-modules fonts-gfs-bodoni-classic fonts-gfs-didot-classic fonts-gfs-gazis fonts-gfs-theokritos ko.tex-extra-hlfont   libxml-sax-expat-perl ps2eps swath
+              apt-cache search cjk
+              sudo aptitude install latex-cjk-all  latex-cjk-xcjk   cjk-latex   latex-cjk-chinese
+              sudo aptitude install texmaker
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 9. Install R and rpy2 #######################################################################################
+###############################################################################################################################################################
+       whereis    tclConfig.sh
+       whereis    tkConfig.sh
+
+       Logout
+       ./configure   --with-tcltk   --with-tcl-config=/usr/lib/tclConfig.sh     --with-tk-config=/usr/lib/tkConfig.sh       --with-cairo    --with-x   --enable-R-shlib
+       make
+       make pdf
+       make info
+       sudo  make install
+       sudo  make install-info
+       sudo  make install-pdf
+
+       env  ##使用env命令显示所有的环境变量
+       echo  ${LD_LIBRARY_PATH}
+          export R_HOME=/usr/local/lib/R   ##.bashrc
+          export LD_LIBRARY_PATH=/usr/local/lib/R/lib:${R_HOME}/lib:${LD_LIBRARY_PATH}  ##.bashrc
+       Logout   
+
+       sudo R:
+              install.packages("ggplot2") 
+              source("http://bioconductor.org/biocLite.R") 
+              biocLite("preprocessCore")
+              library(ggplot2)
+              library(preprocessCore)
+       Logout
+
+       ## install rpy2:
+              sudo  aptitude   install  r-base-dev r-doc-html r-recommended
+              sudo  aptitude  install  r-cran-rcppeigen   r-cran-rcpparmadillo   r-other-rot   r-cran-rcmdr
+              sudo  aptitude install python-rpy2
+              python -m rpy2.tests  #运行测试
+
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 10. Install  R packages #####################################################################################
+###############################################################################################################################################################
+       install.packages("ggplot2")
+       install.packages("gplots")
+       install.packages("tcltk2")
+       source("http://bioconductor.org/biocLite.R")
+       biocLite()
+       biocLite("ALL")
+
+       capabilities()["tcltk"]
+       library("tcltk2")
+
+       biocLite("sem")
+       biocLite(c("affy", "limma", "RColorBrewer"))
+       biocLite("XML")
+       biocLite(c("genefilter", "annotate"))  
+       biocLite("simpleaffy")    
+       biocLite("AnnotationDbi")
+       biocLite("gcrma")
+       biocLite("latticeExtra")
+       biocLite("MantelCorr")
+       biocLite("mogene10stv1.r3cdf")   
+       biocLite("mogene10stv1cdf")
+       biocLite("oligo", "pd.mogene.1.0.st.v1")
+       biocLite("mogene10stprobeset.db")
+       install.packages('Cairo') 
+       biocLite("affyPLM")
+
+       biocLite("affycoretools")
+       biocLite("genefilter")
+       biocLite("annotate")
+       biocLite("GOstats")
+
+       library(affycoretools)
+       library(genefilter)
+       library(annotate)
+       library(GOstats)
+
+       biocLite("mogene10stv1cdf")
+       biocLite("mogene10stv1probe")
+       biocLite("mogene.1.0.st.v1frmavecs")
+       biocLite("mogene10sttranscriptcluster.db")
+       biocLite("mogene10stprobeset.db")
+
+       install.packages("reshape2")
+       install.packages("ggplot2") 
+       install.packages("grid")
+       install.packages("Cairo")
+       install.packages("RColorBrewer")
+       install.packages("gplots")  
+       install.packages("stats")
+       install.packages("KernSmooth")
+       install.packages("psych")
+       install.packages("minerva")
+       install.packages("matrixStats")
+       install.packages("extrafont")
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 11. Install  some packages ##################################################################################
+###############################################################################################################################################################
+sudo apt-get install libmotif-dev  libmotif4  libmotif-common    ##install openmotif for installing cluster 3.0
+Install boost c++:
+             sudo aptitude install mpi-default-dev
+             sudo aptitude install libicu-dev   libbz2-dev　　　
+             ##aptitude search boost
+             sudo aptitude install libboost-all-dev  htslib-test   libhts-dev  libhts0   root-system-bin -y 
+sudo aptitude  install  libgtextutils-dev
+sudo aptitude  install  libgd-dbg  libgd-dev  libgd-graph-perl    libgd-perl  libgd-text-perl  libgd3  libgdata-common  libgd-svg-perl  libgd-tools   libgdm-dev  ##apt-cache search libgd
+sudo apt-get -y install  fontconfig   libfreetype6  libfreetype6-dev  libxft-dev  libtiff5-dev     
+sudo apt-get -y install   libpng12-0  libpng12-dev  libpng++-dev  libpng3 libpnglite-dev  tkpng
+sudo apt-get -y install   libjpeg-dev    libjpeg8  libjpeg8-dbg  libjpeg8-dev libxpm-dev  libxpm4  libxpm4-dbg
+sudo apt-get -y install   libgd-config
+sed
+sudo aptitude  install   gnuplot
+
+## Must:
+Download http://search.cpan.org/~lds/GD-2.56/lib/GD.pm:  such as GD-2.56.tar.gz    and Install       
+
+sudo perl -MCPAN -e shell
+    install  PerlIO::gzip
+    install  YAML
+    install  GD
+    install  GD::Graph
+    install  GD::Graph::bars
+    exit
+
+截图工具: gnome-screenshot  
+App path:  /usr/share/applications
+
+ubuntu安装nvidia官方驱动 (http://blog.csdn.net/aaa2832/article/details/8451919):
+0. 查看显卡型号： lspci | grep VGA   ## 查看已经安装了的显卡 less -NS /etc/X11/xorg.conf
+1. 下载最新版的适合的nVidia驱动， 比如NVIDIA-Linux-x86_64-352.55.run，  命名为NVIDIA.run。
+    http://www.nvidia.com/page/drivers.html
+2.编辑blacklist.conf。
+  sudo gedit /etc/modprobe.d/blacklist.conf
+  添加以下部分并保存：
+  blacklist vga16fb
+  blacklist nouveau
+  blacklist rivafb
+  blacklist nvidiafb
+  blacklist rivatv
+  （这里有一行空格）
+3. 删除之前所安装的nVidia驱动。
+    sudo apt-get  remove  --purge  nvidia-*    ##需要清除干净
+    sudo apt-get  remove  --purge  xserver-xorg-video-nouveau
+4. 重启电脑: sudo reboot now
+5. 按Ctrl + Alt +F1到第一控制台（+F7是回到xservers）。
+6. 输入用户名和密码后，登录后执行 ：
+   sudo /etc/init.d/gdm stop 
+   或者
+   sudo /etc/init.d/lightdm stop
+7. 进入驱动所在的文件夹，安装驱动。
+   sudo sh NVIDIA.run 
+8.启动GDM :
+   sudo /etc/init.d/gdm restart
+   或者
+   sudo /etc/init.d/lightdm restart
+9.重启电脑。
+    sudo reboot
+10.可能在详细信息里面显卡选项显示未知，可用以下手法：
+    sudo apt-get install mesa-utils
+11. 可能会用到的命令：
+    sudo nvidia-xconfig 
+    sudo nvidia-settings 
+    uname -a
+
+How I can change columns headers from letters to numbers in LibreOffice Calc?
+        Go to:
+                Tools -> Options -> LibeOffice Calc -> Forumula
+                And then change the Formula syntax dropdown to: Excel R1C1
+###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+sudo aptitude  install glibc-pic  glibc-doc  glibc-doc-reference  glibc-source libbsd-dev linux-libc-dev 
+sudo aptitude  install  python-virtualenv
+sudo aptitude  install  python-xlsxwriter
+
+换为163的源：  http://jingyan.baidu.com/article/925f8cb8f3af25c0dde05681.html  
+
+source("http://bioconductor.org/biocLite.R")
+biocLite("knitr")
+
+
+## wget, mysql, and ftp are available.
+## apt-cache search mysql 
+## sudo aptitude install  mysql-client-5.6  mysql-client-core-5.6  mysql-common-5.6  mysql-server-5.6  mysql-server-core-5.6  mysql-source-5.6  mysql-utilities libmysqlclient-dev  bacula-common-mysql   bacula-common-mysql-dbg   bacula-director-mysql   bacula-director-mysql-dbg  bacula-sd-mysql  bacula-sd-mysql-dbg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
