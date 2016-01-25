@@ -4,7 +4,7 @@ ________________________________________________________________________________
                             
 ________________________________________________________________________________________________________________
 #####II. Universities and Institutes
-[HLJU](http://www.hlju.edu.cn/) ,  [IMU](http://www.imu.edu.cn/)  , [CLS](http://www.cls.edu.cn/) ,  [PKU](http://www.pku.edu.cn/) ,  [THU](http://www.tsinghua.edu.cn/), [PKU-CQB](http://cqb.pku.edu.cn/) , [PKU-IMM](http://www.imm.pku.edu.cn) , [THU-CSSB](http://bioinfo.au.tsinghua.edu.cn/CSSB/web/index.html) , [HMS-SystemsBiology](https://sysbio.med.harvard.edu/) , [Center for Systems Biology](https://csb.mgh.harvard.edu/) , [BroadInstitute](https://www.broadinstitute.org/)   , [中科院](http://www.cas.ac.cn/)        
+[HLJU](http://www.hlju.edu.cn/) ,  [IMU](http://www.imu.edu.cn/)  , [CLS](http://www.cls.edu.cn/) ,  [PKU](http://www.pku.edu.cn/) ,  [THU](http://www.tsinghua.edu.cn/), [PKU-CQB](http://cqb.pku.edu.cn/) , [PKU-IMM](http://www.imm.pku.edu.cn) , [THU-CSSB](http://bioinfo.au.tsinghua.edu.cn/CSSB/web/index.html) , [HMS-SystemsBiology](https://sysbio.med.harvard.edu/) , [Center for Systems Biology](https://csb.mgh.harvard.edu/) , [BroadInstitute](https://www.broadinstitute.org/)   , [中科院](http://www.cas.ac.cn/)  , [Harvard-Program for Evolutionary Dynamics](http://ped.fas.harvard.edu/)      
                                
 ________________________________________________________________________________________________________________
 #####III. Journals
@@ -19,7 +19,15 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________
 #####V. Databases
 [NCBI](http://www.ncbi.nlm.nih.gov/) , [UCSC Genome Browser](https://genome.ucsc.edu/) , [UCSC Microbial GB](http://microbes.ucsc.edu/) , [Ensembl](http://www.ensembl.org) , [Ensembl Plants](http://plants.ensembl.org) , [Ensembl Bacteria](http://bacteria.ensembl.org) , [Ensembl Fungi](http://fungi.ensembl.org) ,  [Ensembl Genomes](http://ensemblgenomes.org/) , [ExPASy](http://www.expasy.org/)   
+                               
+________________________________________________________________________________________________________________
+#####VI. Labs
+[Albert-László Barabási](http://barabasi.com/) , [Martin Nowak](http://www.martinnowak.com/)
 
+
+                               
+________________________________________________________________________________________________________________
+#####VII. Blogs
 
 
 
