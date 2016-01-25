@@ -1,6 +1,6 @@
 ________________________________________________________________________________________________________________
-#####I. Search Engines
-[Google](http://www.google.com/ncr)  ,  [Baidu](https://www.baidu.com/)  ,  [Yahoo](https://www.yahoo.com/)                  
+#####I. Search Engines and News
+[Google](http://www.google.com/ncr)  ,  [Baidu](https://www.baidu.com/)  ,  [Yahoo](https://www.yahoo.com/)  ,  [Bing](https://www.bing.com/) ,  [Ask](http://www.ask.com/)                  
                             
 ________________________________________________________________________________________________________________
 #####II. Universities and Institutes
