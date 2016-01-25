@@ -28,7 +28,7 @@ ________________________________________________________________________________
                                
 ________________________________________________________________________________________________________________
 #####VII. Blogs
-[学而时嘻之](http://www.geekonomics10000.com/) , [糗世界][http://qiubio.com:8080/] , [Xiaole Liu](http://www.longwoodgenomics.org/)      
+[学而时嘻之](http://www.geekonomics10000.com/) , [糗世界](http://qiubio.com:8080/) , [Xiaole Liu](http://www.longwoodgenomics.org/)      
 
 
 
