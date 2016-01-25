@@ -1,6 +1,6 @@
 ________________________________________________________________________________________________________________
 #####I. Search Engines and News
-[Google](http://www.google.com/ncr)  ,  [Baidu](https://www.baidu.com/)  ,  [Yahoo](https://www.yahoo.com/)  ,  [Bing](https://www.bing.com/) ,  [Ask](http://www.ask.com/) ， [中国搜索](http://www.chinaso.com/) , [好搜](http://www.haosou.com/) , [DDG](https://duckduckgo.com/) , [Yandex](https://www.yandex.com/) , [Sogou](https://www.sogou.com/)                            
+[Google](http://www.google.com/ncr)  ,  [Baidu](https://www.baidu.com/)  ,  [Yahoo](https://www.yahoo.com/)  ,  [Bing](https://www.bing.com/) ,  [Ask](http://www.ask.com/) ， [中国搜索](http://www.chinaso.com/) , [好搜](http://www.haosou.com/) , [DDG](https://duckduckgo.com/) , [Yandex](https://www.yandex.com/) , [Sogou](https://www.sogou.com/) , [新浪](http://www.sina.com.cn/) ,  [搜狐](http://www.sohu.com/) ,  [网易](http://www.163.com/) ,  [腾讯](http://www.qq.com/)                                    
                             
 ________________________________________________________________________________________________________________
 #####II. Universities and Institutes
