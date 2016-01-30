@@ -25,14 +25,18 @@ ________________________________________________________________________________
 [Albert-László Barabási](http://barabasi.com/) , [Martin Nowak](http://www.martinnowak.com/) , [Uri Alon](https://www.weizmann.ac.il/mcb/UriAlon/homepage) , [Eran Segal](http://genie.weizmann.ac.il/index.html) , [Trey Ideker](http://healthsciences.ucsd.edu/som/medicine/research/labs/ideker/Pages/default.aspx) , [Manolis Kellis](http://compbio.mit.edu) , [Bradley E. Bernstein](http://bernstein.mgh.harvard.edu/)      
 
 
-                               
+                                                    
 ________________________________________________________________________________________________________________
 #####VII. Blogs
 [学而时嘻之](http://www.geekonomics10000.com/) , [糗世界](http://qiubio.com:8080/) , [Xiaole Liu](http://www.longwoodgenomics.org/)      
-                               
+                                                                   
 ________________________________________________________________________________________________________________
 #####VIII. Emails
 [OUTLOOK](http://www.outlook.com/) , 
+                                                                   
+________________________________________________________________________________________________________________
+#####Ⅸ. Online Tools
+[Highcharts](http://www.highcharts.com/) , [Highcharts中文网](http://www.hcharts.cn/) , [GREAT](http://bejerano.stanford.edu/great) , [DAVID](https://david.ncifcrf.gov) , [GOrilla](http://cbl-gorilla.cs.technion.ac.il/) , [Metascape](http://metascape.org) , [OUTLOOK](http://www.outlook.com/) , 
 
 
 
