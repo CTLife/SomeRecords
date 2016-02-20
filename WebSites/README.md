@@ -28,7 +28,7 @@ ________________________________________________________________________________
                                                     
 ________________________________________________________________________________________________________________
 #####VII. Blogs
-[学而时嘻之](http://www.geekonomics10000.com/) , [糗世界](http://qiubio.com:8080/) , [Xiaole Liu](http://www.longwoodgenomics.org/) , [始终](http://liam0205.me/)     
+[学而时嘻之](http://www.geekonomics10000.com/) , [糗世界](http://qiubio.com:8080/) , [Xiaole Liu](http://www.longwoodgenomics.org/) , [始终](http://liam0205.me/)  , [RNA-Seq Blog](http://www.rna-seqblog.com/)   
                                                                    
 ________________________________________________________________________________________________________________
 #####VIII. Emails
