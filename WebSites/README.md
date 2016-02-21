@@ -22,7 +22,7 @@ ________________________________________________________________________________
                                
 ________________________________________________________________________________________________________________
 #####VI. Labs
-[Albert-László Barabási](http://barabasi.com/) , [Martin Nowak](http://www.martinnowak.com/) , [Uri Alon](https://www.weizmann.ac.il/mcb/UriAlon/homepage) , [Eran Segal](http://genie.weizmann.ac.il/index.html) , [Trey Ideker](http://healthsciences.ucsd.edu/som/medicine/research/labs/ideker/Pages/default.aspx) , [Manolis Kellis](http://compbio.mit.edu) , [Bradley E. Bernstein](http://bernstein.mgh.harvard.edu/)      
+[Albert-László Barabási](http://barabasi.com/) , [Martin Nowak](http://www.martinnowak.com/) , [Uri Alon](https://www.weizmann.ac.il/mcb/UriAlon/homepage) , [Eran Segal](http://genie.weizmann.ac.il/index.html) , [Trey Ideker](http://healthsciences.ucsd.edu/som/medicine/research/labs/ideker/Pages/default.aspx) , [Manolis Kellis](http://compbio.mit.edu) , [Bradley E. Bernstein](http://bernstein.mgh.harvard.edu/) , [Xiaole Shirley Liu](http://liulab.dfci.harvard.edu/) , [Wendell Lim](http://limlab.ucsf.edu/papers.html) , [Michael Elowitz](http://www.elowitz.caltech.edu/index.html)   , [Johan Paulsson](http://projects.iq.harvard.edu/paulsson) , [Peng Yin](http://molecular-systems.net/) , [Lulu Qian](http://dna.caltech.edu/~lulu/) , []
 
 
                                                     
