@@ -9,7 +9,7 @@
 ##                                   ensembl67=useMart(host='may2012.archive.ensembl.org', biomart='ENSEMBL_MART_ENSEMBL')
 ##                                   listDatasets(ensembl67)[grep("Mus", listDatasets(ensembl67)$description),]
 ##                                   listDatasets(ensembl67)
-## run this script, such as:  Rscript  convertEensembl2Symbol.R   DoulbleKOvsWT.down.txt  1  1
+## run this script, such as:  Rscript  MM9convertEensembl2Symbol.R   DoulbleKOvsWT.down.txt  1  1
 
 
 args <- commandArgs(TRUE)
