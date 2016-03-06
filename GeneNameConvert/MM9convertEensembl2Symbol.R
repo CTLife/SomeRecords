@@ -9,7 +9,7 @@
 ##                                   ensembl67=useMart(host='may2012.archive.ensembl.org', biomart='ENSEMBL_MART_ENSEMBL')
 ##                                   listDatasets(ensembl67)[grep("Mus", listDatasets(ensembl67)$description),]
 ##                                   listDatasets(ensembl67)
-## run this script, such as:  Rscript  MM9convertEensembl2Symbol.R   DoulbleKOvsWT.down.txt  1  1
+## run this script, such as:  Rscript  convertEensembl2Symbol.R   DoulbleKOvsWT.down.txt  1  1
 
 
 args <- commandArgs(TRUE)
@@ -60,8 +60,8 @@ sink()
 filterName <- "ensembl_transcript_id"   ## for others, by using listFilters(mart)
 
 
-results <- getBM(attributes = c("ensembl_gene_id",  "ensembl_transcript_id",  "description", 
-                                "mgi_symbol", "refseq_mrna", "refseq_ncrna", "external_gene_name" ),  
+results <- getBM(attributes = c("ensembl_gene_id",  "ensembl_transcript_id",  "description", "chromosome_name", "start_position", "end_position", "strand", 
+                                "mgi_symbol",  "refseq_mrna",  "refseq_ncrna", "external_gene_id", "external_transcript_id" ),  
                  filters = c(filterName),  values = input.table[,ensembl.col],   mart = mart)       
                                                     
 ##head(results)
