@@ -28,7 +28,7 @@ ________________________________________________________________________________
                                                     
 ________________________________________________________________________________________________________________
 #####VII. Blogs
-[学而时嘻之](http://www.geekonomics10000.com/) , [糗世界](http://qiubio.com:8080/) , [Xiaole Liu](http://www.longwoodgenomics.org/) , [始终](http://liam0205.me/)  , [RNA-Seq Blog](http://www.rna-seqblog.com/) , [2016 Google hosts](http://laod.cn/hosts/2016-google-hosts.html)   
+[学而时嘻之](http://www.geekonomics10000.com/) , [糗世界](http://qiubio.com:8080/) , [Xiaole Liu](http://www.longwoodgenomics.org/) , [始终](http://liam0205.me/)  , [RNA-Seq Blog](http://www.rna-seqblog.com/) ,    
                                                                    
 ________________________________________________________________________________________________________________
 #####VIII. Emails
@@ -36,7 +36,10 @@ ________________________________________________________________________________
                                                                    
 ________________________________________________________________________________________________________________
 #####Ⅸ. Online Tools
-[Highcharts](http://www.highcharts.com/) , [Highcharts中文网](http://www.hcharts.cn/) , [GREAT](http://bejerano.stanford.edu/great) , [DAVID](https://david.ncifcrf.gov) , [GOrilla](http://cbl-gorilla.cs.technion.ac.il/) , [Metascape](http://metascape.org) , [Sequence Manipulation Suite](http://www.bioinformatics.org/sms2/) , [WikiPathways](http://www.wikipathways.org/index.php/WikiPathways) , [iPATH2](http://pathways.embl.de/) , [WebGestalt](http://www.webgestalt.org/) , [GOView](http://www.webgestalt.org/GOView/) , [EaSeq](http://easeq.net/)                      
+[Highcharts](http://www.highcharts.com/) , [Highcharts中文网](http://www.hcharts.cn/) , [GREAT](http://bejerano.stanford.edu/great) , [DAVID](https://david.ncifcrf.gov) , [GOrilla](http://cbl-gorilla.cs.technion.ac.il/) , [Metascape](http://metascape.org) , [Sequence Manipulation Suite](http://www.bioinformatics.org/sms2/) , [WikiPathways](http://www.wikipathways.org/index.php/WikiPathways) , [iPATH2](http://pathways.embl.de/) , [WebGestalt](http://www.webgestalt.org/) , [GOView](http://www.webgestalt.org/GOView/) , [EaSeq](http://easeq.net/) 
+
+#####X. For Internet
+[2016 Google hosts](http://laod.cn/hosts/2016-google-hosts.html),  [北大网络服务](https://its.pku.edu.cn)
 
 
 
