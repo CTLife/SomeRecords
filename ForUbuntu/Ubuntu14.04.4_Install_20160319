@@ -478,9 +478,9 @@ Download http://search.cpan.org/~lds/GD-2.56/lib/GD.pm:  such as GD-2.56.tar.gz 
 ## You can use "sudo perl -MCPAN -e shell"  or  "sudo cpan    install "
 sudo cpan    install  PerlIO::gzip
 sudo cpan    install  YAML
-sudo cpan    install  GD
+sudo cpan    install  GD 
 sudo cpan    install  GD::Graph
-sudo cpan    install  GD::Graph::bars
+sudo cpan    install  GD::Graph::bars   File::pushd  MooseX::Params::Validate   HPCI
 
 截图工具: gnome-screenshot  
 App path:  /usr/share/applications
@@ -507,7 +507,65 @@ sudo  aptitude  install  libboost-all-dev    libboost-atomic-dev    libboost-chr
 sudo aptitude install  bonnie++  gnuplot  gnuplot-doc  gnuplot-mode  gnuplot-nox  gnuplot-qt  gnuplot-x11
 sudo cpan install PerlIO::gzip 
 sudo cpan install  GD::Graph::bars
+
+## apt-cache search gsl
+sudo apt-get install libgsl0-dbg  libgsl0-dev libgsl0ldbl gsl-doc-info gsl-doc-pdf gsl-bin gsl-ref-html gsl-ref-psdoc
+sudo pip install   pyBigWig
+sudo pip install pysam   coverage eta swalign
+sudo apt-get install perl-doc
+
+sudo  -H  pip install   setuptools
+sudo  -H  pip install   pyparsing 
+sudo  -H  pip install   cython 
+sudo  -H  pip install   numpy 
+sudo  -H  pip install   MySQL-python 
+sudo  -H  pip install   PyYAML 
+sudo  -H  pip install   alignlib-lite 
+sudo  -H  pip install   biopython 
+sudo  -H  pip install   drmaa
+sudo  -H  pip install   hgapi
+sudo  -H  pip install   matplotlib-venn
+sudo  -H  pip install   matplotlib
+sudo  -H  pip install   networkx
+sudo  -H  pip install   openpyxl
+sudo  -H  pip install   pandas
+sudo  -H  pip install   pysam
+sudo  -H  pip install   rdflib
+sudo  -H  pip install   psycopg2
+sudo  -H  pip install   rpy2
+sudo  -H  pip install   ruffus
+sudo  -H  pip install   scipy
+sudo  -H  pip install   bx-python
+sudo  -H  pip install   sphinx 
+sudo  -H  pip install   sphinxcontrib-programoutput 
+sudo  -H  pip install   sqlalchemy 
+sudo  -H  pip install   threadpool 
+sudo  -H  pip install   web.py 
+sudo  -H  pip install   weblogo 
+sudo  -H  pip install   xlwt 
+sudo  -H  pip install   pybedtools 
+sudo  -H  pip install   pep8 
+sudo  -H  pip install   CGATReport 
+sudo  -H  pip install   cgat
 ###############################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
