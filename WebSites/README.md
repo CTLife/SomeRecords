@@ -47,4 +47,4 @@ ________________________________________________________________________________
 
 
 #####XII. Ask and Answer (yongxpeng@outlook.com)
-[Biostar](https://www.biostars.org/) , [Stack Overflow](http://stackoverflow.com/)
+[Biostar](https://www.biostars.org/) , [Stack Overflow](http://stackoverflow.com/) ， [SEQanswers](http://seqanswers.com/)
