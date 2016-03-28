@@ -46,4 +46,5 @@ ________________________________________________________________________________
 [GitHub](https://github.com/CTLife) , [WorkFlowy](https://workflowy.com/) , [Evernote](https://evernote.com)
 
 
-
+#####XII. Ask and Answer
+[Biostar](https://www.biostars.org/) , [Stack Overflow](http://stackoverflow.com/)
