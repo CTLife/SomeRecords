@@ -50,4 +50,4 @@ ________________________________________________________________________________
 [Biostar](https://www.biostars.org/) , [Stack Overflow](http://stackoverflow.com/) ， [SEQanswers](http://seqanswers.com/)  ,  [知乎](https://www.zhihu.com/)
 
 #####XIII.Googles
-
+[Google_1](https://g2.wen.lu/webhp?hl=zh-CN) , [Google_2](https://www.ggss.cf/webhp?hl=en&gws_rd=ssl) , 
