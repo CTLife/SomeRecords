@@ -50,4 +50,4 @@ ________________________________________________________________________________
 [Biostar](https://www.biostars.org/) , [Stack Overflow](http://stackoverflow.com/) ， [SEQanswers](http://seqanswers.com/)  ,  [知乎](https://www.zhihu.com/) 
 
 #####XIII.Mirrors of Google
-[Google_1, OK](https://g2.wen.lu/webhp?hl=zh-CN) , [Google_2](https://www.ggss.cf/webhp?hl=en&gws_rd=ssl) , [Google_3](https://www.google.co.kr/webhp?hl=ko) , [Google_4](https://gg.kfd.me/webhp?hl=zh-CN) , [Google_5](http://soguge.com/webhp?hl=zh-CN) , [Google_6](http://rose.jgoproxy.tk/) , [Google_7, OK](http://hao.cytbj.com/) , [Google_8](http://gc.ihuan.me/) , 
+[Google_1(OK)](https://g2.wen.lu/webhp?hl=zh-CN) , [Google_2](https://www.ggss.cf/webhp?hl=en&gws_rd=ssl) , [Google_3](https://www.google.co.kr/webhp?hl=ko) , [Google_4](https://gg.kfd.me/webhp?hl=zh-CN) , [Google_5](http://soguge.com/webhp?hl=zh-CN) , [Google_6](http://rose.jgoproxy.tk/) , [Google_7(OK)](http://hao.cytbj.com/) , [Google_8](http://gc.ihuan.me/) , 
