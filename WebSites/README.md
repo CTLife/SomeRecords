@@ -54,3 +54,8 @@ ________________________________________________________________________________
 
 ##### XIV. Tools
 [genometools](http://genometools.org/)
+
+##### XV. For NGS
+[HTS mappers](http://www.ebi.ac.uk/~nf/hts_mappers/)                  
+                   
+                   
