@@ -1,0 +1,494 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+export PATH=$PATH:/bootstrap/cn/managements
+
+##############################
+# set enviroment for bioapps #
+##############################
+
+export BIOAPPS_BASE=/apps/bioapps
+source /apps/bioinfo/virtualenv-python2.7/install/bin/activate
+export PATH=$BIOAPPS_BASE/bin:$PATH
+export LD_LIBRARY_PATH=$BIOAPPS_BASE/lib:$LD_LIBRARY_PATH
+ #for java
+#export JAVA_HOME=$BIOAPPS_BASE/jdk-sun
+#export JDK_HOME=$JAVA_HOME
+#export JAVAC=$JDK_HOME/bin/javac
+#export PATH=$JAVA_HOME/bin:$PATH
+#export MANPATH=$JAVA_HOME/man:$MANPATH
+ #for lapack
+export LD_LIBRARY_PATH=$BIOAPPS_BASE/lapack/install/lib:$LD_LIBRARY_PATH
+ #for R
+export MANPATH=$BIOAPPS_BASE/R/install/share/man:$MANPATH
+ #for bwa
+export MANPATH=$BIOAPPS_BASE/bwa/install/share/man:$MANPATH
+ #for gatk
+export GATK_HOME=$BIOAPPS_BASE/gatk
+alias gatk="java -jar $GATK_HOME/GenomeAnalysisTK.jar"
+ # for samtools
+export MANPATH=$BIOAPPS_BASE/samtools/install/share/man:$MANPATH
+
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib
+
+ # local cufflinks
+#export cufflinks=/home/ahe_pkuhpc/cufflinks-2.2.1.Linux_x86_64/cufflinks
+
+################################
+# set enviroment for md & dock #
+################################
+ #for md-all 
+export PATH=$PATH:/apps/mdapps/bin
+ # for amber14
+source /apps/mdapps/amber14/amber.sh
+export AMBERHOME=/apps/mdapps/amber14
+export PATH=$PATH:/apps/mdapps/amber14/bin
+ # for NAMD2-10
+export PATH=$PATH:/apps/mdapps/NAMD_2.10_Linux-x86_64-ibverbs
+ #for MMTSB
+export MMTSBDIR=/apps/mdapps/mmtsb
+export PATH=$PATH:/apps/mdapps/mmtsb/bin:/apps/mdapps/mmtsb/perl
+ #for autodocktools
+##export PATH=/apps/mdapps/mgltools_x86_64Linux2_1.5.6/bin:$PATH
+alias pmv='/apps/mdapps/mgltools_x86_64Linux2_1.5.6/bin/pmv'
+alias adt='/apps/mdapps/mgltools_x86_64Linux2_1.5.6/bin/adt'
+alias vision='/apps/mdapps/mgltools_x86_64Linux2_1.5.6/bin/vision'
+alias pythonsh='/apps/mdapps/mgltools_x86_64Linux2_1.5.6/bin/pythonsh'
+ #for dock6 !!! amber!
+#export PATH=$PATH:/apps/mdapps/dock6
+
+
+
+###########################
+###   export intel  mpi ###   
+###########################
+ #for openmpi
+#export PATH=$PATH:/usr/mpi/gcc/openmpi-1.8.4rc1/bin/
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/mpi/gcc/openmpi-1.8.4rc1/lib64
+ #for mpich2
+#export PATH=$PATH:/usr/mpi/gcc/mvapich2-2.0/bin
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/mpi/gcc/mvapich2-2.0/lib
+
+
+#source /opt/intel/composer_xe_2013_sp1.2.144/bin/iccvars.sh intel64
+#source /opt/intel/composer_xe_2013_sp1.2.144/bin/ifortvars.sh intel64
+#source /opt/intel/impi/5.0.0.028/bin64/mpivars.sh
+
+###########################
+###   export  mic   gpu ###   
+###########################
+ # for mic
+#/opt/mpss/3.4.2/sysroots
+ #for cuda
+#export PATH=$PATH:/usr/local/cuda/bin
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib
+
+
+ #for matlab 
+export PATH=$PATH:/usr/local/MATLAB/R2013a/bin/matlab
+
+
+ # for TH-1a
+alias yhbatch='sbatch'
+alias yhrun='srun'
+alias yhi='sinfo'
+alias yhq='squeue'
+alias yhcancel='scancel'
+
+
+
+
+
+
+
+
+
+
+
+
+
+#################################### Add by Yong Peng ############################################
+
+
+
+############################################################################### Add by Yong Peng ###############################################################################
+
+##### 1_Lib
+export PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/ghostscript:$PATH
+#export PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/gmtk/bin:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/htslib/bin:$PATH
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/htslib/lib:$LIBRARY_PATH    ##for install CRAC
+#export LD_LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/htslib/lib:$LD_LIBRARY_PATH    ##for install CRAC
+#export C_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/htslib/include/htslib:$C_INCLUDE_PATH
+#export CPLUS_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/htslib/include/htslib:$CPLUS_INCLUDE_PATH
+
+#export PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/jemalloc/bin:$PATH
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/jemalloc/lib:$LIBRARY_PATH    ##for install CRAC
+#export LD_LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/jemalloc/lib:$LD_LIBRARY_PATH    ##for install CRAC
+#export C_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/jemalloc/include/jemalloc:$C_INCLUDE_PATH
+#export CPLUS_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/jemalloc/include/jemalloc:$CPLUS_INCLUDE_PATH
+ 
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libgtextutils/lib:$LIBRARY_PATH
+#export LD_LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libgtextutils/lib:$LD_LIBRARY_PATH
+#export C_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libgtextutils/include/gtextutils/gtextutils:$C_INCLUDE_PATH
+#export CPLUS_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libgtextutils/include/gtextutils/gtextutils:$CPLUS_INCLUDE_PATH
+
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libStatGen:$LIBRARY_PATH
+#export LD_LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libStatGen:$LD_LIBRARY_PATH
+
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/seqan-library/include/seqan:$LIBRARY_PATH 
+#export C_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/seqan-library/include/seqan:$C_INCLUDE_PATH
+#export CPLUS_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/seqan-library/include/seqan:$CPLUS_INCLUDE_PATH
+
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/sparsehash/lib/pkgconfig:$LIBRARY_PATH 
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/sparsehash/include/sparsehash:$LIBRARY_PATH    
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/sparsehash/include/sparsehash/internal:$LIBRARY_PATH    
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/sparsehash/include/google:$LIBRARY_PATH    
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/sparsehash/include/google/sparsehash:$LIBRARY_PATH    
+
+export PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/weblogo:$PATH
+
+#export LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libmaus2/lib:$LIBRARY_PATH    ##for install CRAC
+#export LD_LIBRARY_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libmaus2/lib:$LD_LIBRARY_PATH    ##for install CRAC
+#export C_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libmaus2/include/libmaus2:$C_INCLUDE_PATH
+#export CPLUS_INCLUDE_PATH=$HOME/lustre1/.MyProgramFiles/1_Lib/libmaus2/include/libmaus2:$CPLUS_INCLUDE_PATH
+
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lustre1/.MyProgramFiles/1_Lib/gsl/lib
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
+## perform  "ln   $HOME/lustre1/.MyProgramFiles/1_Lib/gsl/lib/libgsl.so    $HOME/lustre1/.MyProgramFiles/1_Lib/gsl/lib/libgsl.so.0"
+## perform  "sudo ln   /usr/lib/x86_64-linux-gnu/libgsl.so    /usr/lib/x86_64-linux-gnu/libgsl.so.0"
+
+
+
+
+
+
+##### 2_Lang
+export GOROOT=$HOME/lustre1/.MyProgramFiles/2_Lang/go
+export PATH=$GOROOT/bin:$PATH
+
+export  JAVA_HOME=$HOME/lustre1/.MyProgramFiles/2_Lang/jdk     # No space before and after "="
+export  JRE_HOME=${JAVA_HOME}/jre
+export  CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export  PATH=${JAVA_HOME}/bin:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/2_Lang/julia/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/2_Lang/Perl6/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/2_Lang/Perl6/share/perl6/site/bin:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/2_Lang/Python2/bin:$PATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/2_Lang/Python2/lib/python2.7/site-packages/:$PYTHONPATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/2_Lang/R/bin:$PATH
+export R_HOME=/home/ahe_pkuhpc/lustre1/.MyProgramFiles/2_Lang/R/lib64/R     ##very important,    http://xiaoniuwaershi.blog.163.com/blog/static/2067850572012410105121854/
+export R_LIBS=$HOME/lustre1/.MyProgramFiles/2_Lang/R/lib64/R/lib
+export LD_LIBRARY_PATH=${R_HOME}/lib:${LD_LIBRARY_PATH}
+
+
+
+
+
+##### 3_HTS2G
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/fastools/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/fastqp/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/MultiQC/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/ngsutils/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/Trim/cutadapt/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/cgat/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/CGATPipelines/lib/python2.7/site-packages/:$PYTHONPATH
+#export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/CrossMap/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/deepTools/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/goatools/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/metaseq/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/ENCODE/MACS1.4/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/ENCODE/spp-idr/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/edd/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/MACS2/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/PePr/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/2_BAM/RSeQC/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/4_Final/TEToolkit/lib/python2.7/site-packages/:$PYTHONPATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/ea-utils:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/FaQCs:$PATH
+#export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/fastools/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/FastQC:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/fastqp/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/fastq-tools/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/fastx_toolkit/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/fqtools/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/htqc-0.90.8/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/htqc-1.92.3/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/Lighter-1.1.1:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/MultiQC/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/NGSQCToolkit/Format-converter:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/NGSQCToolkit/QC:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/NGSQCToolkit/Statistics:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/NGSQCToolkit/Trimming:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/ngsutils/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/prinseq-lite-0.20.4:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/QC3-1.34:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/seqcontrol:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/SolexaQA/Linux_x64:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/sratoolkit.2.6.2/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/TOGGLE-0.3.0:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/Trim/adapterremoval/build:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/Trim/cutadapt/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/Trim/NxTrim:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/Trim/skewer:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/1_FASTQ/Trim/Trimmomatic-0.36:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/angsd:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/BamQC/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/BAMStats-1.25:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/bamtools-2.4.0/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/bamUtil-1.0.14/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/biobambam2/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/ezBAMQC-0.6.7:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/mmr:$PATH
+#export PERL5LIB=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/ngsperl:$PERL5LIB
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/NGSQC:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/picard-tools-2.2.4:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/preseq_v2.0:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/qualimap_v2.2:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/Raspberry-0.3/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/samstat/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/samtools-1.3.1:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/statsTools/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/2_BAM/Super-Deduper:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/bedops:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/bedtools2/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/bpipe-0.9.9/bin:$PATH
+#export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/bwtool:$PATH
+#export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/cgat/bin:$PATH
+#export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/CGATPipelines/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/CrossMap/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/deepTools/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/goatools/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/HOMER/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/metaseq/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/ngsplot-2.61/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/3_BEDWig/Rcount:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/2_BAM/hotspot-4.1.0/hotspot-distr/hotspot-deploy/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/2_BAM/hotspot-4.1.0/pipeline-scripts:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/2_BAM/TS-TorrentSuite_5.0.2/Analysis/:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/2_BAM/TS-TorrentSuite_5.0.2/buil/dAnalysis/:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/2_BAM/VancouverShortR-4.0.16/utilities/:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/2_BAM/zerone/:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/bbmap:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/bowtie2-2.2.9:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/bowtie-1.1.2:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/bwa.kit:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/cushaw3-v3.0.3:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/gemtools:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/gmap:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/last/bin$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/mrsfast-3.3.8:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/novocraft:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/pash-3.01.02/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/razers3-3.5.3/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/snap:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/stampy-1.0.28$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/subread-1.5.0-p2/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/subread-1.5.0-p2/bin/utilities:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/3_Aligners/yara-0.9.6/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/ENCODE/gem:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/ENCODE/homer-idr/idr:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/ENCODE/idr-2.0.2/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/ENCODE/MACS1.4/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/ENCODE/PeakSeq/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/ENCODE/phantompeakqualtools:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/peakTools/chip-seq:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/peakTools/papst:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/peakTools/PeakAnalyzer:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/peakTools/PeakAnnotator:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/peakTools/PeakSplitter:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/DFilter1.6:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/DROMPA3:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/edd/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/JAMM-1.0.7.3:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/MACS2/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/MUSIC/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/PeakRanger-1.17/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/peakzilla:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/PePr/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/Q/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/rseg:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/4_ChIPseq/4_Final/SICER_V1.1/SICER:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/2_BAM/QoRTs:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/2_BAM/RNA-SeQC:$PATH
+#export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/2_BAM/RSeQC/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/ContextMap:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/crac:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/hisat2-2.0.4:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/kallisto:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/MapSplice:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/RapMap-0.2.1/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/RSEM/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/SailfishBeta-0.10.0/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/salmon-0.6.0/build/src:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/STAR-2.5.2a/bin/Linux_x86_64:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/STAR-Fusion_v0.7.0:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/tophat-2.1.1:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/3_Aligners/trinityrnaseq-2.2.0:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/4_Final/ballgown:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/4_Final/bam-readcount/build/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/4_Final/cidane:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/4_Final/cufflinks-2.2.1:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/4_Final/RSEQtools-0.6:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/4_Final/spladder:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/4_Final/stringtie-1.2.2:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/5_RNAseq/4_Final/TEToolkit/bin:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/6_BSseq/1_FASTQ/trim_galore:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/6_BSseq/2_BAM/bseqc/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/6_BSseq/2_BAM/methylQA-0.1.5:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/6_BSseq/3_Aligners/bismark:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/6_BSseq/3_Aligners/brat_nova:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/6_BSseq/3_Aligners/erne-2.1/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/6_BSseq/4_Final/metilene_v0.2-6:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/6_BSseq/4_Final/PileOMeth:$PATH
+
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/7_HIC/2_BAM/hifive/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/7_HIC/2_BAM/hiclib/lib/python2.7/site-packages/:$PYTHONPATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/7_HIC/2_BAM/hifive:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/7_HIC/2_BAM/mirnylab-hiclib:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/7_HIC/2_BAM/runHiC/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/7_HIC/3_Aligners/HiC-Pro:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/7_HIC/3_Aligners/hicup:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/7_HIC/4_Final/HiCExplorer:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/7_HIC/4_Final/HiCPlotter:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/8_DNAseq/4_Final/bcftools-1.3.1:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/8_DNAseq/4_Final/gatk-4.alpha.1:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/8_DNAseq/4_Final/vcftools/bin:$PATH
+
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/9_NucleosomeSeq/4_Final/danpos-2.2.2:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/9_NucleosomeSeq/4_Final/NucleoATAC:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/9_NucleosomeSeq/4_Final/iNPS_V1.2.2:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/9_NucleosomeSeq/4_Final/PING2:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/3_HTS2G/9_NucleosomeSeq/4_Final/nucleR2:$PATH
+
+
+
+
+
+##### 4_HTS-3G
+
+
+
+
+##### 5_HTS-4G
+
+
+
+
+##### 6_Bioinformatics
+export PATH=$HOME/lustre1/.MyProgramFiles/6_Bioinformatics/UCSC_Tools_Utilities:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/6_Bioinformatics/UCSC_Tools_Utilities/blat:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/6_Bioinformatics/Pse-in-One-1.0.3/Pse-in-One:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/6_Bioinformatics/genoman:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/6_Bioinformatics/ugene-1.22.0:$PATH
+
+
+
+
+
+##### 7_SystemsBio
+
+
+
+
+##### 8_MolSimulat
+
+
+
+
+##### 9_Nonlinear
+
+
+
+
+##### 10_ComplexNets
+
+
+
+
+##### 11_SequenceAna
+export PATH=$HOME/lustre1/.MyProgramFiles/11_SequenceAna/genometools-1.5.8/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/11_SequenceAna/kPAL-2.1.1:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/11_SequenceAna/ncbi-blast-2.3.0+/bin:$PATH
+
+
+
+
+
+##### 12_GUI-Softwares
+export PATH=$HOME/lustre1/.MyProgramFiles/12_GUI-Softwares/cluster/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/12_GUI-Softwares/FileZilla3/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/12_GUI-Softwares/IGV_2.3.72/bin:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/12_GUI-Softwares/TreeView:$PATH
+
+
+
+
+
+##### 13_SingleCell
+
+
+
+
+##### 14_SingleMol
+
+
+
+
+##### 15_MachineLear
+export PATH=$HOME/lustre1/.MyProgramFiles/15_MachineLear/libsvm:$PATH
+export PATH=$HOME/lustre1/.MyProgramFiles/15_MachineLear/weka-3-8-0:$PATH
+
+
+
+
+
+##### 16_EGWAS_eQTL
+
+
+
+
+##### 17_Omics
+
+
+
+
+##### 18-OtherTools
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
