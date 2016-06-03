@@ -37,24 +37,27 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________
 #####Ⅸ. Online Tools
 [Highcharts](http://www.highcharts.com/) , [GREAT](http://bejerano.stanford.edu/great) , [DAVID](https://david.ncifcrf.gov) , [GOrilla](http://cbl-gorilla.cs.technion.ac.il/) , [Metascape](http://metascape.org) , [Sequence Manipulation Suite](http://www.bioinformatics.org/sms2/) , [WikiPathways](http://www.wikipathways.org/index.php/WikiPathways) , [iPATH2](http://pathways.embl.de/) , [WebGestalt](http://www.webgestalt.org/) , [GOView](http://www.webgestalt.org/GOView/) , [EaSeq](http://easeq.net/) , [gkno](http://gkno.me/) , [GeneProf](http://www.geneprof.org/GeneProf/) , [Teaser](http://teaser.cibiv.univie.ac.at/) , [pKa calculation](http://compbio.clemson.edu/pka_webserver/) , [GenomeSpace](http://www.genomespace.org/) , [GeneAnalytics](http://geneanalytics.genecards.org/) , [sgRNA_MIT](http://crispr.mit.edu/)  , [Benchling](https://benchling.com/) , [drawVenn](http://bioinformatics.psb.ugent.be/webtools/Venn/) , [BioVenn](http://www.cmbi.ru.nl/cdd/biovenn/) , [Regulatory Sequence Analysis Tools (RSAT)](http://rsat.sb-roscoff.fr/) , [MyGene](http://mygene.info/) , [MyVariant](http://myvariant.info/) , [GREAT 2016NAR](https://absynth.issb.genopole.fr/Bioinformatics/tools/GREAT/)
-
+                                                                   
+________________________________________________________________________________________________________________
 #####X. For Internet
 [2016 Google hosts](http://laod.cn/hosts/2016-google-hosts.html),  [北大网络服务](https://its.pku.edu.cn)
 
-
+________________________________________________________________________________________________________________
 #####XI. My Library
 [GitHub](https://github.com/CTLife) , [WorkFlowy](https://workflowy.com/) , [Evernote](https://evernote.com) , 
 
-
+________________________________________________________________________________________________________________
 #####XII. Ask and Answer (yongxpeng@outlook.com)
 [Biostar](https://www.biostars.org/) , [Stack Overflow](http://stackoverflow.com/) ， [SEQanswers](http://seqanswers.com/)  ,  [知乎](https://www.zhihu.com/) 
-
+                                           
+________________________________________________________________________________________________________________
 #####XIII. Temp
-
-
+                                                  
+________________________________________________________________________________________________________________
 ##### XIV. Tools
 [genometools](http://genometools.org/)
-
+                                                                                        
+________________________________________________________________________________________________________________
 ##### XV. For NGS
 [HTS mappers](http://www.ebi.ac.uk/~nf/hts_mappers/)                  
                    
