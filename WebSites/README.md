@@ -1,6 +1,6 @@
 ________________________________________________________________________________________________________________
 #####I. Search Engines and News
-[Google](https://www.google.com/ncr)  ,  [Baidu](https://www.baidu.com/)  ,  [Yahoo](https://www.yahoo.com/)  ,  [Bing](https://www.bing.com/) ,  [Ask](http://www.ask.com/) ， [中国搜索](http://www.chinaso.com/) , [好搜](http://www.haosou.com/) , [DDG](https://duckduckgo.com/) , [Yandex](https://www.yandex.com/) , [Sogou](https://www.sogou.com/) , [新浪](http://www.sina.com.cn/) ,  [搜狐](http://www.sohu.com/) ,  [网易](http://www.163.com/) ,  [腾讯](http://www.qq.com/) , [US News](http://www.usnews.com/) , [Washington Post](https://www.washingtonpost.com/) , [New York Times](http://www.nytimes.com/) ,  [BBC](http://www.bbc.com/)  , [CNN](http://www.bbc.com/) , [MIT Technology Review](http://www.technologyreview.com/)                                  
+[Google](https://www.google.com/ncr)  ,  [Baidu](https://www.baidu.com/)  ,  [Yahoo](https://www.yahoo.com/)  ,  [Bing](https://www.bing.com/) ,  [Ask](http://www.ask.com/) ， [中国搜索](http://www.chinaso.com/) , [好搜](http://www.haosou.com/) , [DDG](https://duckduckgo.com/) , [Yandex](https://www.yandex.com/) , [Sogou](https://www.sogou.com/) , [新浪](http://www.sina.com.cn/) ,  [搜狐](http://www.sohu.com/) ,  [网易](http://www.163.com/) ,  [腾讯](http://www.qq.com/) , [US News](http://www.usnews.com/) , [Washington Post](https://www.washingtonpost.com/) , [New York Times](http://www.nytimes.com/) ,  [BBC](http://www.bbc.com/)  , [CNN](http://www.bbc.com/) , [MIT Technology Review](http://www.technologyreview.com/)    ,  [Google_1](https://g2.wen.lu/webhp?hl=zh-CN) , [Google_2](https://www.ggss.cf/webhp?hl=en&gws_rd=ssl) , [Google_3](http://gc.ihuan.me/) , [Google_4](https://gg.kfd.me/webhp?hl=zh-CN) , [Google_5](http://soguge.com/webhp?hl=zh-CN) , [Google_6](http://hao.cytbj.com/)                                
                             
 ________________________________________________________________________________________________________________
 #####II. Universities and Institutes
@@ -43,14 +43,14 @@ ________________________________________________________________________________
 
 
 #####XI. My Library
-[GitHub](https://github.com/CTLife) , [WorkFlowy](https://workflowy.com/) , [Evernote](https://evernote.com)
+[GitHub](https://github.com/CTLife) , [WorkFlowy](https://workflowy.com/) , [Evernote](https://evernote.com) , 
 
 
 #####XII. Ask and Answer (yongxpeng@outlook.com)
 [Biostar](https://www.biostars.org/) , [Stack Overflow](http://stackoverflow.com/) ， [SEQanswers](http://seqanswers.com/)  ,  [知乎](https://www.zhihu.com/) 
 
-#####XIII. Mirrors of Google
-[Google_1(OK)](https://g2.wen.lu/webhp?hl=zh-CN) , [Google_2](https://www.ggss.cf/webhp?hl=en&gws_rd=ssl) , [Google_3](https://www.google.co.kr/webhp?hl=ko) , [Google_4](https://gg.kfd.me/webhp?hl=zh-CN) , [Google_5](http://soguge.com/webhp?hl=zh-CN) , [Google_6](http://rose.jgoproxy.tk/) , [Google_7(OK)](http://hao.cytbj.com/) , [Google_8](http://gc.ihuan.me/) , 
+#####XIII. Temp
+
 
 ##### XIV. Tools
 [genometools](http://genometools.org/)
