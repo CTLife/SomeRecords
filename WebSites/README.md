@@ -14,7 +14,7 @@ Molecular BioSystems](http://pubs.rsc.org/en/journals/journalissues/mb?_ga=1.188
                                
 ________________________________________________________________________________________________________________
 #####IV. Scholar Search
-[Google Scholar Search](https://scholar.google.com/) , [Microsoft Academic Search](http://academic.research.microsoft.com/) , [百度学术](http://xueshu.baidu.com/) , [CNKI](http://www.cnki.net/) , [Web of Knowledge](http://apps.webofknowledge.com) , [PubMed](http://www.ncbi.nlm.nih.gov/pubmed) , [SCI-HUB] (http://www.sci-hub.io/)   
+[Google Scholar Search](https://scholar.google.com/) , [Microsoft Academic Search](http://academic.research.microsoft.com/) , [百度学术](http://xueshu.baidu.com/) , [CNKI](http://www.cnki.net/) , [Web of Knowledge](http://apps.webofknowledge.com) , [PubMed](http://www.ncbi.nlm.nih.gov/pubmed) , [SCI-HUB] (http://www.sci-hub.cc/)   
                                
 ________________________________________________________________________________________________________________
 #####V. Databases
