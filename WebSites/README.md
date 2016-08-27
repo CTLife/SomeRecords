@@ -55,7 +55,7 @@ ________________________________________________________________________________
                                                   
 ________________________________________________________________________________________________________________
 ##### XIV. Tools
-[genometools](http://genometools.org/) , [MEGA](http://www.megasoftware.net/)
+[genometools](http://genometools.org/) , [MEGA](http://www.megasoftware.net/) , [ChIPseq](http://biocluster.ucr.edu/~rkaundal/workshops/R_feb2016/ChIPseq/ChIPseq.html)
                                                                                         
 ________________________________________________________________________________________________________________
 ##### XV. For NGS
