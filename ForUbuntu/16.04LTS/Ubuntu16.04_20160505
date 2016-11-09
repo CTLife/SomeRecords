@@ -16,13 +16,11 @@
 
 	Solve the problem of  "E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)":
         	sudo killall apt
-        	sudo killall apt
         	sudo killall synaptic
 
 	Ubuntu software center: 
             	Inkscape Vector Graphics Editor
             	GIMP Image Editor
-                BleachBit  ##系统清理工具  
 
 	搜狗输入法: 
           	sudo apt install  fcitx   fcitx-config-gtk  fcitx-table-all  im-config    libopencc1  fcitx-libs   fcitx-libs-qt  fonts-droid-fallback  
@@ -159,7 +157,7 @@ sudo apt-get install -f
 ################################################# 4A. Install python2 packages ################################################################################# 
 ###############################################################################################################################################################
       	sudo apt    install   libfreetype6  libfreetype6-dev   tk-dev    libatlas-base-dev  libopenblas-base libopenblas-dev   ## apt search  blas 
-      	sudo apt    install   libblas-test   libblas-dev   libblas-doc  libblas3  libgsl0-dbg                                                          
+      	sudo apt    install   libblas-test   libblas-dev   libblas-doc  libblas3                                                          
       	sudo apt    install   libatlas-base-dev  libatlas-dev   libatlas-doc  libatlas-test   libatlas3-base   liblas-bin  liblas-c-dev   liblas-dev
       	sudo apt    install   liblapack-dev   liblapack-doc  liblapack3   liblapacke  liblapacke-dev        ## apt search  lapack   
       	sudo apt    install   liblapack-doc-man    liblapack-pic     liblapack-test   libblas-test          ## apt search  lapack 
