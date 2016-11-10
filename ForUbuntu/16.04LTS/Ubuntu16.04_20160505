@@ -363,6 +363,9 @@ loadfonts()
 loadfonts(device="postscript")
 names(postscriptFonts())
 
+##The following R commands will install all CRAN packages:
+availablePackages <- available.packages()[,1]
+install.packages(availablePackages)
 
 ###############################################################################################################################################################
 
