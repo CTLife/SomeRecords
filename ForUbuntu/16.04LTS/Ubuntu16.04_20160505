@@ -308,7 +308,7 @@ sudo apt-get install -f
        biocLite(c("affy", "limma", "RColorBrewer", "sem", "ALL", "XML", "genefilter", "annotate", "simpleaffy", "AnnotationDbi",  "gcrma", "latticeExtra",  "MantelCorr"))
        biocLite( c("oligoClasses", "oligo", "oligo", "pd.mogene.1.0.st.v1",  "mogene10stv1cdf", "mogene10stprobeset.db", "affyPLM") )
 
-       install.packages( c('Cairo', 'corrplot') )
+       install.packages( c('Cairo', 'corrplot', 'svglite') )
 
        biocLite( c("affycoretools",  "genefilter", "annotate", "GOstats", "goseq") )
        biocLite( c("DESeq", "DESeq2", "EDASeq", "XBSeq", "DEXSeq", "limma", "edgeR" ) )
