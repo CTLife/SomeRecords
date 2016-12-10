@@ -53,7 +53,7 @@ ________________________________________________________________________________
                                            
 ________________________________________________________________________________________________________________
 ##### XIII. Forums
-                                                  
+[科学网](http://www.sciencenet.cn/) , [小木虫]（http://muchong.com/） ，   [mitbbs](http://www.mitbbs.com/)         
 ________________________________________________________________________________________________________________
 ##### XIV. Tools and softwares
 [genometools](http://genometools.org/) , [MEGA](http://www.megasoftware.net/) , [ChIPseq](http://biocluster.ucr.edu/~rkaundal/workshops/R_feb2016/ChIPseq/ChIPseq.html)
@@ -65,7 +65,6 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________
 ##### XVI. Websites for information and computer sciences       
 [开源中国](http://www.oschina.net/) , [CSDN](http://www.csdn.net/) , [图灵社区](http://www.ituring.com.cn/), [China-Pub](http://www.china-pub.com/)                                                              
-                         
-                        
-##### XVII. Other Websites                            
+                                                                                  
+________________________________________________________________________________________________________________                 ##### XVII. Other Websites                            
                    
