@@ -53,7 +53,7 @@ ________________________________________________________________________________
                                            
 ________________________________________________________________________________________________________________
 ##### XIII. Forums
-[科学网](http://www.sciencenet.cn/) , [小木虫]（http://muchong.com/） ，   [mitbbs](http://www.mitbbs.com/)         
+[科学网](http://www.sciencenet.cn/) , [小木虫](http://muchong.com/) ，   [mitbbs](http://www.mitbbs.com/)         
 ________________________________________________________________________________________________________________
 ##### XIV. Tools and softwares
 [genometools](http://genometools.org/) , [MEGA](http://www.megasoftware.net/) , [ChIPseq](http://biocluster.ucr.edu/~rkaundal/workshops/R_feb2016/ChIPseq/ChIPseq.html)
