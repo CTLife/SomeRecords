@@ -45,7 +45,7 @@ ________________________________________________________________________________
 
 ________________________________________________________________________________________________________________
 ##### XI. My Library
-[GitHub](https://github.com/CTLife) , [WorkFlowy](https://workflowy.com/) , [Evernote](https://evernote.com) , 
+[GitHub](https://github.com/CTLife) , [WorkFlowy](https://workflowy.com/) , [Evernote](https://evernote.com) , [Wikibooks](https://en.wikibooks.org/wiki/Main_Page)                  
 
 ________________________________________________________________________________________________________________
 ##### XII. Ask and Answer (yongxpeng@outlook.com)
@@ -60,7 +60,7 @@ ________________________________________________________________________________
                                                                                         
 ________________________________________________________________________________________________________________
 ##### XV. For NGS
-[HTS mappers](http://www.ebi.ac.uk/~nf/hts_mappers/)            
+[HTS mappers](http://www.ebi.ac.uk/~nf/hts_mappers/)  , [Wikibooks-Next Generation Sequencing](https://en.wikibooks.org/wiki/Next_Generation_Sequencing_(NGS))              
                                         
 ________________________________________________________________________________________________________________
 ##### XVI. Websites for information and computer sciences       
