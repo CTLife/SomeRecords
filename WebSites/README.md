@@ -60,7 +60,7 @@ ________________________________________________________________________________
                                                                                         
 ________________________________________________________________________________________________________________
 ##### XV. For NGS
-[HTS mappers](http://www.ebi.ac.uk/~nf/hts_mappers/)  , [Wikibooks-Next Generation Sequencing](https://en.wikibooks.org/wiki/Next_Generation_Sequencing_(NGS))              
+[HTS mappers](http://www.ebi.ac.uk/~nf/hts_mappers/)  , [Wikibooks-Next Generation Sequencing](https://en.wikibooks.org/wiki/Next_Generation_Sequencing_(NGS)) , [LibSVM](https://www.csie.ntu.edu.tw/~cjlin/libsvm/)             
                                         
 ________________________________________________________________________________________________________________
 ##### XVI. Websites for information and computer sciences       
