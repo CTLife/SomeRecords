@@ -67,5 +67,8 @@ ________________________________________________________________________________
 [开源中国](http://www.oschina.net/) , [CSDN](http://www.csdn.net/) , [图灵社区](http://www.ituring.com.cn/), [China-Pub](http://www.china-pub.com/)                                                              
                                                                                                               
 ________________________________________________________________________________________________________________                 
-##### XVII. Other Websites                                               
+##### XVII. GitHub Sites                                               
+[Deep Learning Papers Reading Roadmap](https://github.com/songrotek/Deep-Learning-Papers-Reading-Roadmap), [Machine Learning for Go](https://github.com/sjwhitworth/golearn) , [TensorFlow](https://github.com/tensorflow/tensorflow) , [bioinformatics library for Go](https://github.com/biogo/biogo)                                                                                                            
+________________________________________________________________________________________________________________                 
+##### XVIII. Other Websites                                               
                    
