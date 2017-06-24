@@ -1,0 +1,65 @@
+1. 安装anaconda3
+https://www.continuum.io/downloads
+bash  Anaconda3-4.4.0-Linux-x86_64.sh   (change the install path, such as )
+conda -V
+conda 
+python
+查看已安装软件：
+conda list
+更新指定软件：
+conda update 软件名
+卸载指定软件：
+conda remove 软件名
+
+
+2.添加channels, 安装bioconda
+conda config --add channels conda-forge
+conda config --add channels defaults
+conda config --add channels r
+conda config --add channels bioconda
+查看已经添加的channels：
+conda config --get channels
+
+更新miniconda
+conda update conda
+
+conda install   samtools   wget  r-essentials bioconductor-deseq2 bioconductor-edger
+
+
+3. 安装tensorflow
+anaconda search -t conda tensorflow
+
+anaconda show jjhelmus/tensorflow
+conda install --channel https://conda.anaconda.org/jjhelmus tensorflow
+
+or
+
+anaconda show  hajapy/tensorflow
+conda install --channel https://conda.anaconda.org/hajapy tensorflow
+
+
+安装成功与否，可以测试一下。
+在终端输入python，进入python编译环境，然后输入：
+import tensorflow as tf
+引包tensorflow包，如果没有报错，则安装成功，否则就有问题。
+
+然后可以输入：
+tf.__version__
+tf.__path__
+查看tensorflow的安装版本和安装路径（左右各两根下横线）。
+
+
+
+4. Install python, perl and R packages
+which python
+python -V
+
+anaconda search -t conda  perl
+
+
+
+
+
+
+
+
