@@ -1,3 +1,4 @@
 http://topking.blog.51cto.com/233017/1261891/   
 http://www.cnblogs.com/hfyfpga/p/5789681.html   
-https://unix.stackexchange.com/questions/273471/how-to-solve-drmradeon-init-radeon-error-no-ums-support-in-radeon-module  
+https://unix.stackexchange.com/questions/273471/how-to-solve-drmradeon-init-radeon-error-no-ums-support-in-radeon-module 
+http://blog.csdn.net/qq_18297675/article/details/52563819
