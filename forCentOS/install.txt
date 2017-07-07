@@ -7,4 +7,4 @@ for network: http://blog.csdn.net/maxine_du/article/details/52130243
 install ntfs-3g: https://www.techbrown.com/mount-ntfs-file-system-centos-7-rhel-7.shtml 
 yum install ntfs-3g
 yum install ntfsprogs
-for driver： 
+for driver： http://blog.csdn.net/sidely/article/details/40983599
