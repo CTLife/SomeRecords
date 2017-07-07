@@ -3,3 +3,5 @@ http://www.cnblogs.com/hfyfpga/p/5789681.html
 https://unix.stackexchange.com/questions/273471/how-to-solve-drmradeon-init-radeon-error-no-ums-support-in-radeon-module 
 http://blog.csdn.net/qq_18297675/article/details/52563819
 https://www.centos.org/forums/viewtopic.php?f=47&t=53479&start=10  (solved. but need to re-insert USB)
+for network: http://blog.csdn.net/maxine_du/article/details/52130243
+for driver： 
