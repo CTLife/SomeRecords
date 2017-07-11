@@ -1,0 +1,144 @@
+## Part 1  Based on root 
+1. download ultroISO, CentOS7 DVD
+2. install
+3. setting
+4. update OS:  yum update
+
+
+
+## Part 2  Only based on user
+
+download anaconda3
+bash  Anaconda3-4.4.0-Linux-x86_64.sh
+logout
+which python
+which pip
+python -V
+conda install scipy
+pip install numpy
+
+which conda
+conda -V
+conda 
+conda help
+查看已安装软件：
+conda list
+更新指定软件：
+conda update 软件名
+conda update --prefix /home/yp/anaconda3 anaconda
+卸载指定软件：
+conda remove 软件名
+
+添加channels, 安装bioconda
+conda config --add channels conda-forge
+conda config --add channels r
+conda config --add channels bioconda
+conda config --add channels defaults
+查看已经添加的channels：
+conda config --get channels
+
+anaconda search -t conda gcc
+anaconda  show  salford_systems/gcc-5
+conda install --channel https://conda.anaconda.org/salford_systems gcc-5
+anaconda  show  salford_systems/libgcc-5
+conda install --channel https://conda.anaconda.org/salford_systems libgcc-5
+(conda remove gcc-5, conda remove libgcc-5)
+which gcc
+which g++
+which gfortran
+
+
+
+
+############## for python2.7
+# 创建一个名为python27的环境，指定Python版本是2.7 
+conda create --name python27 python=2.7
+
+# 安装好后，使用activate激活某个环境
+source activate python27    # for Linux & Mac
+# 激活后，会发现terminal输入的地方多了python27的字样，
+实际上，此时系统做的事情就是把默认3.5环境从PATH中去除，再把2.7对应的命令加入PATH
+
+# 此时，再次输入
+python --version
+
+# 如果想返回默认的python 2.7环境，运行
+source deactivate python27   # for Linux & Mac
+
+# 删除一个已有的环境
+conda remove --name python27 --all
+在命令中运行 conda info -e 查看已安装的环境
+
+source activate python27
+anaconda search -t conda vim
+anaconda  show brown-data-science/vim
+conda install --channel  https://conda.anaconda.org/brown-data-science vim
+source deactivate python27
+
+
+
+
+anaconda search -t conda jdk
+anaconda  show  anaconda/openjdk
+conda install --channel https://conda.anaconda.org/anaconda openjdk
+which java
+java -version
+javac -version
+
+
+anaconda search -t conda julia
+anaconda  show  brown-data-science/julia
+conda install --channel https://conda.anaconda.org/brown-data-science julia
+which julia
+julia -v 
+julia
+
+
+conda install perl
+which perl
+whcih cpan
+perl -v
+
+conda install -c r r-essentials    ## -c CHANNEL, --channel CHANNEL
+conda update -c r r-esconda helpsentials
+conda install -c r edgeR
+
+install golang:
+MyMyProgramFiles="/run/media/yp/RefData/.MyProgramFiles"
+## 1-Languages
+export GOROOT=$MyMyProgramFiles/1-Languages/go
+export PATH=$GOROOT/bin:$PATH
+http://blog.csdn.net/dream_angel_z/article/details/45870189
+go version
+which go
+
+
+
+## Part 3  install packages
+anaconda search -t conda unzip
+anaconda  show  conda-forge/unzip
+conda install --channel   https://conda.anaconda.org/conda-forge unzip
+
+
+which python
+which pip
+python -V
+pip install cython ipython  six  pysam  matplotlib SWIG  htseq  
+pip install cython ipython  six  PyCUDA  theano  
+
+source activate python27
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
