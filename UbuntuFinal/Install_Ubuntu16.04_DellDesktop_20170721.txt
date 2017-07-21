@@ -398,7 +398,7 @@ sudo apt  install  minitube
 sudo apt  install  python3-dev python3-numpy python3-setuptools python3-matplotlib
 sudo apt  install  zlib1g-dev libbz2-dev libboost-dev libgomp1
 sudo apt  install python-numpy python-scipy zlib1g-dev python-setuptools; 
-  
+sudo apt  install libexpat1-dev  zlib1g-dev  autoconf  automake  libtool  
 
 
 
@@ -422,6 +422,7 @@ sudo cpan install  Getopt::Long   Pod::Usage   File::Temp   Fcntl   Digest::MD5 
 sudo cpan install  JSON   Cairo   Statistics::PCA   MIME::Base64  CGI LWP::Simple  File::Basename
 sudo cpan install  File::Basename FindBin Getopt::Long HTML::Template threads threads::shared 
 # sudo cpan install  File::Copy   source::bamSummary source::fastqSummary source::makeReport source::vcfSummary                   
+sudo cpan install Math::CDF  
    
    
    
