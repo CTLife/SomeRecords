@@ -616,6 +616,23 @@ StereoGene  -h
 htseq-qa  -h
 htseq-count  -h
 
+which  ChromHMM.jar
+meme -version
+chipcenter
+chipcor
+chipextract
+chippart
+chippeak
+chipscore
+
+hisat2  --version 
+
+bisar --help 
+ 
+bcftools  --version
+which  GenomeAnalysisTK.jar
+gt --version
+vcftools  --version 
 
 bedops
 bedtools  --version
@@ -631,13 +648,13 @@ wigToBigWig
 wigCorrelate
 CrossMap.py  -h
 
-
-
-
-
-
-
-
+svm-predict
+svm-scale
+svm-train
+pse.py  -h
+blastn
+blastp
+blastx
 
 
 
