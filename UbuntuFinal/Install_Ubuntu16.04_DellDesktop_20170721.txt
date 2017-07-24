@@ -423,7 +423,7 @@ sudo cpan install  Getopt::Long   Pod::Usage   File::Temp   Fcntl   Digest::MD5 
 sudo cpan install  JSON   Cairo   Statistics::PCA   MIME::Base64  CGI LWP::Simple  File::Basename
 sudo cpan install  File::Basename FindBin Getopt::Long HTML::Template threads threads::shared 
 # sudo cpan install  File::Copy   source::bamSummary source::fastqSummary source::makeReport source::vcfSummary                   
-sudo cpan install Math::CDF  
+sudo cpan install Math::CDF  IO::Uncompress::Gunzip  
    
    
    
