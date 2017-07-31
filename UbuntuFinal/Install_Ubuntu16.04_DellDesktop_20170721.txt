@@ -156,6 +156,7 @@
         exit; (退出)
 
          3_GUI:
+   sudo apt install libgstreamer0.10-0  libgstreamer0.10-dev  libgstreamer1.0-0  libgstreamer1.0-dev  libgstreamermm-1.0-dev
 	 Install all the softwares in "$MyProgramFiles/3_GUI": 
              Java TreeView, IGV, IGB, GSEA, GenePattern, Rstudio, cluster3.0, MeV, Filezilla, SeqMonk, Sublime Text and Atom.
              javaws gsea.jnlp
