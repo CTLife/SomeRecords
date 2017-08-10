@@ -447,7 +447,7 @@ sudo pip2 install   ezBAMQC  MACS2
 sudo pip2 install  RGT
 sudo pip2 install  PePr
 sudo pip2 install  pybloom  
-  
+sudo pip2 install  toolshed 
 
 
 ##for python3.6: 
