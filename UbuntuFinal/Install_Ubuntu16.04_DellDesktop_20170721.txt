@@ -402,6 +402,11 @@ sudo apt  install  zlib1g-dev libbz2-dev libboost-dev libgomp1
 sudo apt  install python-numpy python-scipy zlib1g-dev python-setuptools; 
 sudo apt  install libexpat1-dev  zlib1g-dev  autoconf  automake  libtool  
 For mega: sudo dpkg -i megacc_7.0.26-1_amd64.deb
+##You can already install gcc-7 and g++-7 from this package:
+sudo add-apt-repository ppa:jonathonf/gcc-7.1
+sudo apt-get update
+sudo apt-get install gcc-7 g++-7    
+
 
 
 
