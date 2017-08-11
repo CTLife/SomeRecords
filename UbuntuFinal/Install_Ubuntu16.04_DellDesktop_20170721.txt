@@ -142,8 +142,7 @@
 
 	Install Perl6:
         	sudo apt install  libparrot-dev   libparrot6.6.0   parrot-doc   nqp   parrot   parrot-minimal  libjs-angularjs    libjs-bootstrap   moarvm  libtommath0         	
-                perl  Configure.pl  --backend=moar  --gen-moar  -prefix=/media/yp/ProgramFiles/.MyProgramFiles/2_Language/Perl6
-        	make
+                pperl Configure.pl --gen-moar --prefix=/media/yp/ProgramFiles/.MyProgramFiles/2_Language/Perl6
         	make install
         	export PATH=$MyProgramFiles/2_Language/Perl6/bin:$PATH
         	export PATH=$MyProgramFiles/2_Language/Perl6/share/perl6/site/bin:$PATH
