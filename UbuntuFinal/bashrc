@@ -118,12 +118,21 @@ fi
 
 
 
+
+
+
 ####################### Add By Yong Peng #######################
 MyProgramFiles="/media/yp/ProgramFiles/.MyProgramFiles"
+
+
+
+
 
 ## 1_Library
 export PATH=$MyProgramFiles/1_Library/htslib/bin:$PATH
 export PATH=$MyProgramFiles/1_Library/edlib/build/bin:$PATH
+
+
 
 
 
@@ -177,6 +186,7 @@ export PATH=$MyProgramFiles/4_ChIPseq/2-FASTQ-Quality/ngsutils/bin:$PATH
 export PATH=$MyProgramFiles/4_ChIPseq/2-FASTQ-Quality/prinseq:$PATH 
 export PATH=$MyProgramFiles/4_ChIPseq/2-FASTQ-Quality/QC3:$PATH 
 export PATH=$MyProgramFiles/4_ChIPseq/2-FASTQ-Quality/SolexaQA++/Linux_x64:$PATH 
+export PATH=$MyProgramFiles/4_ChIPseq/2-FASTQ-Quality/fastq-tools/bin:$PATH 
 
 export PATH=$MyProgramFiles/4_ChIPseq/3-Remove-Correct/bbmap:$PATH 
 export PATH=$MyProgramFiles/4_ChIPseq/3-Remove-Correct/Lighter:$PATH 
@@ -198,7 +208,9 @@ export PATH=$MyProgramFiles/4_ChIPseq/5-Mapping/novocraft:$PATH
 export PATH=$MyProgramFiles/4_ChIPseq/5-Mapping/razers3/bin:$PATH 
 export PATH=$MyProgramFiles/4_ChIPseq/5-Mapping/stampy:$PATH 
 export PATH=$MyProgramFiles/4_ChIPseq/5-Mapping/subread/bin:$PATH 
+export PATH=$MyProgramFiles/4_ChIPseq/5-Mapping/subread/bin/utilities:$PATH 
 export PATH=$MyProgramFiles/4_ChIPseq/5-Mapping/yara/bin:$PATH 
+export PATH=$MyProgramFiles/4_ChIPseq/5-Mapping/AlignerBoost:$PATH 
 
 export PYTHONPATH=$MyProgramFiles/4_ChIPseq/6-BAM-Quality/idr/lib/python3.5/site-packages:$PYTHONPATH 
 export PATH=$MyProgramFiles/4_ChIPseq/6-BAM-Quality/biobambam2/bin:$PATH 
@@ -231,12 +243,34 @@ export PATH=$MyProgramFiles/4_ChIPseq/9-Others/chip-seq:$PATH
 
 ## 5-RNAseq
 export PATH=$MyProgramFiles/5-RNAseq/hisat2:$PATH 
+export PATH=$MyProgramFiles/5-RNAseq/kallisto:$PATH 
+export PATH=$MyProgramFiles/5-RNAseq/RapMap/bin:$PATH 
+export PATH=$MyProgramFiles/5-RNAseq/RSEM/bin:$PATH 
+export PATH=$MyProgramFiles/5-RNAseq/Salmon/bin:$PATH 
+export PATH=$MyProgramFiles/5-RNAseq/STAR/bin/Linux_x86_64_static:$PATH 
+export PATH=$MyProgramFiles/5-RNAseq/QoRTs:$PATH 
+export PATH=$MyProgramFiles/5-RNAseq/RNA-SeQC:$PATH 
+
 
 
 
 
 ## 6-BSseq
 export PATH=$MyProgramFiles/6-BSseq/bs_tools/bin:$PATH 
+export PYTHONPATH=$MyProgramFiles/6-BSseq/bwa-meth/lib/python2.7/site-packages:$PYTHONPATH 
+export PATH=$MyProgramFiles/6-BSseq/biscuit:$PATH 
+export PATH=$MyProgramFiles/6-BSseq/Bismark:$PATH 
+export PATH=$MyProgramFiles/6-BSseq/Bisulfighter/bsf-call:$PATH 
+export PATH=$MyProgramFiles/6-BSseq/Bisulfighter/bsf-diff/src:$PATH 
+export PATH=$MyProgramFiles/6-BSseq/Bisulfighter/ComMet:$PATH 
+
+export PATH=$MyProgramFiles/6-BSseq/BSseeker2:$PATH 
+export PATH=$MyProgramFiles/6-BSseq/bwa-meth/bin:$PATH 
+export PATH=$MyProgramFiles/6-BSseq/last/bin:$PATH 
+export PATH=$MyProgramFiles/6-BSseq/last/scripts:$PATH 
+export PATH=$MyProgramFiles/6-BSseq/walt/bin:$PATH 
+
+
 
 
 
@@ -295,15 +329,6 @@ export PATH=$MyProgramFiles/15-Bioinformatics/Pse-in-One/Pse-in-One:$PATH
 
 ## 16-Others
 export PATH=$MyProgramFiles/16-Others/ncbi-blast/bin:$PATH 
-
-
-
-
-
-
-
-
-
 
 
 
