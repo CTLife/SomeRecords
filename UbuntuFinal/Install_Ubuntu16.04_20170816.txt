@@ -20,10 +20,11 @@
 	Solve the problem of  "E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)":
         	sudo killall apt
         	sudo killall synaptic
+
 	Ubuntu software center: 
-            	Inkscape Vector Graphics Editor
-            	GIMP Image Editor, BleachBit
-                Open the Inkscape and GIMP.
+            	Inkscape Vector Graphics Editor, GIMP Image Editor, BleachBit.
+                Open them to check.
+
 	搜狗输入法: 
           	sudo apt install  fcitx   fcitx-config-gtk  fcitx-table-all  im-config    libopencc1  fcitx-libs   fcitx-libs-qt  fonts-droid-fallback  
           	Language Support --> Keyboard input method system --> fcitx --> Apply system-wide
@@ -41,7 +42,8 @@
 
 	设置浏览器主页： 
                  Firefox: https://github.com/CTLife/SomeRecords/blob/master/WebSites/README.md
-        安装PKU VPN要用sudo  dpkg -i 
+
+        安装PKU VPN要用  sudo  dpkg -i 
 
         Edit hosts "/etc/hosts": https://github.com/racaljk/hosts
         sudo  gedit   /etc/hosts
@@ -63,14 +65,14 @@
 ###############################################################################################################################################################
 ################################################# 2. Install Basic Softwares ##################################################################################
 ###############################################################################################################################################################
-	sudo apt  install  vpnc  git  cmake  qtcreator  build-essential  aptitude  gcc  g++  gfortran   gccgo   vim   qmake
+	sudo apt  install  vpnc  git  cmake  qtcreator  build-essential  aptitude  gcc  g++  gfortran   gccgo   vim   qt5-default   qt5-qmake   
 	sudo apt  install  unace unrar lunzip lzip zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller 
 	sudo apt  install  ubuntu-wallpapers*   edgy-wallpapers  feisty-wallpapers  gutsy-wallpapers        ## more: http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-wallpapers/
         sudo apt  install  qconf qt5-default  qt5-qmake qt5-qmake-arm-linux-gnueabihf 
-        sudo apt  install g++ qt5-default libqt5xmlpatterns5-dev libqt5sql5-mysql git cmake python-matplotlib 
+        sudo apt  install  g++  qt5-default  libqt5xmlpatterns5-dev   libqt5sql5-mysql   git   cmake   python-matplotlib 
 	搜索安装包命令:   apt search
             	由于有些安装包的名称中包含了版本号，比如“libcurl4-openssl-dev”，这样的名称是很不好记忆的，
-            	所以通过“ apt search libcurl”命令就能很方便的查找到该安装包的全称，然后用“apt install libcurl4-openssl-dev”进行安装就行了。
+            	所以通过“apt search libcurl”命令就能很方便的查找到该安装包的全称，然后用“apt install libcurl4-openssl-dev”进行安装就行了。
 
 	## sudo apt search libcurl
 	sudo apt  install    tclcurl  libcurl3   gnupg   gnupg-curl    libstdc++6   libxt-dev  x11proto-print-dev   ## downlaod: apt download libcurl4-openssl-dev ，  apt source package 
@@ -94,9 +96,19 @@
        Ubuntu开启IPV6:  sudo apt install miredo
        ubuntu txt 中文乱码 解决办法： gedit  --encoding=GB18030   filename.txt
        
-    安装 Unity Tweak Tool: sudo apt install unity-tweak-tool   
+    安装 Unity Tweak Tool: 
+    sudo apt install unity-tweak-tool   
     sudo apt  install compiz-plugins  
     sudo apt  install compizconfig-settings-manager  
+
+    ##You can already install gcc-7 and g++-7 from this package:
+    sudo add-apt-repository ppa:jonathonf/gcc-7.1
+    sudo apt update
+    sudo apt install gcc-7  g++-7  gfortran-7   gccgo-7
+    gcc-7  --version
+    g++-7  --version
+    gfortran-7  --version
+    gccgo-7  --version
 
      Logout
 ###############################################################################################################################################################
@@ -115,7 +127,7 @@
 
 
         1_Library: 
-                  htslib
+                  htslib , edlib , seqan , seqan3
                   export PATH=$MyProgramFiles/1_Library/htslib/bin:$PATH
 
         2_Language: 
@@ -142,7 +154,7 @@
 
 	Install Perl6:
         	sudo apt install  libparrot-dev   libparrot6.6.0   parrot-doc   nqp   parrot   parrot-minimal  libjs-angularjs    libjs-bootstrap   moarvm  libtommath0         	
-                pperl Configure.pl --gen-moar --prefix=/media/yp/ProgramFiles/.MyProgramFiles/2_Language/Perl6
+                perl Configure.pl --gen-moar --prefix=/media/yp/ProgramFiles/.MyProgramFiles/2_Language/Perl6
         	make install
         	export PATH=$MyProgramFiles/2_Language/Perl6/bin:$PATH
         	export PATH=$MyProgramFiles/2_Language/Perl6/share/perl6/site/bin:$PATH
@@ -154,13 +166,18 @@
         mysql -u root -p   (-u 表示选择登陆的用户名， -p 表示登陆的用户密码)
         exit; (退出)
 
-         3_GUI:
-   sudo apt install libgstreamer0.10-0  libgstreamer0.10-dev  libgstreamer1.0-0  libgstreamer1.0-dev  libgstreamermm-1.0-dev
+        3_GUI:
+        sudo apt install libgstreamer0.10-0  libgstreamer0.10-dev  libgstreamer1.0-0  libgstreamer1.0-dev  libgstreamermm-1.0-dev
 	sudo apt install libgstreamer-plugins-base0.10-dev  libgstreamer-plugins-base1.0-0  libgstreamer-plugins-base1.0-dev  libgstreamer0.10-0  libgstreamer0.10-dev 
-	 Install all the softwares in "$MyProgramFiles/3_GUI": 
+
+	Install all the softwares in "$MyProgramFiles/3_GUI": 
              Java TreeView, IGV, IGB, GSEA, GenePattern, Rstudio, cluster3.0, MeV, Filezilla, SeqMonk, Sublime Text and Atom.
-             javaws gsea.jnlp
+        #for .jnlp file:  javaws gsea.jnlp
+        #for sublime: http://www.sublimetext.com/docs/3/linux_repositories.html
+        sudo  dpkg -i  atom-amd64.deb
+    
 ###############################################################################################################################################################
+
 
 
 
@@ -211,11 +228,13 @@
 ################################################# 4B. Install python3 packages ################################################################################# 
 ###############################################################################################################################################################
       	sudo apt install  python3-dev   python3-setuptools    python3-pip 
-	sudo  pip3   install  cython              
+	sudo  pip3   install  cython         
+        sudo  pip3   install  pytest progressbar2   tqdm  khmer   jinja2     ## sudo  -H pip3   install --upgrade pytest progressbar2   tqdm  khmer   jinja2
       	sudo  pip3   install   six  pysam  numpy   scipy  matplotlib   sklearn  
       	sudo  apt   install  python3-numpy python3-scipy python3-matplotlib ipython3 ipython3-notebook python3-pandas   python3-nose
         sudo  pip3   install  HTSeq
       	sudo  pip3  install  theano    ## sudo -H  pip3   install  --upgrade   theano
+        sudo  pip3  install  atropos   ## to trim and filter NGS reads
 
     	验证BLAS是否安装成功。由于numpy是依赖BLAS的，如果BLAS没有安装成功，虽然numpy亦可以安装，但是无法使用BLAS的加速。
     	验证numpy是否真的成功依赖BLAS编译，用以下代码试验： 
@@ -274,12 +293,6 @@
 ###############################################################################################################################################################
 
 
-
-
-
-
-
- 
 
 
 
@@ -364,10 +377,6 @@ names(postscriptFonts())
 
 
 
-
-
-
-
 ###############################################################################################################################################################
 ################################################# 7. Install  some packages ##################################################################################
 ###############################################################################################################################################################
@@ -401,10 +410,6 @@ sudo apt  install  zlib1g-dev libbz2-dev libboost-dev libgomp1
 sudo apt  install python-numpy python-scipy zlib1g-dev python-setuptools; 
 sudo apt  install libexpat1-dev  zlib1g-dev  autoconf  automake  libtool  
 For mega: sudo dpkg -i megacc_7.0.26-1_amd64.deb
-##You can already install gcc-7 and g++-7 from this package:
-sudo add-apt-repository ppa:jonathonf/gcc-7.1
-sudo apt-get update
-sudo apt-get install gcc-7 g++-7    
 
 
 
@@ -451,7 +456,8 @@ sudo pip2 install   ezBAMQC  MACS2
 sudo pip2 install  RGT
 sudo pip2 install  PePr
 sudo pip2 install  pybloom  
-sudo pip2 install  toolshed 
+sudo pip2 install  toolshed RSeQC
+
 
 
 ##for python3.6: 
@@ -506,10 +512,14 @@ library("DiffBind")
 library("ChIPComp")
 library("csaw")
 
+source("http://bioconductor.org/biocLite.R")
 biocLite("normr")
 biocLite("chromstaR")
 biocLite("GenoGAM")
-                                           
+biocLite("DMRcaller")
+biocLite("bsseq") 
+biocLite("alpine")
+                                
 ###############################################################################################################################################################
 
 
@@ -662,22 +672,5 @@ pse.py  -h
 blastn
 blastp
 blastx
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
