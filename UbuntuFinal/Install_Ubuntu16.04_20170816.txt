@@ -85,6 +85,7 @@
         sudo apt  install    libxt-dev tcl-dev tk-dev libicu-dev liblzma-dev libpng12-dev libjpeg-dev libtiff5-dev libtiff5 libcairo2-dev tcl tk tcl-dev tk-dev libffi-dev libssl-dev 
         sudo apt  install    libbz2-1.0  lbzip2   bzip2  bzip2-doc  libarchive-dev  libbz2-dev  xz-utils   liblzma-dev  liblzma5  pxz  xzdec
         sudo apt  install    texlive-full
+	sudo apt  install    gawk
 
     #远程登录设置
        		sudo apt install openssh-server
