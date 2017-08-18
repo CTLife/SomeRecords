@@ -412,6 +412,7 @@ sudo apt  install python-numpy python-scipy zlib1g-dev python-setuptools;
 sudo apt  install libexpat1-dev  zlib1g-dev  autoconf  automake  libtool  
 For mega: sudo dpkg -i megacc_7.0.26-1_amd64.deb
 sudo apt  install libhdf5-serial-dev hdf5-tools
+sudo apt install   libwxbase3.0-0v5  libwxgtk3.0-0v5  libhdf5-10  libhdf5-10-dbg  libhdf5-cpp-11  libhdf5-cpp-11-dbg  libhdf5-dev  
 
 
 
