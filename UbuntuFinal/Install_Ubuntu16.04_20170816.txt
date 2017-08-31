@@ -86,7 +86,9 @@
         sudo apt  install    libbz2-1.0  lbzip2   bzip2  bzip2-doc  libarchive-dev  libbz2-dev  xz-utils   liblzma-dev  liblzma5  pxz  xzdec
         sudo apt  install    texlive-full
 	sudo apt  install    gawk
-
+	sudo apt install zsh fish  
+        cat /etc/shells
+	
     #远程登录设置
        		sudo apt install openssh-server
        		启动sshserver命令： sudo service ssh start  或者 sudo /etc/init.d/ssh  start
