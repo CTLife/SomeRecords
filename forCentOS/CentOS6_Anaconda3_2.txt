@@ -7,11 +7,20 @@
 　　which pip
 　　python -V
   　
-3. Change name for python3 in "/home/pengyong/anaconda3/bin/"
+3. Change name for python3 in "/home/pengyong/anaconda3/bin/":
    pip to pip3
    delete python (symbol link)
+   canda to conda3
    which python
    which python3
    which pip
    which pip3
+   which conda
+   which conda3
    
+4. Install Anaconda2:
+   bash Anaconda2-4.4.0-Linux-x86_64.sh -b -p $HOME/anaconda3/envs/py2
+   logout
+　　which python
+　　which pip
+　　python -V
