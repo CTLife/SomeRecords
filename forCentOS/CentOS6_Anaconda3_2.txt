@@ -26,14 +26,30 @@
    which anaconda3
    
 
-5. Change the versions of Anaconda and python:
+４. Change the versions of Anaconda and python:
    conda info --envs    # conda info -e
    source activate  Anaconda2
    source deactivate  Anaconda2
 
-
-   anaconda3 search -t conda3 gcc
-   anaconda  show  salford_systems/gcc-5
-   conda install --channel https://conda.anaconda.org/salford_systems gcc-5
+5. Install some softwares by using anaconda3:
+   anaconda3 search -t conda gcc
+   anaconda  show  TimVideos/gcc-or1k-elf-newlib
+   conda install --channel https://conda.anaconda.org/TimVideos gcc-or1k-elf-newlib
+                   
+   anaconda  show  brown-data-science/vim 
+   conda install --channel https://conda.anaconda.org/brown-data-science vim
+   anaconda  show  ActivisionGameScience/zsh
+   conda install --channel https://conda.anaconda.org/ActivisionGameScience zsh   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
 
