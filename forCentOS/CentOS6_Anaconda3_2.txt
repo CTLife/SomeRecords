@@ -11,12 +11,16 @@
    pip to pip3
    delete python (symbol link)
    canda to conda3
+   anaconda to anaconda3
    which python
    which python3
    which pip
    which pip3
    which conda
    which conda3
+   which anaconda3
+   which anaconda
+   change the first line of file "conda3" and "anaconda3", python to python3
    
 4. Install Anaconda2:
    bash Anaconda2-4.4.0-Linux-x86_64.sh -b -p $HOME/anaconda3/envs/py2
@@ -28,3 +32,13 @@
    which pip3
    which conda
    which conda3
+   which anaconda
+   which anaconda3
+   
+
+5. Install some softwares by using conda3:
+   anaconda3 search -t conda3 gcc
+   anaconda  show  salford_systems/gcc-5
+   conda install --channel https://conda.anaconda.org/salford_systems gcc-5
+   
+
