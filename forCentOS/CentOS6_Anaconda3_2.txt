@@ -20,7 +20,11 @@
    
 4. Install Anaconda2:
    bash Anaconda2-4.4.0-Linux-x86_64.sh -b -p $HOME/anaconda3/envs/py2
+   add " export PATH="/home/pengyong/anaconda3/envs/py2/bin:$PATH" "  to  .bashrc
    logout
-　　which python
-　　which pip
-　　python -V
+   which python
+   which python3
+   which pip
+   which pip3
+   which conda
+   which conda3
