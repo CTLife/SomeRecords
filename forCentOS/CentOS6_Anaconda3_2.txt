@@ -6,25 +6,15 @@
 　　which python
 　　which pip
 　　python -V
-  　
-3. Change name for python3 in "/home/pengyong/anaconda3/bin/":
-   pip to pip3
-   delete python (symbol link)
-   canda to conda3
-   anaconda to anaconda3
-   which python
-   which python3
-   which pip
-   which pip3
-   which conda
-   which conda3
-   which anaconda3
-   which anaconda
-   change the first line of file "conda3" and "anaconda3", python to python3
+   Creat symbol link for pip3, conda3, anaconda3:
+         cd /home/pengyong/anaconda3/bin 
+         ln -s pip pip3 　## 对空格数目敏感。
+         ln -s conda conda3
+         ln -s anaconda anaconda3
    
-4. Install Anaconda2:
-   bash Anaconda2-4.4.0-Linux-x86_64.sh -b -p $HOME/anaconda3/envs/py2
-   add " export PATH="/home/pengyong/anaconda3/envs/py2/bin:$PATH" "  to  .bashrc
+
+3. Install Anaconda2:
+   bash Anaconda2-4.4.0-Linux-x86_64.sh   -b   -p  $HOME/anaconda3/envs/Anaconda2
    logout
    which python
    which python3
@@ -36,7 +26,12 @@
    which anaconda3
    
 
-5. Install some softwares by using conda3:
+5. Change the versions of Anaconda and python:
+   conda info --envs    # conda info -e
+   source activate  Anaconda2
+   source deactivate  Anaconda2
+
+
    anaconda3 search -t conda3 gcc
    anaconda  show  salford_systems/gcc-5
    conda install --channel https://conda.anaconda.org/salford_systems gcc-5
