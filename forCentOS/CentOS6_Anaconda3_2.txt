@@ -33,16 +33,34 @@
 
 5. Install some softwares by using anaconda3:
    anaconda3 search -t conda gcc
-   anaconda  show  TimVideos/gcc-or1k-elf-newlib
-   conda install --channel https://conda.anaconda.org/TimVideos gcc-or1k-elf-newlib
-                   
-   anaconda  show  brown-data-science/vim 
-   conda install --channel https://conda.anaconda.org/brown-data-science vim
-   anaconda  show  ActivisionGameScience/zsh
-   conda install --channel https://conda.anaconda.org/ActivisionGameScience zsh   
+   anaconda  show  anaconda/gcc
+   conda install --channel https://conda.anaconda.org/anaconda  gcc
+   conda install --channel https://conda.anaconda.org/anaconda  libgcc
+
+   conda install --channel https://conda.anaconda.org/anaconda  openssl                   
+   (conda install --channel openssl)  
+   conda install cmake 
    
-   
-   
+6. Seeting for anaconda3:   
+    which conda
+    conda -V
+    conda 
+    conda help
+    查看已安装软件：
+        conda list
+    更新指定软件：
+        conda update 软件名
+        conda update --prefix /home/yp/anaconda3 anaconda
+    卸载指定软件：
+        conda remove 软件名
+
+    添加channels, 安装bioconda
+        conda config --add channels conda-forge
+        conda config --add channels r
+        conda config --add channels bioconda
+        conda config --add channels defaults
+    查看已经添加的channels：
+        conda config --get channels
    
    
    
