@@ -39,7 +39,7 @@
 
    conda install --channel https://conda.anaconda.org/anaconda  openssl                   
    (conda install --channel openssl)  
-   conda install cmake 
+   conda install cmake  unzip
    
 6. Seeting for anaconda3:   
     which conda
