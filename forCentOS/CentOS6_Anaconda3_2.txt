@@ -1,1 +1,17 @@
+1. Install CentOS 6.
 
+2. Install Anaconda3：
+　　bash Anaconda3-4.4.0-Linux-x86_64.sh　　　
+　　logout
+　　which python
+　　which pip
+　　python -V
+  　
+3. Change name for python3 in "/home/pengyong/anaconda3/bin/"
+   pip to pip3
+   delete python (symbol link)
+   which python
+   which python3
+   which pip
+   which pip3
+   
