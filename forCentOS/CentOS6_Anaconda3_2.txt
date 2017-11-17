@@ -30,6 +30,11 @@
    conda info --envs    # conda info -e
    source activate  Anaconda2
    source deactivate  Anaconda2
+   which pip/pip2
+   which python/python2
+   which conda/conda2
+   which anaconda/anaconda2
+   ln -s ~/anaconda3/envs/Anaconda2/bin/pip ~/anaconda3/envs/Anaconda2/bin/pip2     
 
 5. Install some softwares by using anaconda3:
    anaconda3 search -t conda gcc
