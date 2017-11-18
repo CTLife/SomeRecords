@@ -37,14 +37,16 @@
    ln -s ~/anaconda3/envs/Anaconda2/bin/pip ~/anaconda3/envs/Anaconda2/bin/pip2     
 
 5. Install some softwares by using anaconda3:
+   conda install cmake unzip    
    anaconda3 search -t conda gcc
-   anaconda  show  anaconda/gcc
-   conda install --channel https://conda.anaconda.org/anaconda  gcc
+   anaconda  show  salford_systems/gcc-5
+   anaconda  show  salford_systems/libgcc-5
+   conda install --channel https://conda.anaconda.org/salford_systems gcc-5
    conda install --channel https://conda.anaconda.org/anaconda  libgcc
 
    conda install --channel https://conda.anaconda.org/anaconda  openssl                   
-   (conda install --channel openssl)  
-   conda install cmake  unzip
+   conda install --channel openssl  
+    
    
 6. Seeting for anaconda3:   
     which conda
