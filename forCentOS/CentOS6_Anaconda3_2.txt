@@ -39,13 +39,12 @@
 5. Install some softwares by using anaconda3:
    conda install cmake unzip    
    anaconda3 search -t conda gcc
-   anaconda  show  salford_systems/gcc-5
-   anaconda  show  salford_systems/libgcc-5
-   conda install --channel https://conda.anaconda.org/salford_systems gcc-5
-   conda install --channel https://conda.anaconda.org/anaconda  libgcc
-
-   conda install --channel https://conda.anaconda.org/anaconda  openssl                   
-   conda install --channel openssl  
+   anaconda  show  omgarcia/gcc-6
+   anaconda  show  omgarcia/libgcc-6
+   conda install --channel https://conda.anaconda.org/omgarcia gcc-6
+   conda install --channel https://conda.anaconda.org/omgarcia libgcc-6
+                   
+   conda install  openssl  
     
    
 6. Seeting for anaconda3:   
