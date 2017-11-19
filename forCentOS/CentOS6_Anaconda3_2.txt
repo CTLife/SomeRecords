@@ -44,7 +44,7 @@
    conda install --channel https://conda.anaconda.org/msarahan gcc-5
    conda install --channel https://conda.anaconda.org/msarahan libgcc
                    
-   conda install  openssl  
+   conda install  openssl  make autoconf  automake  
     
    
 6. Seeting for anaconda3:   
