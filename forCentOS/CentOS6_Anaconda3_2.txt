@@ -39,10 +39,10 @@
 5. Install some softwares by using anaconda3:
    conda install cmake unzip    
    anaconda3 search -t conda gcc
-   anaconda  show  omgarcia/gcc-6
-   anaconda  show  omgarcia/libgcc-6
-   conda install --channel https://conda.anaconda.org/omgarcia gcc-6
-   conda install --channel https://conda.anaconda.org/omgarcia libgcc-6
+   anaconda  show  msarahan/gcc-5
+   anaconda  show  msarahan/libgcc
+   conda install --channel https://conda.anaconda.org/msarahan gcc-5
+   conda install --channel https://conda.anaconda.org/msarahan libgcc
                    
    conda install  openssl  
     
