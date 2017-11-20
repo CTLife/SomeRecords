@@ -7,13 +7,14 @@
 　　which python
 　　which pip
 　　python -V
+    which python3
   
    Creat symbol link for pip3, conda3, anaconda3:
-         cd /home/pengyong/anaconda3/bin 
+         cd $HOME/anaconda3/bin 
          ln -s pip pip3 　## 对空格数目敏感。
          ln -s conda conda3
          ln -s anaconda anaconda3
-         
+   cd ~      
    which python3/pip3/conda3/anaconda3
    
 
