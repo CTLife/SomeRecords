@@ -47,10 +47,8 @@
 5. Install some softwares by using anaconda3:
    conda3 install cmake unzip openssl  make autoconf  automake      
    anaconda3  search -t conda gcc
-   anaconda3  show  msarahan/gcc-5
-   anaconda3  show  msarahan/libgcc
-   conda3 install --channel https://conda.anaconda.org/msarahan gcc-5
-   conda3 install --channel https://conda.anaconda.org/msarahan libgcc
+   anaconda3  show  TimVideos/gcc-or1k-elf-nostdc
+   conda install --channel https://conda.anaconda.org/TimVideos gcc-or1k-elf-nostdc
                    
   
     
