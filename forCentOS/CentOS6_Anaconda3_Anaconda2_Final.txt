@@ -19,8 +19,9 @@
    
 
 3. Install Anaconda2:
-   bash Anaconda2-4.4.0-Linux-x86_64.sh   -b   -p  $HOME/anaconda3/envs/Anaconda2
+   bash Anaconda2-5.0.1-Linux-x86_64.sh   -b   -p  $HOME/anaconda3/envs/Anaconda2
    logout
+   
    which python
    which python3
    which pip
@@ -30,16 +31,17 @@
    which anaconda
    which anaconda3
    
+   cd $HOME/anaconda3/envs/Anaconda2/bin
+         ln -s pip pip2 　## 对空格数目敏感。
+         ln -s conda conda2
+         ln -s anaconda anaconda2
+   
 
 ４. Change the versions of Anaconda and python:
-   conda info --envs    # conda info -e
-   source activate  Anaconda2
-   source deactivate  Anaconda2
-   which pip/pip2
-   which python/python2
-   which conda/conda2
-   which anaconda/anaconda2
-   ln -s ~/anaconda3/envs/Anaconda2/bin/pip ~/anaconda3/envs/Anaconda2/bin/pip2     
+       conda info --envs    # conda info -e
+       source activate  Anaconda2
+       source deactivate  Anaconda2
+                                           
 
 5. Install some softwares by using anaconda3:
    conda install cmake unzip    
