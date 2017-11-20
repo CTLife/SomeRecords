@@ -42,6 +42,9 @@
        source activate  Anaconda2
        which python2/pip2/conda2/anaconda2
        source deactivate  Anaconda2
+       
+       conda3 config --add channels 'https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/'
+       conda3 config --set show_channel_urls yes
                                            
 
 5. Install some softwares by using anaconda3:
