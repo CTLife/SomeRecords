@@ -52,7 +52,9 @@
    conda3  search  gcc  (more: anaconda3 search  -t conda gcc)
    conda3  show  TimVideos/gcc-or1k-elf-nostdc
    conda install --channel https://conda.anaconda.org/TimVideos gcc-or1k-elf-nostdc
-                   
+   or doenload the package firstly:
+   conda install --use-local  binutils-or1k-elf-2.28.0-20171120_065043.tar.bz2
+   conda install --use-local  gcc-or1k-elf-nostdc-5.4.0_4334_g9310fdc97ee-20171120_070621.tar.bz2                   
   
     
    
