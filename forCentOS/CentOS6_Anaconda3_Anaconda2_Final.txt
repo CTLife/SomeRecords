@@ -40,18 +40,19 @@
 ４. Change the versions of Anaconda and python:
        conda info --envs    # conda info -e
        source activate  Anaconda2
+       which python2/pip2/conda2/anaconda2
        source deactivate  Anaconda2
                                            
 
 5. Install some softwares by using anaconda3:
-   conda install cmake unzip    
+   conda3 install cmake unzip openssl  make autoconf  automake      
    anaconda3 search -t conda gcc
    anaconda  show  msarahan/gcc-5
    anaconda  show  msarahan/libgcc
    conda install --channel https://conda.anaconda.org/msarahan gcc-5
    conda install --channel https://conda.anaconda.org/msarahan libgcc
                    
-   conda install  openssl  make autoconf  automake  
+  
     
    
 6. Seeting for anaconda3:   
