@@ -1,0 +1,7 @@
+yum groupinstall "Additional Development"
+yum -y groupinstall "Development Tools" ;
+yum -y groupinstall "Development Libraries" ;
+yum -y install gcc-g++ git-core wget links zip unzip unrar ;
+yum -y install mysql-server mysql-client mysql-devel ;
+yum -y install openssl ;
+yum -y install cmake ;
