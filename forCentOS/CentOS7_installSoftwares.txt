@@ -8,3 +8,11 @@ yum -y install cmake ;
 
 yum --setopt=group_package_types=mandatory,default,optional   groupinstall "Development Tools"
 yum --setopt=group_package_types=mandatory,default,optional   groupinstall "Development Libraries"
+
+
+yum  search blas
+yum install blas-devel.x86_64   blas-static.x86_64  blas64-static.x86_64  blas.x86_64  blas64.x86_64
+yum  search   lapack
+yum  install  lapack-devel.x86_64  lapack-static.x86_64  lapack64-devel.x86_64  lapack64-static.x86_64  lapack.x86_64  lapack64.x86_64
+yum  search  atlas
+yum install  atlas-devel.x86_64  atlas-static.x86_64   atlas.x86_64 
