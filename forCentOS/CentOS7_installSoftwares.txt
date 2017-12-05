@@ -19,7 +19,7 @@ yum install  atlas-devel.x86_64  atlas-static.x86_64   atlas.x86_64
 yum  install  cairo-devel.x86_64   cairo-gobject.x86_64  cairo-gobject-devel.x86_64  cairo-tools.x86_64  cairomm.x86_64  cairomm-devel.x86_64  pycairo.x86_64   pycairo-devel.x86_64  cairo.x86_64  librsvg2.x86_64 
 
 
-
+yum install gd-devel   gd-devel.x86_64  gdb-gdbserver.x86_64  graphviz-gd.x86_64  gupnp-igd.x86_64  gupnp-igd-devel.x86_64  gupnp-igd-python.x86_64  libgdata.x86_64
 
 
 
