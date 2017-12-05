@@ -16,3 +16,10 @@ yum  search   lapack
 yum  install  lapack-devel.x86_64  lapack-static.x86_64  lapack64-devel.x86_64  lapack64-static.x86_64  lapack.x86_64  lapack64.x86_64
 yum  search  atlas
 yum install  atlas-devel.x86_64  atlas-static.x86_64   atlas.x86_64 
+yum  install  cairo-devel.x86_64   cairo-gobject.x86_64  cairo-gobject-devel.x86_64  cairo-tools.x86_64  cairomm.x86_64  cairomm-devel.x86_64  pycairo.x86_64   pycairo-devel.x86_64  cairo.x86_64  librsvg2.x86_64 
+
+
+
+
+
+
