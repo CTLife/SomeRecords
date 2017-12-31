@@ -3,7 +3,7 @@
 ## Suffixes of all self-defined global variables must be "_g".
 ##
 ## Example:  
-## Rscript  Cluster_DMR_CG_singletons_Pups.R     11B_splitXY/100A-rmXY/5_cov50reads     1011B_splitXY/100A-rmXY/5_cov50reads/Cluster_DMR_CG_singletons_Pups          
+## Rscript  Cluster2_DMR2_CG_MaleTwins.R     11B_splitXY/100A-rmXY/5_cov50reads     1011B_splitXY/100A-rmXY/5_cov50reads/Cluster2_DMR2_CG_MaleTwins          
          
 args_g <- commandArgs(TRUE)
 print("args: ")
@@ -13,8 +13,8 @@ print("#############")
 
 inputDir_g = args_g[1];     ## the path of input files
 outDir_g   = args_g[2];     ## the path of output files
-# inputDir_g =  "11B_splitXY/100A-rmXY/3_cov30reads"
-# outDir_g   =  "1011B_splitXY/100A-rmXY/3_cov30reads/Cluster_DMR_CG_singletons_Pups"
+# inputDir_g =  "11B_splitXY/100A-rmXY/0_cov5reads"
+# outDir_g   =  "1011B_splitXY/100A-rmXY/0_cov5reads/Cluster2_DMR2_CG_MaleTwins"
 print(inputDir_g)   
 print(outDir_g)
 
@@ -47,8 +47,8 @@ library(plot3D)
 library(FactoMineR)
 library(fpc)   
 library(DSS) 
-
-
+library(matrixStats)
+library(ggpubr)
 
 
 Files_NC_g <- c(
@@ -305,6 +305,9 @@ library(plot3D)
 library(FactoMineR)
 library(fpc)   
 library(DSS) 
+library(matrixStats)
+library(ggpubr)
+
 
 
 Files_NC_parents_g <- c(
@@ -1679,14 +1682,14 @@ MyPCA_3A_g <- function(  mymeth2 ,  path2,   file2, width2, height2,  dataFrame_
 
 ##########################
 ## Annotating differentially methylated bases or regions
-myRefSeqGenes_g = "/home/yongpeng/AnnotationBED/hg38_RefSeq_Genes.bed"
-myCpGIslands_g  = "/home/yongpeng/AnnotationBED/hg38_CpG_islands.bed"
-myRepeats_g     = "/home/yongpeng/AnnotationBED/hg38_Repeats_rmsk.bed"
-myImprintedRegions1_g = "/home/yongpeng/AnnotationBED/67.Regions.PlosGenetics.ImprintedGenes.hg38.bed"
-myImprintedRegions2_g = "/home/yongpeng/AnnotationBED/75Regions.GR.hg38.bed"
-myImprintedRegions3_g = "/home/yongpeng/AnnotationBED/369Regions.GR.hg38.bed"
-myImprintedRegions4_g = "/home/yongpeng/AnnotationBED/merge1.imprintedRegions.hg38.bed"
-myImprintedRegions5_g = "/home/yongpeng/AnnotationBED/merge2.imprintedRegions.hg38.bed"
+myRefSeqGenes_g = "/home/yp/AnnotationBED/hg38_RefSeq_Genes.bed"
+myCpGIslands_g  = "/home/yp/AnnotationBED/hg38_CpG_islands.bed"
+myRepeats_g     = "/home/yp/AnnotationBED/hg38_Repeats_rmsk.bed"
+myImprintedRegions1_g = "/home/yp/AnnotationBED/67.Regions.PlosGenetics.ImprintedGenes.hg38.bed"
+myImprintedRegions2_g = "/home/yp/AnnotationBED/75Regions.GR.hg38.bed"
+myImprintedRegions3_g = "/home/yp/AnnotationBED/369Regions.GR.hg38.bed"
+myImprintedRegions4_g = "/home/yp/AnnotationBED/merge1.imprintedRegions.hg38.bed"
+myImprintedRegions5_g = "/home/yp/AnnotationBED/merge2.imprintedRegions.hg38.bed"
 
 gene.obj_g     = readTranscriptFeatures(myRefSeqGenes_g)
 cpg.obj_g      = readFeatureFlank(myCpGIslands_g, flank=10000, feature.flank.name=c("CpGi", "shores"))
@@ -2187,6 +2190,122 @@ myMainFunction_1_g  <- function(  myobj_temp1,   path_temp1,   binSize_temp1, bi
   
 } 
 
+
+#dataFrame_temp111 <- data.frame(
+#  mysampleID  = c(mySampleID_NC_g,  mySampleID_IVF_fresh_g),
+#  mytreatment = c(myTreatment_NC_g, myTreatment_IVF_fresh_g),
+#  mysex       = c(Sex_NC_g,  Sex_IVF_fresh_g),
+#  mytech      = c(Tech_NC_g, Tech_IVF_fresh_g)    
+#)
+myMainFunction_2_g  <- function(  myobj_temp1,   path_temp1,   binSize_temp1, binBases_temp1, dataFrame_temp1  ) {
+  if( ! file.exists(path_temp1) ) { dir.create(path_temp1, recursive = TRUE) }
+  myobj_2two <- reorganize(myobj_temp1,  sample.ids = as.vector(dataFrame_temp1$mysampleID),  treatment  = as.vector(dataFrame_temp1$mytreatment) )
+  
+  path_temp1_sub1 = paste(path_temp1, "1_stats_information", sep="/")
+  if( ! file.exists(path_temp1_sub1) ) { dir.create(path_temp1_sub1, recursive = TRUE) }
+  
+  sink( file=paste(path_temp1_sub1,  "1_select-subSets.txt", sep="/")  )
+  print( length(myobj_2two) )
+  print( getSampleID(myobj_2two) )
+  print( getTreatment(myobj_2two) )
+  sink()
+  
+  tiles_2two = tileMethylCounts( myobj_2two,   win.size=binSize_temp1,   step.size=binSize_temp1,   cov.bases = binBases_temp1  )    
+  meth_2two  = unite( tiles_2two, destrand=FALSE, mc.cores=16   )   ## 100% overlap
+  mat_2two   = percMethylation( meth_2two )
+  
+  sink( file=paste(path_temp1_sub1 , "2_dimensions-tiles.txt", sep="/")  )
+  print( tiles_2two )
+  print("#########dimensions:")
+  print( dim(meth_2two)  )   
+  print( dim(mat_2two)   )
+  sink()
+  
+  write.table(meth_2two , 
+              file = paste(path_temp1_sub1,   "3A_meth-tiles.txt",  sep="/"), 
+              append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+              row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+  write.table(mat_2two , 
+              file = paste(path_temp1_sub1,   "3B_mat-tiles.txt",  sep="/"), 
+              append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+              row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+  
+  pdf( file=paste(path_temp1_sub1, "4A_MethylationStats-tiles.pdf", sep="/")  )
+  for( i in c(1:length(myobj_2two)) ) {
+    getMethylationStats(tiles_2two[[i]], plot=TRUE, both.strands=FALSE )
+  }
+  dev.off()
+  
+  sink( file=paste(path_temp1_sub1, "4B_MethylationStats-tiles.txt", sep="/")  )
+  for( i in c(1:length(myobj_2two)) ) {
+    print("##############################################")
+    print( paste(as.vector(dataFrame_temp1$mysampleID)[i],  ":", sep="") )
+    print( getMethylationStats( tiles_2two[[i]] )  )
+  }
+  sink()
+  
+  pdf( file=paste(path_temp1_sub1, "5A_CoverageStats-tiles.pdf", sep="/")  )
+  for( i in c(1:length(myobj_2two)) ) {
+    getCoverageStats(tiles_2two[[i]], plot=TRUE, both.strands=FALSE )
+  }
+  dev.off()
+  sink( file=paste(path_temp1_sub1, "5B_CoverageStats-tiles.txt", sep="/")  )
+  for( i in c(1:length(myobj_2two)) ) {
+    print("##############################################")
+    print( paste( as.vector(dataFrame_temp1$mysampleID)[i],   ":", sep="") )
+    print( getCoverageStats( tiles_2two[[i]] )  )
+  }
+  sink()
+  
+  #sink( file=paste(path_temp1_sub1, "6A_Correlation-tiles.txt", sep="/")  )
+  #pdf( file=paste(path_temp1_sub1, "6A_Correlation-tiles.pdf", sep="/")  )
+  #getCorrelation(meth_2two, method = "pearson",   plot=TRUE  )
+  #getCorrelation(meth_2two, method = "spearman",  plot=TRUE  )
+  #dev.off()
+  #sink()
+  
+  sink( file=paste(path_temp1_sub1, "6B_pearsonCorrelation-tiles.txt", sep="/")  )
+  getCorrelation(meth_2two, method = "pearson",   plot=FALSE  )
+  sink()
+  
+  sink( file=paste(path_temp1_sub1, "6C_spearmanCorrelation-tiles.txt", sep="/")  )
+  getCorrelation(meth_2two, method = "spearman",  plot=FALSE  )
+  sink()
+  
+  
+  path_temp1_sub2 = paste(path_temp1, "2_HierarchicalClustering_byMethylKit", sep="/")
+  if( ! file.exists(path_temp1_sub2) ) { dir.create(path_temp1_sub2, recursive = TRUE) }
+  MyCluster_3_g(  mymeth2=meth_2two ,  path2=path_temp1_sub2,     file2="HierarchicalClustering_byMethylKit_",   width2=8,   height2=5 )
+  
+  path_temp1_sub3 = paste(path_temp1, "3_PCA_byMethylKit", sep="/")
+  if( ! file.exists(path_temp1_sub3) ) { dir.create(path_temp1_sub3, recursive = TRUE) }
+  MyPCA_3_g(  mymeth2=meth_2two ,  path2=path_temp1_sub3,     file2="PCA_byMethylKit_",   width2=4,   height2=4 )
+  
+  #path_temp1_sub4 = paste(path_temp1, "4_PCAinfor_byMethylKit", sep="/")
+  #if( ! file.exists(path_temp1_sub4) ) { dir.create(path_temp1_sub4, recursive = TRUE) }
+  #MyPCA_3A_g(  mymeth2=meth_2two ,  path2=path_temp1_sub4,     file2="PCAinfor_byMethylKit_",   width2=4,   height2=4,  dataFrame_temp2=dataFrame_temp1   )
+  
+  path_temp1_sub5 = paste(path_temp1, "5_PCA_DirectlyByPrcomp", sep="/")
+  if( ! file.exists(path_temp1_sub5) ) { dir.create(path_temp1_sub5, recursive = TRUE) }
+  PCA_2two_sub5 <- prcomp( t(mat_2two) )
+  MyPrcompObj_1_g(  prcompObj2=PCA_2two_sub5,   path2=path_temp1_sub5,   file2="PCA_DirectlyByPrcomp",  dataFrame_temp2=dataFrame_temp1   )
+  
+  path_temp1_sub6 = paste(path_temp1, "6_PCA_byFactoMineR", sep="/")
+  if( ! file.exists(path_temp1_sub6) ) { dir.create(path_temp1_sub6, recursive = TRUE) }
+  PCA_2two_sub6 <- PCA( t(mat_2two) , graph=FALSE)
+  MyPCAobj_FactoMineR_g(  PCAobj2=PCA_2two_sub6,   path2=path_temp1_sub6,   file2="PCA_byFactoMineR",  dataFrame_temp2=dataFrame_temp1   )
+  
+  path_temp1_sub7 = paste(path_temp1, "7_HierarchicalClustering", sep="/")
+  if( ! file.exists(path_temp1_sub7) ) { dir.create(path_temp1_sub7, recursive = TRUE) }
+  myHierarchicalClustering_1_g(  mat_3three=mat_2two,   path_temp1=path_temp1_sub7,   dataFrame_temp1=dataFrame_temp1  )
+  
+  path_temp1_sub8 = paste(path_temp1, "8_DMR", sep="/")
+  if( ! file.exists(path_temp1_sub8) ) { dir.create(path_temp1_sub8, recursive = TRUE) }
+  myDiff_DMC_DMR_g(  methobj2=meth_2two,   path2=path_temp1_sub8  )
+  
+  
+} 
+
 ##################################################################################################################
 
 
@@ -2379,15 +2498,279 @@ myobj_nor_parents_g <- myobj_parents_g
 
 
 
+##################################################################################################################
+myOutDir_sub2_g = paste(outDir_g, "/2_SD_CV",  sep="") 
+if( ! file.exists(myOutDir_sub2_g) ) { dir.create(myOutDir_sub2_g, recursive = TRUE) }
+
+
+tiles_2two_children_g = tileMethylCounts( myobj_nor_g,   win.size=1000,   step.size=1000,   cov.bases = 3  )    
+meth_2two_children_g  = unite( tiles_2two_children_g, destrand=FALSE, mc.cores=16   )   ## 100% overlap
+mat_2two_children_g   = percMethylation( meth_2two_children_g )
+head(mat_2two_children_g)
+dim(mat_2two_children_g)
+
+sd_2two_children_g = rowSds(mat_2two_children_g)
+length(sd_2two_children_g)
+head(sd_2two_children_g)
+
+mean_2two_children_g = rowMeans2(mat_2two_children_g)
+length(mean_2two_children_g)
+head(mean_2two_children_g)
+
+cv_2two_children_g = sd_2two_children_g/mean_2two_children_g
+length(cv_2two_children_g)
+head(cv_2two_children_g)
+
+sd_mean_cv_2two_children_g  <- cbind(getData(meth_2two_children_g)[,1:4], sd_2two_children_g, mean_2two_children_g, cv_2two_children_g)               
+head(sd_mean_cv_2two_children_g)
+
+
+write.table(meth_2two_children_g , 
+            file = paste(myOutDir_sub2_g,   "1A_meth-tiles_children.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+write.table(mat_2two_children_g , 
+            file = paste(myOutDir_sub2_g,   "1B_mat-tiles_children.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+write.table(sd_mean_cv_2two_children_g , 
+            file = paste(myOutDir_sub2_g,   "1C_SD-Mean-CV_children.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+
+
+
 tiles_2two_parents_g = tileMethylCounts( myobj_nor_parents_g,   win.size=1000,   step.size=1000,   cov.bases = 3  )    
 meth_2two_parents_g  = unite( tiles_2two_parents_g, destrand=FALSE, mc.cores=16   )   ## 100% overlap
-mat_2two_parents   = percMethylation( meth_2two )
+mat_2two_parents_g   = percMethylation( meth_2two_parents_g )
+head(mat_2two_parents)
+dim(mat_2two_parents)
+
+sd_2two_parents_g = rowSds(mat_2two_parents_g)
+length(sd_2two_parents_g)
+head(sd_2two_parents_g)
+
+mean_2two_parents_g = rowMeans2(mat_2two_parents_g)
+length(mean_2two_parents_g)
+head(mean_2two_parents_g)
+
+cv_2two_parents_g = sd_2two_parents_g/mean_2two_parents_g
+length(cv_2two_parents_g)
+head(cv_2two_parents_g)
+
+
+sd_mean_cv_2two_parents_g  <- cbind(getData(meth_2two_parents_g)[,1:4], sd_2two_parents_g, mean_2two_parents_g, cv_2two_parents_g)               
+head(sd_mean_cv_2two_parents_g)
+
+
+write.table(meth_2two_parents_g , 
+            file = paste(myOutDir_sub2_g,   "2A_meth-tiles_parents.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+write.table(mat_2two_parents_g , 
+            file = paste(myOutDir_sub2_g,   "2B_mat-tiles_parents.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+write.table(sd_mean_cv_2two_parents_g , 
+            file = paste(myOutDir_sub2_g,   "2C_SD-Mean-CV_parents.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+
+dim(sd_mean_cv_2two_children_g)
+dim(sd_mean_cv_2two_parents_g)
+
+ 
+
+my_wdata_sd_g = data.frame( sd1 = c(sd_2two_children_g, sd_2two_parents_g),
+                            type1 = factor( c(rep("children" , times=length(sd_2two_children_g)),
+                                              rep("parents" ,  times=length(sd_2two_parents_g)) ) )
+                          )
+
+
+pdf( file=paste(myOutDir_sub2_g, "3A_StandardDeviation-tiles.pdf", sep="/") , width=3, height=3 )
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation", ylab = "Density")  
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 20)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 10)
+dev.off()
+
+
+pdf( file=paste(myOutDir_sub2_g, "3B_StandardDeviation-fill-tiles.pdf", sep="/"), width=3, height=3  )
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation", ylab = "Density")  
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1",  
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 20)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",   fill = "type1", 
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 10)
+dev.off()
+
+
+pdf( file=paste(myOutDir_sub2_g, "3C_StandardDeviation-tiles.pdf", sep="/") , width=3, height=3 )
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation", ylab = "Density")  
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 20)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 10)
+dev.off()
 
 
 
 
+pdf( file=paste(myOutDir_sub2_g, "4A_StandardDeviation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=1, 
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF")  
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 20)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 10)
+dev.off()
 
 
+pdf( file=paste(myOutDir_sub2_g, "4B_StandardDeviation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2, 
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF")  
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 20)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 10)
+dev.off()
+
+
+
+pdf( file=paste(myOutDir_sub2_g, "4C_StandardDeviation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",    
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF")  
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",   
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 20)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",     
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 10)
+dev.off()
+
+
+
+png( file=paste(myOutDir_sub2_g, "5_StandardDeviation-QQplot-tiles.png", sep="/") )
+ggqqplot(my_wdata_sd_g, x = "sd1", color = "type1")
+dev.off()
+
+
+
+
+##############
+my_wdata_cv_g = data.frame( sd1 = c(cv_2two_children_g, cv_2two_parents_g),
+                            type1 = factor( c(rep("children" , times=length(sd_2two_children_g)),
+                                              rep("parents" ,  times=length(sd_2two_parents_g)) ) )
+)
+
+
+pdf( file=paste(myOutDir_sub2_g, "6A_CoefficientOfVariation-tiles.pdf", sep="/") , width=3, height=3 )
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation", ylab = "Density")  
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 1)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 0.5)
+dev.off()
+
+
+pdf( file=paste(myOutDir_sub2_g, "6B_CoefficientOfVariation-fill-tiles.pdf", sep="/"), width=3, height=3  )
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation", ylab = "Density")  
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1",  
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 1)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",   fill = "type1", 
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 0.5)
+dev.off()
+
+
+pdf( file=paste(myOutDir_sub2_g, "6C_CoefficientOfVariation-tiles.pdf", sep="/") , width=3, height=3 )
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation", ylab = "Density")  
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 1)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 0.5)
+dev.off()
+
+
+
+
+pdf( file=paste(myOutDir_sub2_g, "7A_CoefficientOfVariation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=1, 
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF")  
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 1)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.5)
+dev.off()
+
+
+pdf( file=paste(myOutDir_sub2_g, "7B_CoefficientOfVariation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2, 
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF")  
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 1)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.5)
+dev.off()
+
+
+
+pdf( file=paste(myOutDir_sub2_g, "7C_CoefficientOfVariation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",    
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF")  
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",   
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 1)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",     
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.5)
+dev.off()
+
+
+
+png( file=paste(myOutDir_sub2_g, "8_CoefficientOfVariation-QQplot-tiles.png", sep="/") )
+ggqqplot(my_wdata_cv_g, x = "sd1", color = "type1")
+dev.off()
+
+
+###############################################
 
 
 
