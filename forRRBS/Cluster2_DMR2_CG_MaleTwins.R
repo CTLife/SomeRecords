@@ -51,503 +51,8 @@ library(matrixStats)
 library(ggpubr)
 
 
-Files_NC_g <- c(
-  paste( inputDir_g,   "67_E24C-boy-NC_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "67_E24D-boy-NC_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "68_E56C-boy-NC_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "68_E56D-boy-NC_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "69_NC-E123-C-Boy_Rep1.bismark.cov",  sep="/" ),
-  paste( inputDir_g,   "69_NC-E123-D-Boy_Rep1.bismark.cov",  sep="/" ) 
-)
 
-mySampleID_NC_g <- rep( x="NC", times=length(Files_NC_g) )
-Tech_NC_g <- mySampleID_NC_g
-  
-for(i in c(1:length(mySampleID_NC_g)) ) {
-  mySampleID_NC_g[i] = paste(mySampleID_NC_g[i], i, sep="_")
-}
 
-myTreatment_NC_g <- rep( x=0,  times=length(Files_NC_g) )
-
-Sex_NC_g = rep( x="boy",  times=length(Files_NC_g) )  
-for(i in c(1:length(Sex_NC_g)) ) {
-  Sex_NC_g[i] = "boy"
-  if(i>=4) { Sex_NC_g[i] = "boy" }
-}
-
-  
-
-Files_IVF_fresh_g <- c(
-  paste( inputDir_g,   "70_E113C-boy-ART_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "70_E113D-boy-ART_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "71_ART-W58-C-Boy_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "71_ART-W58-D-Boy_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "72_ART-W779-C-Boy_Rep1.bismark.cov",   sep="/" ),
-  paste( inputDir_g,   "72_W779D-ART-boy_Rep1.bismark.cov",    sep="/" ) 
-)
-
-mySampleID_IVF_fresh_g <- rep( x="IVF_fresh", times=length(Files_IVF_fresh_g) )
-Tech_IVF_fresh_g <- mySampleID_IVF_fresh_g
-
-for(i in c(1:length(mySampleID_IVF_fresh_g)) ) {
-  mySampleID_IVF_fresh_g[i] = paste(mySampleID_IVF_fresh_g[i], i, sep="_")
-}
-
-myTreatment_IVF_fresh_g <- rep( x=1,  times=length(Files_IVF_fresh_g) )
-
-Sex_IVF_fresh_g = rep( x="boy",      times=length(Files_IVF_fresh_g) ) 
-for(i in c(1:length(Sex_IVF_fresh_g)) ) {
-  Sex_IVF_fresh_g[i] = "boy"
-  if(i>=4) { Sex_IVF_fresh_g[i] = "boy" }
-}
-
-
-
-Files_IVF_frozen_g <- c(
-  paste( inputDir_g,   "9_W1365C-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "9_Q5-W1365D-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "10_W1733C-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "10_W1733D-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "11_W1398C-boy-IVF-frozen_Rep1.bismark.cov",   sep="/" ),
-  paste( inputDir_g,   "11_W1398D-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ) 
-)
-
-mySampleID_IVF_frozen_g <- rep( x="IVF_frozen", times=length(Files_IVF_frozen_g) )
-Tech_IVF_frozen_g <- mySampleID_IVF_frozen_g
-
-for(i in c(1:length(mySampleID_IVF_frozen_g)) ) {
-  mySampleID_IVF_frozen_g[i] = paste(mySampleID_IVF_frozen_g[i], i, sep="_")
-}
-
-myTreatment_IVF_frozen_g <- rep( x=2,  times=length(Files_IVF_frozen_g) )
-
-Sex_IVF_frozen_g = rep( x="boy",      times=length(Files_IVF_frozen_g) )
-for(i in c(1:length(Sex_IVF_frozen_g)) ) {
-  Sex_IVF_frozen_g[i] = "boy"
-  if(i>=4) { Sex_IVF_frozen_g[i] = "boy" }
-}
-
-
-
-Files_ICSI_fresh_g <- c(
-  paste( inputDir_g,   "12_W1579C-boy-ICSI-fresh-merge_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "12_Q17-W1579D-boy-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "13_W1647C-boy-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "13_W1647D-boy-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "14_W1719C-boy-ICSI-fresh_Rep1.bismark.cov",   sep="/" ),
-  paste( inputDir_g,   "14_W1719D-boy-ICSI-fresh_Rep1.bismark.cov",    sep="/" ) 
-)
-
-mySampleID_ICSI_fresh_g <- rep( x="ICSI_fresh", times=length(Files_ICSI_fresh_g) )
-Tech_ICSI_fresh_g <- mySampleID_ICSI_fresh_g
-
-for(i in c(1:length(mySampleID_ICSI_fresh_g)) ) {
-  mySampleID_ICSI_fresh_g[i] = paste(mySampleID_ICSI_fresh_g[i], i, sep="_")
-}
-
-myTreatment_ICSI_fresh_g <- rep( x=3,  times=length(Files_ICSI_fresh_g) )
-
-Sex_ICSI_fresh_g = rep( x="boy",      times=length(Files_ICSI_fresh_g) )  
-for(i in c(1:length(Sex_ICSI_fresh_g)) ) {
-  Sex_ICSI_fresh_g[i] = "boy"
-  if(i>=4) { Sex_ICSI_fresh_g[i] = "boy" }
-}
-
-
-
-Files_ICSI_frozen_g <- c(
-  paste( inputDir_g,   "15_Q6-W871C-boy-ICSI-frozen_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "15_Q4-W871D-boy-ICSI-frozen_Rep1.bismark.cov",    sep="/" ) 
-)
-
-mySampleID_ICSI_frozen_g <- rep( x="ICSI_frozen", times=length(Files_ICSI_frozen_g) )
-Tech_ICSI_frozen_g <- mySampleID_ICSI_frozen_g
-
-for(i in c(1:length(mySampleID_ICSI_frozen_g)) ) {
-  mySampleID_ICSI_frozen_g[i] = paste(mySampleID_ICSI_frozen_g[i], i, sep="_")
-}
-
-myTreatment_ICSI_frozen_g <- rep( x=4,  times=length(Files_ICSI_frozen_g) )
-
-Sex_ICSI_frozen_g = rep( x="boy",      times=length(Files_ICSI_frozen_g) )  
-for(i in c(1:length(Sex_ICSI_frozen_g)) ) {
-  Sex_ICSI_frozen_g[i] = "boy"
-  if(i>=4) { Sex_ICSI_frozen_g[i] = "boy" }
-}
-
-
-
-
-
-Files_All_vector_g <- c(
-  Files_NC_g,
-  Files_IVF_fresh_g,
-  Files_IVF_frozen_g,
-  Files_ICSI_fresh_g,
-  Files_ICSI_frozen_g  
-)
-Files_All_list_g <- as.list( Files_All_vector_g )
-
-
-mySampleID_All_vector_g <- c( 
-  mySampleID_NC_g,
-  mySampleID_IVF_fresh_g,
-  mySampleID_IVF_frozen_g,
-  mySampleID_ICSI_fresh_g,
-  mySampleID_ICSI_frozen_g  
-)
-mySampleID_All_list_g <- as.list( mySampleID_All_vector_g )
-
-
-myTreatment_All_vector_g <- c( 
-  myTreatment_NC_g,
-  myTreatment_IVF_fresh_g,
-  myTreatment_IVF_frozen_g,
-  myTreatment_ICSI_fresh_g,
-  myTreatment_ICSI_frozen_g 
-)       
-myTreatment_All_list_g <- as.list( myTreatment_All_vector_g )
-
-
-mySex_All_vector_g <- c( 
-  Sex_NC_g,
-  Sex_IVF_fresh_g,
-  Sex_IVF_frozen_g,
-  Sex_ICSI_fresh_g,
-  Sex_ICSI_frozen_g 
-)       
-mySex_All_list_g <- as.list( mySex_All_vector_g )
-
-
-myTech_All_vector_g <- c( 
-  Tech_NC_g,
-  Tech_IVF_fresh_g,
-  Tech_IVF_frozen_g,
-  Tech_ICSI_fresh_g,
-  Tech_ICSI_frozen_g 
-)       
-myTech_All_list_g <- as.list( myTech_All_vector_g )
-
-
-## boy=16, girl=17,  father=1, mother=2
-## NC=black,   IVF-fresh=blue,   IVF-frozen=green,  ICSI-fresh=red, ICSI-frozen=purple
-mySex_All_shape_g  = c( "boy"=16, "girl"=17, "father"=1, "mother"=2 ) 
-myTech_All_color_g = c( "NC"="black", "IVF_fresh"="blue", "IVF_frozen"="green",  "ICSI_fresh"="red", "ICSI_frozen"="purple" )
-mySex_All_shape_g
-myTech_All_color_g
-
-MySex_Shape_g <- function(  mySex_vector   ) {
-  mySex_shape2  = mySex_vector
-  for(i in c(1:length(mySex_shape2)) ) {
-    if(mySex_shape2[i] == "boy")    { mySex_shape2[i] = c("boy"=16)   }
-    if(mySex_shape2[i] == "girl")   { mySex_shape2[i] = c("girl"=17)  }
-    if(mySex_shape2[i] == "father") { mySex_shape2[i] = c("father"=1) }
-    if(mySex_shape2[i] == "mother") { mySex_shape2[i] = c("mother"=2) }
-  }
-  mySex_shape2 = as.numeric(mySex_shape2)
-  names(mySex_shape2) = mySex_vector
-  return(mySex_shape2)
-}
-
-MyTech_color_g <- function(  myTech_vector  ) {
-  myTech_color  = myTech_vector
-  for(i in c(1:length(myTech_color)) ) {
-    if(myTech_color[i] == "NC")          { myTech_color[i] = c("NC"="black") }
-    if(myTech_color[i] == "IVF_fresh")   { myTech_color[i] = c("IVF_fresh"="blue") }
-    if(myTech_color[i] == "IVF_frozen")  { myTech_color[i] = c("IVF_frozen"="green") }
-    if(myTech_color[i] == "ICSI_fresh")  { myTech_color[i] = c("ICSI_fresh"="red") }
-    if(myTech_color[i] == "ICSI_frozen") { myTech_color[i] = c("ICSI_frozen"="purple") }
-  }
-  names(myTech_color) = myTech_vector
-  return(myTech_color)
-}
-
-MySex_Shape_g( mySex_All_vector_g )
-MyTech_color_g( myTech_All_vector_g )
-## boy=16, girl=17,  father=1, mother=2
-## NC=black,   IVF-fresh=blue,   IVF-frozen=green,  ICSI-fresh=red, ICSI-frozen=purple
-
-
-length( Files_All_vector_g )
-length( Files_All_list_g )
-length( mySampleID_All_vector_g )
-length( mySampleID_All_list_g )
-length( myTreatment_All_vector_g )
-length( myTreatment_All_list_g )
-length( mySex_All_vector_g )
-length( mySex_All_list_g )
-length( myTech_All_vector_g )
-length( myTech_All_list_g )
-##################################################################################################################
-
-
-
-
-
-##################################################################################################################
-library(methylKit)
-library(genomation)
-library(ggplot2) 
-library(ggfortify)
-library(cluster)
-library(lfda)
-library(MASS)
-library(factoextra)
-library(magrittr)  
-library(dplyr)  
-library(rgl)
-library(gdata)
-library(ggrepel)
-library(scatterplot3d)
-library(car) 
-library(plotly)
-library(plot3D)
-library(FactoMineR)
-library(fpc)   
-library(DSS) 
-library(matrixStats)
-library(ggpubr)
-
-
-
-Files_NC_parents_g <- c(
-  paste( inputDir_g,   "67_NC-E24-F-Father_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "68_E56F-father-NC_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "69_NC-E123-F-Father_Rep1.bismark.cov",  sep="/" ),
-  paste( inputDir_g,   "67_NC-E24-M-Mother_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "68_E56M-mother-NC_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "69_NC-E123-M-Mother-merge_Rep1.bismark.cov",  sep="/" ) 
-)
-
-mySampleID_NC_parents_g <- rep( x="NC", times=length(Files_NC_parents_g) )
-Tech_NC_parents_g <- mySampleID_NC_parents_g
-
-for(i in c(1:length(mySampleID_NC_parents_g)) ) {
-  mySampleID_NC_parents_g[i] = paste(mySampleID_NC_parents_g[i], i, sep="_")
-}
-
-myTreatment_NC_parents_g <- rep( x=0,  times=length(Files_NC_parents_g) )
-
-Sex_NC_parents_g = rep( x="father",  times=length(Files_NC_parents_g) )  
-for(i in c(1:length(Sex_NC_parents_g)) ) {
-  Sex_NC_parents_g[i] = "father"
-  if(i>=4) { Sex_NC_parents_g[i] = "mother" }
-}
-
-
-
-Files_IVF_fresh_parents_g <- c(
-  paste( inputDir_g,   "70_E113F-father-ART_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "71_ART-W58-F-Father_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "72_ART-W779-F-Father_Rep1.bismark.cov",   sep="/" ),
-  paste( inputDir_g,   "70_E113M-mother-ART_Rep3.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "71_ART-W58-M-Mother_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "72_ART-W779-M-Mother_Rep1.bismark.cov",    sep="/" ) 
-)
-
-mySampleID_IVF_fresh_parents_g <- rep( x="IVF_fresh", times=length(Files_IVF_fresh_parents_g) )
-Tech_IVF_fresh_parents_g <- mySampleID_IVF_fresh_parents_g
-
-for(i in c(1:length(mySampleID_IVF_fresh_parents_g)) ) {
-  mySampleID_IVF_fresh_parents_g[i] = paste(mySampleID_IVF_fresh_parents_g[i], i, sep="_")
-}
-
-myTreatment_IVF_fresh_parents_g <- rep( x=1,  times=length(Files_IVF_fresh_parents_g) )
-
-Sex_IVF_fresh_parents_g = rep( x="father",      times=length(Files_IVF_fresh_parents_g) ) 
-for(i in c(1:length(Sex_IVF_fresh_parents_g)) ) {
-  Sex_IVF_fresh_parents_g[i] = "father"
-  if(i>=4) { Sex_IVF_fresh_parents_g[i] = "mother" }
-}
-
-
-
-Files_IVF_frozen_parents_g <- c(
-  paste( inputDir_g,   "9_W1365F-father-IVF-frozen-merge_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "10_W1733F-father-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "11_W1398F-father-IVF-frozen_Rep1.bismark.cov",   sep="/" ),
-  paste( inputDir_g,   "9_Q1-W1365M-mother-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "10_W1733M-Mother-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "12_Q19-W1579M-mother-ICSI-fresh_Rep1.bismark.cov",    sep="/" ) 
-)
-
-mySampleID_IVF_frozen_parents_g <- rep( x="IVF_frozen", times=length(Files_IVF_frozen_parents_g) )
-Tech_IVF_frozen_parents_g <- mySampleID_IVF_frozen_parents_g
-
-for(i in c(1:length(mySampleID_IVF_frozen_parents_g)) ) {
-  mySampleID_IVF_frozen_parents_g[i] = paste(mySampleID_IVF_frozen_parents_g[i], i, sep="_")
-}
-
-myTreatment_IVF_frozen_parents_g <- rep( x=2,  times=length(Files_IVF_frozen_parents_g) )
-
-Sex_IVF_frozen_parents_g = rep( x="father",      times=length(Files_IVF_frozen_parents_g) )
-for(i in c(1:length(Sex_IVF_frozen_parents_g)) ) {
-  Sex_IVF_frozen_parents_g[i] = "father"
-  if(i>=4) { Sex_IVF_frozen_parents_g[i] = "mother" }
-}
-
-
-
-Files_ICSI_fresh_parents_g <- c(
-  paste( inputDir_g,   "12_Q18-W1579F-father-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "13_W1647F-father-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "14_W1719F-father-ICSI-fresh_Rep1.bismark.cov",   sep="/" ),
-  paste( inputDir_g,   "12_Q19-W1579M-mother-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "13_Q23-W1647M-mother-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
-  paste( inputDir_g,   "14_Q15-W1719M-mother-ICSI-fresh_Rep1.bismark.cov",    sep="/" ) 
-)
-
-mySampleID_ICSI_fresh_parents_g <- rep( x="ICSI_fresh", times=length(Files_ICSI_fresh_parents_g) )
-Tech_ICSI_fresh_parents_g <- mySampleID_ICSI_fresh_parents_g
-
-for(i in c(1:length(mySampleID_ICSI_fresh_parents_g)) ) {
-  mySampleID_ICSI_fresh_parents_g[i] = paste(mySampleID_ICSI_fresh_parents_g[i], i, sep="_")
-}
-
-myTreatment_ICSI_fresh_parents_g <- rep( x=3,  times=length(Files_ICSI_fresh_parents_g) )
-
-Sex_ICSI_fresh_parents_g = rep( x="father",      times=length(Files_ICSI_fresh_parents_g) )  
-for(i in c(1:length(Sex_ICSI_fresh_parents_g)) ) {
-  Sex_ICSI_fresh_parents_g[i] = "father"
-  if(i>=4) { Sex_ICSI_fresh_parents_g[i] = "mother" }
-}
-
-
-
-Files_ICSI_frozen_parents_g <- c(
-  paste( inputDir_g,   "15_Q7-W871F-father-ICSI-frozen_Rep1.bismark.cov",     sep="/" ),
-  paste( inputDir_g,   "15_Q10-W871M-mother-ICSI-frozen_Rep1.bismark.cov",    sep="/" ) 
-)
-
-mySampleID_ICSI_frozen_parents_g <- rep( x="ICSI_frozen", times=length(Files_ICSI_frozen_parents_g) )
-Tech_ICSI_frozen_parents_g <- mySampleID_ICSI_frozen_parents_g
-
-for(i in c(1:length(mySampleID_ICSI_frozen_parents_g)) ) {
-  mySampleID_ICSI_frozen_parents_g[i] = paste(mySampleID_ICSI_frozen_parents_g[i], i, sep="_")
-}
-
-myTreatment_ICSI_frozen_parents_g <- rep( x=4,  times=length(Files_ICSI_frozen_parents_g) )
-
-Sex_ICSI_frozen_parents_g = rep( x="father",      times=length(Files_ICSI_frozen_parents_g) )  
-for(i in c(1:length(Sex_ICSI_frozen_parents_g)) ) {
-  Sex_ICSI_frozen_parents_g[i] = "father"
-  if(i>=2) { Sex_ICSI_frozen_parents_g[i] = "mother" }
-}
-
-
-
-
-
-
-
-
-
-Files_All_vector_parents_g <- c(
-  Files_NC_parents_g,
-  Files_IVF_fresh_parents_g,
-  Files_IVF_frozen_parents_g,
-  Files_ICSI_fresh_parents_g,
-  Files_ICSI_frozen_parents_g  
-)
-Files_All_list_parents_g <- as.list( Files_All_vector_parents_g )
-
-
-mySampleID_All_vector_parents_g <- c( 
-  mySampleID_NC_parents_g,
-  mySampleID_IVF_fresh_parents_g,
-  mySampleID_IVF_frozen_parents_g,
-  mySampleID_ICSI_fresh_parents_g,
-  mySampleID_ICSI_frozen_parents_g  
-)
-mySampleID_All_list_parents_g <- as.list( mySampleID_All_vector_parents_g )
-
-
-myTreatment_All_vector_parents_g <- c( 
-  myTreatment_NC_parents_g,
-  myTreatment_IVF_fresh_parents_g,
-  myTreatment_IVF_frozen_parents_g,
-  myTreatment_ICSI_fresh_parents_g,
-  myTreatment_ICSI_frozen_parents_g 
-)       
-myTreatment_All_list_parents_g <- as.list( myTreatment_All_vector_parents_g )
-
-
-mySex_All_vector_parents_g <- c( 
-  Sex_NC_parents_g,
-  Sex_IVF_fresh_parents_g,
-  Sex_IVF_frozen_parents_g,
-  Sex_ICSI_fresh_parents_g,
-  Sex_ICSI_frozen_parents_g 
-)       
-mySex_All_list_parents_g <- as.list( mySex_All_vector_parents_g )
-
-
-myTech_All_vector_parents_g <- c( 
-  Tech_NC_parents_g,
-  Tech_IVF_fresh_parents_g,
-  Tech_IVF_frozen_parents_g,
-  Tech_ICSI_fresh_parents_g,
-  Tech_ICSI_frozen_parents_g 
-)       
-myTech_All_list_parents_g <- as.list( myTech_All_vector_parents_g )
-
-
-## boy=16, girl=17,  father=1, mother=2
-## NC=black,   IVF-fresh=blue,   IVF-frozen=green,  ICSI-fresh=red, ICSI-frozen=purple
-mySex_All_shape_parents_g  = c( "boy"=16, "girl"=17, "father"=1, "mother"=2 ) 
-myTech_All_color_parents_g = c( "NC"="black", "IVF_fresh"="blue", "IVF_frozen"="green",  "ICSI_fresh"="red", "ICSI_frozen"="purple" )
-mySex_All_shape_parents_g
-myTech_All_color_parents_g
-
-MySex_Shape_parents_g <- function(  mySex_vector   ) {
-  mySex_shape2  = mySex_vector
-  for(i in c(1:length(mySex_shape2)) ) {
-    if(mySex_shape2[i] == "boy")    { mySex_shape2[i] = c("boy"=16)   }
-    if(mySex_shape2[i] == "girl")   { mySex_shape2[i] = c("girl"=17)  }
-    if(mySex_shape2[i] == "father") { mySex_shape2[i] = c("father"=1) }
-    if(mySex_shape2[i] == "mother") { mySex_shape2[i] = c("mother"=2) }
-  }
-  mySex_shape2 = as.numeric(mySex_shape2)
-  names(mySex_shape2) = mySex_vector
-  return(mySex_shape2)
-}
-
-MyTech_color_parents_g <- function(  myTech_vector  ) {
-  myTech_color  = myTech_vector
-  for(i in c(1:length(myTech_color)) ) {
-    if(myTech_color[i] == "NC")          { myTech_color[i] = c("NC"="black") }
-    if(myTech_color[i] == "IVF_fresh")   { myTech_color[i] = c("IVF_fresh"="blue") }
-    if(myTech_color[i] == "IVF_frozen")  { myTech_color[i] = c("IVF_frozen"="green") }
-    if(myTech_color[i] == "ICSI_fresh")  { myTech_color[i] = c("ICSI_fresh"="red") }
-    if(myTech_color[i] == "ICSI_frozen") { myTech_color[i] = c("ICSI_frozen"="purple") }
-  }
-  names(myTech_color) = myTech_vector
-  return(myTech_color)
-}
-
-MySex_Shape_parents_g( mySex_All_vector_parents_g )
-MyTech_color_parents_g( myTech_All_vector_parents_g )
-## boy=16, girl=17,  father=1, mother=2
-## NC=black,   IVF-fresh=blue,   IVF-frozen=green,  ICSI-fresh=red, ICSI-frozen=purple
-
-
-length( Files_All_vector_parents_g )
-length( Files_All_list_parents_g )
-length( mySampleID_All_vector_parents_g )
-length( mySampleID_All_list_parents_g )
-length( myTreatment_All_vector_parents_g )
-length( myTreatment_All_list_parents_g )
-length( mySex_All_vector_parents_g )
-length( mySex_All_list_parents_g )
-length( myTech_All_vector_parents_g )
-length( myTech_All_list_parents_g )
-##################################################################################################################
-
-
-
-
-
-##################################################################################################################
 MyTheme_1_g <- function(textSize1=14, hjust1=NULL, vjust1=NULL,  angle1=NULL) {    # "hjust=1, vjust=1, angle=30" for some boxplots.
   theme(  
     line  = element_line(colour="black",  size=1.0,   linetype=1,      lineend=NULL),                                                                                        ## all line elements.          局部优先总体,下面3个也是,只对非局部设置有效.   所有线属性.
@@ -666,7 +171,7 @@ MyCluster_3_g <- function(  mymeth2 ,  path2,   file2, width2, height2 ) {
   MyCluster_1_g(  mymeth1 = mymeth2 ,   path1 = path2, file1 = paste(file2, ".ByQuantile.1O.kept1percent.pdf",   sep=""),   width1 = width2,   height1 = height2,   sdThres1 = 0.99)                    
   MyCluster_1_g(  mymeth1 = mymeth2 ,   path1 = path2, file1 = paste(file2, ".ByQuantile.1P.kept0.5percent.pdf", sep=""),   width1 = width2,   height1 = height2,   sdThres1 = 0.995)                    
   MyCluster_1_g(  mymeth1 = mymeth2 ,   path1 = path2, file1 = paste(file2, ".ByQuantile.1Q.kept0.1percent.pdf", sep=""),   width1 = width2,   height1 = height2,   sdThres1 = 0.999)                    
- 
+  
   MyCluster_2_g(  mymeth1 = mymeth2 ,   path1 = path2, file1 = paste(file2, ".NoQuantile.2A.sd0.pdf",     sep=""),   width1 = width2,   height1 = height2,   sdThres1 = 0    )                     
   MyCluster_2_g(  mymeth1 = mymeth2 ,   path1 = path2, file1 = paste(file2, ".NoQuantile.2B.sd0.01.pdf",  sep=""),   width1 = width2,   height1 = height2,   sdThres1 = 0.01 )                    
   MyCluster_2_g(  mymeth1 = mymeth2 ,   path1 = path2, file1 = paste(file2, ".NoQuantile.2C.sd0.05.pdf",  sep=""),   width1 = width2,   height1 = height2,   sdThres1 = 0.05 )                    
@@ -872,7 +377,7 @@ myHierarchicalClustering_1_g  <- function(  mat_3three,   path_temp1,   dataFram
   print(  fviz_dend(res.hc7_3three,   type="phylogenic", main="single, pearson"    , repel = TRUE)  )
   print(  fviz_dend(res.hc8_3three,   type="phylogenic", main="single, spearman"   , repel = TRUE)  )         
   dev.off() 
-
+  
   # Compute hierarchical clustering by "complete"
   res.hc1_3three <- hclust(res.dist1_3three, method = "complete"  )   
   res.hc2_3three <- hclust(res.dist2_3three, method = "complete"  )   
@@ -904,7 +409,7 @@ myHierarchicalClustering_1_g  <- function(  mat_3three,   path_temp1,   dataFram
   print(  fviz_dend(res.hc7_3three,   type="phylogenic", main="complete, pearson"    , repel = TRUE)  )
   print(  fviz_dend(res.hc8_3three,   type="phylogenic", main="complete, spearman"   , repel = TRUE)  )          
   dev.off() 
-
+  
   # Compute hierarchical clustering by "average"
   res.hc1_3three <- hclust(res.dist1_3three, method = "average"  )   
   res.hc2_3three <- hclust(res.dist2_3three, method = "average"  )   
@@ -936,7 +441,7 @@ myHierarchicalClustering_1_g  <- function(  mat_3three,   path_temp1,   dataFram
   print(  fviz_dend(res.hc7_3three,   type="phylogenic", main="average, pearson"    , repel = TRUE)  )
   print(  fviz_dend(res.hc8_3three,   type="phylogenic", main="average, spearman"   , repel = TRUE)  )          
   dev.off() 
-
+  
   # Compute hierarchical clustering by "mcquitty"
   res.hc1_3three <- hclust(res.dist1_3three, method = "mcquitty"  )   
   res.hc2_3three <- hclust(res.dist2_3three, method = "mcquitty"  )   
@@ -968,7 +473,7 @@ myHierarchicalClustering_1_g  <- function(  mat_3three,   path_temp1,   dataFram
   print(  fviz_dend(res.hc7_3three,   type="phylogenic", main="mcquitty, pearson"    , repel = TRUE)  )
   print(  fviz_dend(res.hc8_3three,   type="phylogenic", main="mcquitty, spearman"   , repel = TRUE)  )          
   dev.off() 
-
+  
   # Compute hierarchical clustering by "median"
   res.hc1_3three <- hclust(res.dist1_3three, method = "median"  )   
   res.hc2_3three <- hclust(res.dist2_3three, method = "median"  )   
@@ -989,7 +494,7 @@ myHierarchicalClustering_1_g  <- function(  mat_3three,   path_temp1,   dataFram
   print(  fviz_dend(res.hc7_3three,   type="rectangle", main="median, pearson"    )  )
   print(  fviz_dend(res.hc8_3three,   type="rectangle", main="median, spearman"   )  )
   dev.off() 
-
+  
   # Compute hierarchical clustering by "centroid"
   res.hc1_3three <- hclust(res.dist1_3three, method = "centroid"  )   
   res.hc2_3three <- hclust(res.dist2_3three, method = "centroid"  )   
@@ -1145,7 +650,7 @@ MyPrcompObj_1_g <- function(  prcompObj2,   path2,   file2,  dataFrame_temp2   )
     guides( colour = guide_legend(override.aes = list(size=5)) ,  shape = guide_legend(override.aes = list(size=5))) 
   MySaveGgplot2_1_g(ggplot2Figure1=FigureTemp6_2two ,  path1=path2, fileName1="5F_PCA-PC1-PC2-Labels",   height1=2.5,  width1=4.3)
   
-
+  
   ## PC1, 2, and 3     dev.off() 
   pdf( file = paste(path2, "6_PCA-3d-by-scatter3D.pdf",  sep="/") )
   
@@ -1154,147 +659,147 @@ MyPrcompObj_1_g <- function(  prcompObj2,   path2,   file2,  dataFrame_temp2   )
             colvar = NULL,  cex = 2, theta=0, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),           
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),           
             colvar = NULL,  cex = 2, theta=0, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),           
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),           
             colvar = NULL,  cex = 2, theta=20, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
             colvar = NULL,  cex = 2, theta=20, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
             colvar = NULL,  cex = 2, theta=30, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),           
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),           
             colvar = NULL,  cex = 2, theta=30, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
             colvar = NULL,  cex = 2, theta=45, phi=10,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
             colvar = NULL,  cex = 2, theta=45, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
             colvar = NULL,  cex = 2, theta=45, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
             colvar = NULL,  cex = 2, theta=60, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),            
             colvar = NULL,  cex = 2, theta=60, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),          
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),          
             colvar = NULL,  cex = 2, theta=60, phi=45,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   
   ##############
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=0, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=0, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=20, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=20, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=30, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=30, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=45, phi=10,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=45, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=45, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=60, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=60, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "g" ,      
             colvar = NULL,  cex = 2, theta=60, phi=45,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   
   ######
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=0, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=0, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=20, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=20, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=30, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=30, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=45, phi=10,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=45, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=45, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=60, phi=20,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=60, phi=30,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   scatter3D(x = dataframeA_2two[,1],  y = dataframeA_2two[,2],  z = dataframeA_2two[,3], 
-             col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
+            col = MyTech_color_g( as.vector(dataFrame_temp2$mytech) )  ,  pch = MySex_Shape_g( as.vector(dataFrame_temp2$mysex) ),         bty = "b2" ,      
             colvar = NULL,  cex = 2, theta=60, phi=45,  xlab = label1_2two,  ylab = label2_2two,  zlab = label3_2two  )
   
   dev.off()
@@ -1327,23 +832,23 @@ MyPCAobj_FactoMineR_g <- function(  PCAobj2,   path2,   file2,  dataFrame_temp2 
   print("####################### PCAobj2$ind #########################")
   print(PCAobj2$ind)
   sink()
-
+  
   pdf( file = paste(path2, "/3_PCA_info_",  file2,  ".pdf",   sep="")  )
   print( fviz_eig(PCAobj2, addlabels = TRUE ) )
   print( fviz_screeplot(X=PCAobj2, choice = "variance", geom = "line",
-                 barfill = "steelblue", barcolor = "steelblue", linecolor = "black",
-                 ncp = 10, addlabels = TRUE) )
+                        barfill = "steelblue", barcolor = "steelblue", linecolor = "black",
+                        ncp = 10, addlabels = TRUE) )
   print( fviz_screeplot(X=PCAobj2, choice = "eigenvalue", geom = "line",
-                 barfill = "steelblue", barcolor = "steelblue", linecolor = "black",
-                 ncp = 10, addlabels = TRUE) )
+                        barfill = "steelblue", barcolor = "steelblue", linecolor = "black",
+                        ncp = 10, addlabels = TRUE) )
   print( fviz_screeplot(X=PCAobj2, choice = "variance", geom = "bar",
-                 barfill = "steelblue", barcolor = "steelblue", linecolor = "black",
-                 ncp = 10, addlabels = TRUE) )
+                        barfill = "steelblue", barcolor = "steelblue", linecolor = "black",
+                        ncp = 10, addlabels = TRUE) )
   print( fviz_screeplot(X=PCAobj2, choice = "eigenvalue", geom = "bar",
-                 barfill = "steelblue", barcolor = "steelblue", linecolor = "black",
-                 ncp = 10, addlabels = TRUE) )
+                        barfill = "steelblue", barcolor = "steelblue", linecolor = "black",
+                        ncp = 10, addlabels = TRUE) )
   dev.off() 
-
+  
   
   my_fviz_pca_ind1 <- fviz_pca_ind(PCAobj2,
                                    col.ind = "cos2", # Color by the quality of representation
@@ -1379,7 +884,7 @@ MyPCAobj_FactoMineR_g <- function(  PCAobj2,   path2,   file2,  dataFrame_temp2 
   print(my_fviz_pca_ind5)
   dev.off() 
   
-
+  
   #############################
   PCAobj2_matrix <- PCAobj2$ind$coord 
   PCAobj2_Contri  <- (PCAobj2$eig)[,2]
@@ -1393,7 +898,7 @@ MyPCAobj_FactoMineR_g <- function(  PCAobj2,   path2,   file2,  dataFrame_temp2 
   
   dataframeA_2two  <- data.frame( as.data.frame(PCAobj2_matrix), mySex= as.vector(dataFrame_temp2$mysex), 
                                   myTech=as.vector(dataFrame_temp2$mytech),    myLabel=as.vector(dataFrame_temp2$mysampleID)   )  
-
+  
   FigureTemp1_2two  <- ggplot( data = dataframeA_2two, aes(x = Dim.1, y = Dim.2, shape=as.factor(mySex), color=as.factor(myTech) )) + 
     geom_point(size=3, alpha=1  ) + xlab(label1_2two) +   ylab(label2_2two) +   
     scale_colour_manual(values=myTech_All_color_g) +  scale_shape_manual(values=mySex_All_shape_g) + 
@@ -1776,7 +1281,7 @@ myDiff_DMC_DMR_g <- function(  methobj2,   path2  ) {
     geom_point( shape = 20, alpha = 0.1 ) + scale_colour_manual(values=c("no"="black", "yes"="red")) +
     xlab( "Difference (%)" ) + ylab( "-log10(q-value)" ) + MyTheme_1_g(textSize1=14)  + xlim(-20, 20)   + ylim(0, 30)  
   ggsave( filename = paste(path2,  "1D_methDiff_qvalue-3.png",  sep="/"),  height=4, width=6, dpi = 1200 )
-
+  
   myDiff25p.hypo_2two_sub2  = getMethylDiff(myDiff_2two_sub2, difference=10, qvalue=0.001, type="hypo" )  ## less enrich in ART
   myDiff25p.hyper_2two_sub2 = getMethylDiff(myDiff_2two_sub2, difference=10, qvalue=0.001, type="hyper")  ## more enrich in ART
   myDiff25p_2two_sub2       = getMethylDiff(myDiff_2two_sub2, difference=10, qvalue=0.05)
@@ -2071,7 +1576,7 @@ myDiff_DMC_DMR_g <- function(  methobj2,   path2  ) {
   pdf( file=paste(path2, "11J-distribution-onCpGs-hyper.pdf", sep="/")   )
   print(plotTargetAnnotation(diffImprinted5Ann_2two_sub2_hyper, precedence=TRUE, main="differential methylation annotation"))
   dev.off()
-
+  
 }
 
 
@@ -2178,15 +1683,15 @@ myMainFunction_1_g  <- function(  myobj_temp1,   path_temp1,   binSize_temp1, bi
   if( ! file.exists(path_temp1_sub6) ) { dir.create(path_temp1_sub6, recursive = TRUE) }
   PCA_2two_sub6 <- PCA( t(mat_2two) , graph=FALSE)
   MyPCAobj_FactoMineR_g(  PCAobj2=PCA_2two_sub6,   path2=path_temp1_sub6,   file2="PCA_byFactoMineR",  dataFrame_temp2=dataFrame_temp1   )
-                                                                   
+  
   path_temp1_sub7 = paste(path_temp1, "7_HierarchicalClustering", sep="/")
   if( ! file.exists(path_temp1_sub7) ) { dir.create(path_temp1_sub7, recursive = TRUE) }
   myHierarchicalClustering_1_g(  mat_3three=mat_2two,   path_temp1=path_temp1_sub7,   dataFrame_temp1=dataFrame_temp1  )
-                                                                    
+  
   path_temp1_sub8 = paste(path_temp1, "8_DMR", sep="/")
   if( ! file.exists(path_temp1_sub8) ) { dir.create(path_temp1_sub8, recursive = TRUE) }
   myDiff_DMC_DMR_g(  methobj2=meth_2two,   path2=path_temp1_sub8  )
-                                                                             
+  
   
 } 
 
@@ -2306,110 +1811,993 @@ myMainFunction_2_g  <- function(  myobj_temp1,   path_temp1,   binSize_temp1, bi
   
 } 
 
+
+
+## scatter Diagram for 2 samples and colour each category.
+MyScatterDiagram_1 <- function(vector2X,  vector2Y,  path2,   fileName2,   xLab2,   yLab2,  title2,  height2=4,  width2=4,  yMin2=0, yMax2=2,  xMin2=0, xMax2=2,  alpha2=0.5, diffThres2=1.5, colours2=c("red", "blue", "purple")) {                     
+  vector2Y[vector2Y>yMax2] <- yMax2
+  vector2Y[vector2Y<yMin2] <- yMin2
+  vector2X[vector2X>xMax2] <- xMax2
+  vector2X[vector2X<xMin2] <- xMin2
+  myRatio  <- (vector2X - vector2Y) 
+  myRatio1 <- myRatio
+  myRatio2 <- myRatio
+  myRatio3 <- myRatio
+  myRatio4 <- myRatio
+  myRatio5 <- myRatio
+  
+  myRatio1[myRatio1 >= diffThres2] <- 200 
+  myRatio1[myRatio1 <= -diffThres2] <- -200 
+  myRatio1[(myRatio1 < diffThres2)&(myRatio1 > -diffThres2)] <- 0
+  print(myRatio1)
+  
+  dataframeA <- data.frame( xAxis = vector2X,  yAxis = vector2Y , SampleType = factor(myRatio1) ) 
+  FigureTemp1 <- ggplot( data = dataframeA, aes(x = xAxis, y = yAxis,  color=factor(SampleType) )) + 
+    geom_point(size=0.1, alpha=alpha2, shape=20 ) +  geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + scale_colour_manual( values=colours2 ) +
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp1,  path1=path2, fileName1=paste(fileName2, "_1_diffThres2",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+  
+  myRatio2[myRatio2 >= 50] <- 200
+  myRatio2[myRatio2 <= -50] <- -200
+  myRatio2[(myRatio2 < 50)&(myRatio2 > -50)] <- 0
+  dataframeB <- data.frame( xAxis = vector2X,  yAxis = vector2Y , SampleType = factor(myRatio2) ) 
+  FigureTemp1 <- ggplot( data = dataframeB, aes(x = xAxis, y = yAxis,  color=factor(SampleType) )) + 
+    geom_point(size=0.1, alpha=alpha2, shape=20 ) +  geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + scale_colour_manual( values=colours2 ) +
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp1,  path1=path2, fileName1=paste(fileName2, "_2_diff50",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+  
+  myRatio3[myRatio3 >= 25] <- 200
+  myRatio3[myRatio3 <= -25] <- -200
+  myRatio3[(myRatio3 < 25)&(myRatio3 > -25)] <- 0
+  dataframeC <- data.frame( xAxis = vector2X,  yAxis = vector2Y , SampleType = factor(myRatio3) ) 
+  FigureTemp1 <- ggplot( data = dataframeC, aes(x = xAxis, y = yAxis,  color=factor(SampleType) )) + 
+    geom_point(size=0.1, alpha=alpha2, shape=20 ) +  geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + scale_colour_manual( values=colours2 ) +
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp1,  path1=path2, fileName1=paste(fileName2, "_3_diff25",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+  
+  
+  myRatio4[myRatio4 >= 20] <- 200
+  myRatio4[myRatio4 <= -20] <- -200
+  myRatio4[(myRatio4 < 20)&(myRatio4 > -20)] <- 0
+  dataframeC <- data.frame( xAxis = vector2X,  yAxis = vector2Y , SampleType = factor(myRatio4) ) 
+  FigureTemp1 <- ggplot( data = dataframeC, aes(x = xAxis, y = yAxis,  color=factor(SampleType) )) + 
+    geom_point(size=0.1, alpha=alpha2, shape=20 ) +  geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + scale_colour_manual( values=colours2 ) +
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp1,  path1=path2, fileName1=paste(fileName2, "_4_diff20",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+  
+  
+  myRatio5[myRatio5 >= 5] <- 200
+  myRatio5[myRatio5 <= -5] <- -200
+  myRatio5[(myRatio5 < 5)&(myRatio5 > -5)] <- 0
+  dataframeC <- data.frame( xAxis = vector2X,  yAxis = vector2Y , SampleType = factor(myRatio5) ) 
+  FigureTemp1 <- ggplot( data = dataframeC, aes(x = xAxis, y = yAxis,  color=factor(SampleType) )) + 
+    geom_point(size=0.1, alpha=alpha2, shape=20 ) +  geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + scale_colour_manual( values=colours2 ) +
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp1,  path1=path2, fileName1=paste(fileName2, "_5_diff5",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+}
+
+
+
+## 2D density plot
+MyScatterDiagram_2 <- function(vector2X,  vector2Y,  path2,   fileName2,   xLab2,   yLab2,  title2,  height2=4,  width2=4,  yMin2=0, yMax2=2,  xMin2=0, xMax2=2 ) {
+  vector2Y[vector2Y>yMax2] <- yMax2
+  vector2Y[vector2Y<yMin2] <- yMin2
+  vector2X[vector2X>xMax2] <- xMax2
+  vector2X[vector2X<xMin2] <- xMin2
+  
+  dataframeA <- data.frame( xAxis = vector2X,  yAxis = vector2Y  )
+  
+  FigureTemp1 <- ggplot( data = dataframeA   ) +  
+    stat_density_2d(  aes(x=xAxis, y=yAxis, fill = ..density.. ) ,  geom = "raster" , contour=FALSE ) + 
+    geom_abline(slope=1, intercept=10, lty=2, col="black", size=0.3) + geom_abline(slope=1, intercept= -10, lty=2, col="black", size=0.3) +
+    geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +  scale_fill_continuous( low=c("white", "blue") ,  high=c("yellow", "red") , na.value = "white" ) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + 
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp1,  path1=path2, fileName1=paste(fileName2, "_1_4colours",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+  
+  FigureTemp2 <- ggplot( data = dataframeA   ) +  
+    stat_density_2d(  aes(x=xAxis, y=yAxis, fill = ..density.. ) ,  geom = "raster" , contour=FALSE ) + 
+    geom_abline(slope=1, intercept=10, lty=2, col="black", size=0.3) + geom_abline(slope=1, intercept= -10, lty=2, col="black", size=0.3) +
+    geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +  scale_fill_continuous( low=c("white", "blue") ,  high="red" , na.value = "white" ) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + 
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp2,  path1=path2, fileName1=paste(fileName2, "_2_3colours",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+  
+  FigureTemp3 <- ggplot( data = dataframeA   ) +  
+    stat_density_2d(  aes(x=xAxis, y=yAxis, fill = ..density.. ) ,  geom = "raster" , contour=FALSE  ) + 
+    geom_abline(slope=1, intercept=10, lty=2, col="black", size=0.3) + geom_abline(slope=1, intercept= -10, lty=2, col="black", size=0.3) +
+    geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +  scale_fill_continuous( low= "white"  ,  high="red" , na.value = "white" ) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + 
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp3,  path1=path2, fileName1=paste(fileName2, "_3_2colours",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+  
+  FigureTemp4 <- ggplot( data = dataframeA   ) +  
+    stat_density_2d(  aes(x=xAxis, y=yAxis, fill = ..density.. ) ,  geom = "raster" , contour=FALSE  ) + 
+    geom_abline(slope=1, intercept=10, lty=2, col="black", size=0.3) + geom_abline(slope=1, intercept= -10, lty=2, col="black", size=0.3) +
+    geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +  scale_fill_continuous( low= c("white", "red")  ,  high="red4" , na.value = "white" ) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + 
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp4,  path1=path2, fileName1=paste(fileName2, "_4_other3colours",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+  
+  FigureTemp5 <- ggplot( data = dataframeA   ) +  
+    stat_density_2d(  aes(x=xAxis, y=yAxis, fill = ..density.. ) ,  geom = "raster" , contour=FALSE  ) + 
+    geom_abline(slope=1, intercept=10, lty=2, col="black", size=0.3) + geom_abline(slope=1, intercept= -10, lty=2, col="black", size=0.3) +
+    geom_abline(slope=1, intercept=0, lty=2, col="black", size=0.3) +  scale_fill_continuous( low= c("white", "blue")  ,  high=c("red", "red4") , na.value = "white" ) +
+    ylim(yMin2, yMax2) +  xlim(xMin2, xMax2)+  xlab(xLab2) +   ylab(yLab2) +   ggtitle(title2) + 
+    guides( colour = guide_legend(override.aes = list(size=10)) )  + MyTheme_1( textSize=14,  hjust1=NULL, vjust1=NULL,  angle1=NULL)
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp5,  path1=path2, fileName1=paste(fileName2, "_5_other4colours",   sep="",  collapse=NULL),  height1=height2,  width1=width2)
+  
+} 
+
+
+MyBoxViolinPlot_1 <- function(vector2,   sampleType2,  colours2,   path2,   fileName2,  title2,  xLab2,  yLab2,    height2=4,   width2=4,   Ymin2=0, Ymax2=3) { 
+  vector2[vector2>Ymax2] <- Ymax2
+  vector2[vector2<Ymin2] <- Ymin2
+  DataFrame_Local  <- data.frame(   sampleType=sampleType2,   yAxis=vector2    ) 
+  
+  FigureTemp1 <- ggplot( DataFrame_Local, aes(x=sampleType) ) +  
+    geom_errorbar( aes(ymin=min, ymax=max),  data=whisk_1(DataFrame_Local),   width=0.2, size=0.5 ) +
+    geom_boxplot( width=0.6,   aes(y=yAxis), outlier.colour="gray45",  outlier.shape=NA,  outlier.size=0, size=0.5, fill=colours2 ) + 
+    stat_summary( aes(y=yAxis),   fun.y=mean, colour="yellow4", geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp1,  path1=path2, fileName1=paste(fileName2, "_boxPlot",                     sep="",  collapse=NULL),  height1=height2, width1=width2)
+  
+  FigureTemp2 <- ggplot(DataFrame_Local, aes(x=sampleType) ) + 
+    geom_violin(aes(y=yAxis), fill = "gray", colour = "gray" ) +   
+    #geom_errorbar(aes(ymin=min,ymax=max),  data=whisk_1(DataFrame_Local),   width = 0.1, size=0.1, colour = "black") +
+    geom_boxplot( aes(y=yAxis),  width=0.3, size=0.5, fill=NA, outlier.shape=NA,  outlier.size=0,  colour = colours2, notch=FALSE,  notchwidth = 0.15, alpha=1) + 
+    stat_summary( aes(y=yAxis),   fun.y=mean, colour="yellow4", geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp2,  path1=path2, fileName1=paste(fileName2, "_ViolinPlot-noAdjust-colour",  sep="",  collapse=NULL),  height1=height2, width1=width2)
+  
+  FigureTemp3 <- ggplot(DataFrame_Local, aes(x=sampleType) ) + 
+    geom_violin(aes(y=yAxis), fill = "gray", colour = "gray", adjust = 2) +  
+    #geom_errorbar(aes(ymin=min,ymax=max),  data=whisk_1(DataFrame_Local),   width = 0.1, size=0.1, colour = "black") +
+    geom_boxplot( aes(y=yAxis),  width=0.3, size=0.5, fill=NA, outlier.shape=NA,  outlier.size=0,  colour = colours2, notch=FALSE,  notchwidth = 0.15, alpha=1) + 
+    stat_summary( aes(y=yAxis),   fun.y=mean, colour="yellow4", geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp3,  path1=path2, fileName1=paste(fileName2, "_ViolinPlot-2Adjust-colour",   sep="",  collapse=NULL),  height1=height2, width1=width2)
+  
+  FigureTemp4 <- ggplot(DataFrame_Local, aes(x=sampleType) ) + 
+    geom_violin(aes(y=yAxis), fill = "gray", colour = "gray", adjust = 3) +   
+    #geom_errorbar(aes(ymin=min,ymax=max),  data=whisk_1(DataFrame_Local),   width = 0.1, size=0.1, colour = "black") +
+    geom_boxplot( aes(y=yAxis),  width=0.3, size=0.5, fill=NA, outlier.shape=NA,  outlier.size=0,  colour = colours2, notch=FALSE,  notchwidth = 0.15, alpha=1) + 
+    stat_summary( aes(y=yAxis),   fun.y=mean, colour="yellow4", geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp4,  path1=path2, fileName1=paste(fileName2, "_ViolinPlot-3Adjust-colour",  sep="",  collapse=NULL),  height1=height2, width1=width2)
+  
+  FigureTemp5 <- ggplot(DataFrame_Local, aes(x=sampleType) ) + 
+    geom_violin(aes(y=yAxis), fill = "gray", colour = "gray", adjust = 4) +  
+    #geom_errorbar(aes(ymin=min,ymax=max),  data=whisk_1(DataFrame_Local),   width = 0.1, size=0.1, colour = "black") +
+    geom_boxplot( aes(y=yAxis),  width=0.3, size=0.5, fill=NA, outlier.shape=NA,  outlier.size=0,  colour = colours2, notch=FALSE,  notchwidth = 0.15, alpha=1) + 
+    stat_summary( aes(y=yAxis),   fun.y=mean, colour="yellow4", geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp5,  path1=path2, fileName1=paste(fileName2, "_ViolinPlot-4Adjust-colour",   sep="",  collapse=NULL),  height1=height2, width1=width2)  
+}  
+
+
+MyBoxViolinPlot_2 <- function(vector2,   sampleType2,  sampleType3,  colours2,   path2,   fileName2,  title2,  xLab2,  yLab2,    height2=4,   width2=4,   Ymin2=0, Ymax2=3) { 
+  vector2[vector2>Ymax2] <- Ymax2
+  vector2[vector2<Ymin2] <- Ymin2
+  DataFrame_Local  <- data.frame(   sampleType=sampleType2,   yAxis=vector2,  sampleTypeB=sampleType3   ) 
+  
+  FigureTemp1 <- ggplot( DataFrame_Local, aes(x=sampleType, y=yAxis, fill=sampleTypeB) ) +  
+    #geom_errorbar( aes(ymin=min, ymax=max),  data=whisk_1(DataFrame_Local),   width=0.2, size=0.5 ) +
+    geom_boxplot( outlier.shape=NA, outlier.size=0, notch=TRUE,  notchwidth = 0.1,  alpha=1  ) +   
+    stat_summary( position=position_dodge(width=0.75), fun.y=mean,  color="yellow4",  geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    scale_fill_manual( values = colours2 ) +
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp1,  path1=path2, fileName1=paste(fileName2, "_boxPlot",   sep="",  collapse=NULL),  height1=height2, width1=width2)
+  
+  FigureTemp2 <- ggplot( DataFrame_Local, aes(x=sampleType, y=yAxis , fill=sampleTypeB) ) +  
+    geom_violin( colour = NA  ) + 
+    #geom_boxplot( outlier.shape=NA, outlier.size=0, size=1,   alpha=0.001   ) +   
+    #stat_summary( position=position_dodge(width=0.75), fun.y=mean,  color="yellow4",  geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    scale_fill_manual( values = colours2 ) +
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp2,  path1=path2, fileName1=paste(fileName2, "_violinPlot",   sep="",  collapse=NULL),  height1=height2, width1=width2)
+  
+  FigureTemp3 <- ggplot( DataFrame_Local, aes(x=sampleType, y=yAxis , fill=sampleTypeB) ) +  
+    geom_violin(  colour = NA  ) + 
+    #geom_boxplot( outlier.shape=NA, outlier.size=0, size=1,   alpha=0.001   ) +   
+    stat_summary( position=position_dodge(width=0.75), fun.y=mean,  color="yellow4",  geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    scale_fill_manual( values = colours2 ) +
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp3,  path1=path2, fileName1=paste(fileName2, "_violinPlot-mean",   sep="",  collapse=NULL),  height1=height2, width1=width2)
+  
+  FigureTemp4 <- ggplot( DataFrame_Local, aes(x=sampleType, y=yAxis , fill=sampleTypeB) ) +  
+    geom_violin(  colour = NA  ) + 
+    geom_boxplot( outlier.shape=NA, outlier.size=0, size=1,   alpha=0.001   ) +   
+    stat_summary( position=position_dodge(width=0.75), fun.y=mean,  color="yellow4",  geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    scale_fill_manual( values = colours2 ) +
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp4,  path1=path2, fileName1=paste(fileName2, "_violinBoxPlot",   sep="",  collapse=NULL),  height1=height2, width1=width2)
+  
+  FigureTemp5 <- ggplot( DataFrame_Local, aes(x=sampleType, y=yAxis , fill=sampleTypeB) ) +  
+    geom_violin(colour = NA ,  adjust = 2 ) + 
+    geom_boxplot( outlier.shape=NA, outlier.size=0, size=1,   alpha=0.001   ) +   
+    stat_summary( position=position_dodge(width=0.75), fun.y=mean,  color="yellow4",  geom="point", shape=19, size=1.5, show.legend = FALSE) + 
+    scale_fill_manual( values = colours2 ) +
+    xlab(xLab2 ) + ylab( yLab2 ) + ggtitle( title2 )  + MyTheme_1(textSize1=14, hjust1=1, vjust1=1,  angle1=30 ) + ylim(Ymin2, Ymax2 )
+  MySaveGgplot2_1(ggplot2Figure1=FigureTemp5,  path1=path2, fileName1=paste(fileName2, "_violinBoxPlot-2Ajust",   sep="",  collapse=NULL),  height1=height2, width1=width2)
+  
+}  
+
+
+myAnnotation_1 <- function( includeRegions2, path2 ) {  
+  if( ! file.exists(path2) ) { dir.create(path2, recursive = TRUE) }
+  
+  Regions2_temp1 <- as(includeRegions2,  "GRanges")
+  
+  diffGeneAnn_2two_sub2_hypo = annotateWithGeneParts(Regions2_temp1,  gene.obj_g)
+  
+  sink( file=paste(path2, "1A-distribution-onGenes.txt", sep="/")   )
+  getFeatsWithTargetsStats(diffGeneAnn_2two_sub2_hypo,  percentage=TRUE)
+  print(diffGeneAnn_2two_sub2_hypo)
+  sink()
+  
+  pdf( file=paste(path2, "1B-distribution-onGenes.pdf", sep="/")   )
+  print(plotTargetAnnotation(diffGeneAnn_2two_sub2_hypo,precedence=TRUE, main="differential methylation annotation") )
+  dev.off()
+  
+  
+  
+  ##
+  diffCpGann_2two_sub2_hypo = annotateWithFeatureFlank(Regions2_temp1,
+                                                       cpg.obj_g$CpGi,  cpg.obj_g$shores,
+                                                       feature.name="CpGi",flank.name="shores")
+  
+  sink( file=paste(path2, "2A-distribution-on-hypo.txt", sep="/")   )
+  getFeatsWithTargetsStats(diffCpGann_2two_sub2_hypo,  percentage=TRUE)
+  print(diffCpGann_2two_sub2_hypo)
+  sink()
+  
+  pdf( file=paste(path2, "2B-distribution-onCpGs-hypo.pdf", sep="/")   )
+  print(plotTargetAnnotation(diffCpGann_2two_sub2_hypo, precedence=TRUE, main="differential methylation annotation"))
+  dev.off()
+  
+  
+  
+  
+  ##
+  diffrepeatann_2two_sub2_hypo = annotateWithFeatureFlank(Regions2_temp1,
+                                                          myrepeat.obj_g$Repeats,  myrepeat.obj_g$shores,
+                                                          feature.name="Repeats",flank.name="shores")
+  
+  sink( file=paste(path2, "3A-distribution-on-Repeats.txt", sep="/")   )
+  getFeatsWithTargetsStats(diffrepeatann_2two_sub2_hypo,  percentage=TRUE)
+  print(diffrepeatann_2two_sub2_hypo)
+  sink()
+  
+  pdf( file=paste(path2, "3B-distribution-onRepeats.pdf", sep="/")   )
+  print(plotTargetAnnotation(diffrepeatann_2two_sub2_hypo, precedence=TRUE, main="differential methylation annotation"))
+  dev.off()
+  
+  
+  
+  ##
+  diffImprinted1Ann_2two_sub2_hypo = annotateWithFeatureFlank(target=Regions2_temp1,
+                                                              feature=imprint1.obj_g$ImprintedRegions,  flank=imprint1.obj_g$shores,
+                                                              feature.name="ImprintedRegions",  flank.name="shores")
+  
+  sink( file=paste(path2, "4A-distribution-on-ImprintedRegions.txt", sep="/")   )
+  getFeatsWithTargetsStats(diffImprinted1Ann_2two_sub2_hypo,  percentage=TRUE)
+  print(diffImprinted1Ann_2two_sub2_hypo)
+  sink()
+  
+  pdf( file=paste(path2, "4B-distribution-onImprintedRegions.pdf", sep="/")   )
+  print(plotTargetAnnotation(diffImprinted1Ann_2two_sub2_hypo, precedence=TRUE, main="differential methylation annotation"))
+  dev.off()
+  
+  
+  
+  ##
+  diffImprinted2Ann_2two_sub2_hypo = annotateWithFeatureFlank(target=Regions2_temp1,
+                                                              feature=imprint2.obj_g$ImprintedRegions,  flank=imprint2.obj_g$shores,
+                                                              feature.name="ImprintedRegions",  flank.name="shores")
+  
+  sink( file=paste(path2, "5A-distribution-on-ImprintedRegions.txt", sep="/")   )
+  getFeatsWithTargetsStats(diffImprinted2Ann_2two_sub2_hypo,  percentage=TRUE)
+  print(diffImprinted2Ann_2two_sub2_hypo)
+  sink()
+  
+  pdf( file=paste(path2, "5B-distribution-onImprintedRegions.pdf", sep="/")   )
+  print(plotTargetAnnotation(diffImprinted2Ann_2two_sub2_hypo, precedence=TRUE, main="differential methylation annotation"))
+  dev.off()
+  
+  
+  
+  
+  ##
+  diffImprinted3Ann_2two_sub2_hypo = annotateWithFeatureFlank(target=Regions2_temp1,
+                                                              feature=imprint3.obj_g$ImprintedRegions,  flank=imprint3.obj_g$shores,
+                                                              feature.name="ImprintedRegions",  flank.name="shores")
+  
+  sink( file=paste(path2, "6A-distribution-on-ImprintedRegions.txt", sep="/")   )
+  getFeatsWithTargetsStats(diffImprinted3Ann_2two_sub2_hypo,  percentage=TRUE)
+  print(diffImprinted3Ann_2two_sub2_hypo)
+  sink()
+  
+  pdf( file=paste(path2, "6B-distribution-onImprintedRegions.pdf", sep="/")   )
+  print(plotTargetAnnotation(diffImprinted3Ann_2two_sub2_hypo, precedence=TRUE, main="differential methylation annotation"))
+  dev.off()
+  
+  
+  
+  ##
+  diffImprinted4Ann_2two_sub2_hypo = annotateWithFeatureFlank(target=Regions2_temp1,
+                                                              feature=imprint4.obj_g$ImprintedRegions,  flank=imprint4.obj_g$shores,
+                                                              feature.name="ImprintedRegions",  flank.name="shores")
+  
+  sink( file=paste(path2, "7A-distribution-on-ImprintedRegions.txt", sep="/")   )
+  getFeatsWithTargetsStats(diffImprinted4Ann_2two_sub2_hypo,  percentage=TRUE)
+  print(diffImprinted4Ann_2two_sub2_hypo)
+  sink()
+  
+  pdf( file=paste(path2, "7B-distribution-onImprintedRegions.pdf", sep="/")   )
+  print(plotTargetAnnotation(diffImprinted4Ann_2two_sub2_hypo, precedence=TRUE, main="differential methylation annotation"))
+  dev.off()
+  
+  
+  
+  
+  ##
+  diffImprinted5Ann_2two_sub2_hypo = annotateWithFeatureFlank(target=Regions2_temp1,
+                                                              feature=imprint5.obj_g$ImprintedRegions,  flank=imprint5.obj_g$shores,
+                                                              feature.name="ImprintedRegions",  flank.name="shores")
+  
+  sink( file=paste(path2, "8A-distribution-on-ImprintedRegions.txt", sep="/")   )
+  getFeatsWithTargetsStats(diffImprinted5Ann_2two_sub2_hypo,  percentage=TRUE)
+  print(diffImprinted5Ann_2two_sub2_hypo)
+  sink()
+  
+  pdf( file=paste(path2, "8B-distribution-onImprintedRegions.pdf", sep="/")   )
+  print(plotTargetAnnotation(diffImprinted5Ann_2two_sub2_hypo, precedence=TRUE, main="differential methylation annotation"))
+  dev.off()
+  ####################
+  
+}  
+
+
+
 ##################################################################################################################
 
 
 
 
 
-##################################################################################################################
-myOutDir_sub1_g = paste(outDir_g, "/1_ReadRawFiles",  sep="") 
-if( ! file.exists(myOutDir_sub1_g) ) { dir.create(myOutDir_sub1_g, recursive = TRUE) }
 
-sink( file=paste(myOutDir_sub1_g, "1_length-variables.txt", sep="/") )
-length( Files_All_vector_g )
-length( Files_All_list_g )
-length( mySampleID_All_vector_g )
-length( mySampleID_All_list_g )
-length( myTreatment_All_vector_g )
-length( myTreatment_All_list_g )
-length( mySex_All_vector_g )
-length( mySex_All_list_g )
-length( myTech_All_vector_g )
-length( myTech_All_list_g )
-print( "#################### Files_All_vector_g ####################" )
-print( Files_All_vector_g )
-print( "#################### Files_All_list_g ####################" )
-print( Files_All_list_g )
-print( "#################### mySampleID_All_vector_g ####################" )
-print( mySampleID_All_vector_g )
-print( "#################### mySampleID_All_list_g ####################" )
-print( mySampleID_All_list_g )
-print( "#################### myTreatment_All_vector_g ####################" )
-print( myTreatment_All_vector_g )
-print( "#################### myTreatment_All_list_g ####################" )
-print( myTreatment_All_list_g )
-print( "#################### mySex_All_vector_g ####################" )
-print( mySex_All_vector_g )
-print( "#################### mySex_All_list_g ####################" )
-print( mySex_All_list_g )
-print( "#################### myTech_All_vector_g ####################" )
-print( myTech_All_vector_g )
-print( "#################### myTech_All_list_g ####################" )
-print( myTech_All_list_g )
+
+## Define the sample groups about children
+##################################################################################################################
+Files_NC_children_g <- c(
+  paste( inputDir_g,   "67_E24C-boy-NC_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "67_E24D-boy-NC_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "68_E56C-boy-NC_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "68_E56D-boy-NC_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "69_NC-E123-C-Boy_Rep1.bismark.cov",  sep="/" ),
+  paste( inputDir_g,   "69_NC-E123-D-Boy_Rep1.bismark.cov",  sep="/" ) 
+)
+
+mySampleID_NC_children_g <- rep( x="NC", times=length(Files_NC_children_g) )
+Tech_NC_children_g <- mySampleID_NC_children_g
+
+for(i in c(1:length(mySampleID_NC_children_g)) ) {
+  mySampleID_NC_children_g[i] = paste(mySampleID_NC_children_g[i], i, sep="_")
+}
+
+myTreatment_NC_children_g <- rep( x=0,  times=length(Files_NC_children_g) )
+
+Sex_NC_children_g = rep( x="boy",  times=length(Files_NC_children_g) )  
+for(i in c(1:length(Sex_NC_children_g)) ) {
+  Sex_NC_children_g[i] = "boy"
+  if(i>=4) { Sex_NC_children_g[i] = "boy" }
+}
+
+
+
+Files_IVF_fresh_children_g <- c(
+  paste( inputDir_g,   "70_E113C-boy-ART_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "70_E113D-boy-ART_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "71_ART-W58-C-Boy_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "71_ART-W58-D-Boy_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "72_ART-W779-C-Boy_Rep1.bismark.cov",   sep="/" ),
+  paste( inputDir_g,   "72_W779D-ART-boy_Rep1.bismark.cov",    sep="/" ) 
+)
+
+mySampleID_IVF_fresh_children_g <- rep( x="IVF_fresh", times=length(Files_IVF_fresh_children_g) )
+Tech_IVF_fresh_children_g <- mySampleID_IVF_fresh_children_g
+
+for(i in c(1:length(mySampleID_IVF_fresh_children_g)) ) {
+  mySampleID_IVF_fresh_children_g[i] = paste(mySampleID_IVF_fresh_children_g[i], i, sep="_")
+}
+
+myTreatment_IVF_fresh_children_g <- rep( x=1,  times=length(Files_IVF_fresh_children_g) )
+
+Sex_IVF_fresh_children_g = rep( x="boy",      times=length(Files_IVF_fresh_children_g) ) 
+for(i in c(1:length(Sex_IVF_fresh_children_g)) ) {
+  Sex_IVF_fresh_children_g[i] = "boy"
+  if(i>=4) { Sex_IVF_fresh_children_g[i] = "boy" }
+}
+
+
+
+Files_IVF_frozen_children_g <- c(
+  paste( inputDir_g,   "9_W1365C-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "9_Q5-W1365D-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "10_W1733C-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "10_W1733D-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "11_W1398C-boy-IVF-frozen_Rep1.bismark.cov",   sep="/" ),
+  paste( inputDir_g,   "11_W1398D-boy-IVF-frozen_Rep1.bismark.cov",    sep="/" ) 
+)
+
+mySampleID_IVF_frozen_children_g <- rep( x="IVF_frozen", times=length(Files_IVF_frozen_children_g) )
+Tech_IVF_frozen_children_g <- mySampleID_IVF_frozen_children_g
+
+for(i in c(1:length(mySampleID_IVF_frozen_children_g)) ) {
+  mySampleID_IVF_frozen_children_g[i] = paste(mySampleID_IVF_frozen_children_g[i], i, sep="_")
+}
+
+myTreatment_IVF_frozen_children_g <- rep( x=2,  times=length(Files_IVF_frozen_children_g) )
+
+Sex_IVF_frozen_children_g = rep( x="boy",      times=length(Files_IVF_frozen_children_g) )
+for(i in c(1:length(Sex_IVF_frozen_children_g)) ) {
+  Sex_IVF_frozen_children_g[i] = "boy"
+  if(i>=4) { Sex_IVF_frozen_children_g[i] = "boy" }
+}
+
+
+
+Files_ICSI_fresh_children_g <- c(
+  paste( inputDir_g,   "12_W1579C-boy-ICSI-fresh-merge_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "12_Q17-W1579D-boy-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "13_W1647C-boy-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "13_W1647D-boy-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "14_W1719C-boy-ICSI-fresh_Rep1.bismark.cov",   sep="/" ),
+  paste( inputDir_g,   "14_W1719D-boy-ICSI-fresh_Rep1.bismark.cov",    sep="/" ) 
+)
+
+mySampleID_ICSI_fresh_children_g <- rep( x="ICSI_fresh", times=length(Files_ICSI_fresh_children_g) )
+Tech_ICSI_fresh_children_g <- mySampleID_ICSI_fresh_children_g
+
+for(i in c(1:length(mySampleID_ICSI_fresh_children_g)) ) {
+  mySampleID_ICSI_fresh_children_g[i] = paste(mySampleID_ICSI_fresh_children_g[i], i, sep="_")
+}
+
+myTreatment_ICSI_fresh_children_g <- rep( x=3,  times=length(Files_ICSI_fresh_children_g) )
+
+Sex_ICSI_fresh_children_g = rep( x="boy",      times=length(Files_ICSI_fresh_children_g) )  
+for(i in c(1:length(Sex_ICSI_fresh_children_g)) ) {
+  Sex_ICSI_fresh_children_g[i] = "boy"
+  if(i>=4) { Sex_ICSI_fresh_children_g[i] = "boy" }
+}
+
+
+
+Files_ICSI_frozen_children_g <- c(
+  paste( inputDir_g,   "15_Q6-W871C-boy-ICSI-frozen_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "15_Q4-W871D-boy-ICSI-frozen_Rep1.bismark.cov",    sep="/" ) 
+)
+
+mySampleID_ICSI_frozen_children_g <- rep( x="ICSI_frozen", times=length(Files_ICSI_frozen_children_g) )
+Tech_ICSI_frozen_children_g <- mySampleID_ICSI_frozen_children_g
+
+for(i in c(1:length(mySampleID_ICSI_frozen_children_g)) ) {
+  mySampleID_ICSI_frozen_children_g[i] = paste(mySampleID_ICSI_frozen_children_g[i], i, sep="_")
+}
+
+myTreatment_ICSI_frozen_children_g <- rep( x=4,  times=length(Files_ICSI_frozen_children_g) )
+
+Sex_ICSI_frozen_children_g = rep( x="boy",      times=length(Files_ICSI_frozen_children_g) )  
+for(i in c(1:length(Sex_ICSI_frozen_children_g)) ) {
+  Sex_ICSI_frozen_children_g[i] = "boy"
+  if(i>=4) { Sex_ICSI_frozen_children_g[i] = "boy" }
+}
+
+
+
+
+
+Files_All_vector_children_g <- c(
+  Files_NC_children_g,
+  Files_IVF_fresh_children_g,
+  Files_IVF_frozen_children_g,
+  Files_ICSI_fresh_children_g,
+  Files_ICSI_frozen_children_g  
+)
+Files_All_list_children_g <- as.list( Files_All_vector_children_g )
+
+
+mySampleID_All_vector_children_g <- c( 
+  mySampleID_NC_children_g,
+  mySampleID_IVF_fresh_children_g,
+  mySampleID_IVF_frozen_children_g,
+  mySampleID_ICSI_fresh_children_g,
+  mySampleID_ICSI_frozen_children_g  
+)
+mySampleID_All_list_children_g <- as.list( mySampleID_All_vector_children_g )
+
+
+myTreatment_All_vector_children_g <- c( 
+  myTreatment_NC_children_g,
+  myTreatment_IVF_fresh_children_g,
+  myTreatment_IVF_frozen_children_g,
+  myTreatment_ICSI_fresh_children_g,
+  myTreatment_ICSI_frozen_children_g 
+)       
+myTreatment_All_list_children_g <- as.list( myTreatment_All_vector_children_g )
+
+
+mySex_All_vector_children_g <- c( 
+  Sex_NC_children_g,
+  Sex_IVF_fresh_children_g,
+  Sex_IVF_frozen_children_g,
+  Sex_ICSI_fresh_children_g,
+  Sex_ICSI_frozen_children_g 
+)       
+mySex_All_list_children_g <- as.list( mySex_All_vector_children_g )
+
+
+myTech_All_vector_children_g <- c( 
+  Tech_NC_children_g,
+  Tech_IVF_fresh_children_g,
+  Tech_IVF_frozen_children_g,
+  Tech_ICSI_fresh_children_g,
+  Tech_ICSI_frozen_children_g 
+)       
+myTech_All_list_children_g <- as.list( myTech_All_vector_children_g )
+
+
+## boy=16, girl=17,  father=1, mother=2
+## NC=black,   IVF-fresh=blue,   IVF-frozen=green,  ICSI-fresh=red, ICSI-frozen=purple
+mySex_All_shape_children_g  = c( "boy"=16, "girl"=17, "father"=1, "mother"=2 ) 
+myTech_All_color_children_g = c( "NC"="black", "IVF_fresh"="blue", "IVF_frozen"="green",  "ICSI_fresh"="red", "ICSI_frozen"="purple" )
+mySex_All_shape_children_g
+myTech_All_color_children_g
+
+MySex_Shape_children_g <- function(  mySex_vector   ) {
+  mySex_shape2  = mySex_vector
+  for(i in c(1:length(mySex_shape2)) ) {
+    if(mySex_shape2[i] == "boy")    { mySex_shape2[i] = c("boy"=16)   }
+    if(mySex_shape2[i] == "girl")   { mySex_shape2[i] = c("girl"=17)  }
+    if(mySex_shape2[i] == "father") { mySex_shape2[i] = c("father"=1) }
+    if(mySex_shape2[i] == "mother") { mySex_shape2[i] = c("mother"=2) }
+  }
+  mySex_shape2 = as.numeric(mySex_shape2)
+  names(mySex_shape2) = mySex_vector
+  return(mySex_shape2)
+}
+
+MyTech_color_children_g <- function(  myTech_vector  ) {
+  myTech_color  = myTech_vector
+  for(i in c(1:length(myTech_color)) ) {
+    if(myTech_color[i] == "NC")          { myTech_color[i] = c("NC"="black") }
+    if(myTech_color[i] == "IVF_fresh")   { myTech_color[i] = c("IVF_fresh"="blue") }
+    if(myTech_color[i] == "IVF_frozen")  { myTech_color[i] = c("IVF_frozen"="green") }
+    if(myTech_color[i] == "ICSI_fresh")  { myTech_color[i] = c("ICSI_fresh"="red") }
+    if(myTech_color[i] == "ICSI_frozen") { myTech_color[i] = c("ICSI_frozen"="purple") }
+  }
+  names(myTech_color) = myTech_vector
+  return(myTech_color)
+}
+
+MySex_Shape_children_g( mySex_All_vector_children_g )
+MyTech_color_children_g( myTech_All_vector_children_g )
+## boy=16, girl=17,  father=1, mother=2
+## NC=black,   IVF-fresh=blue,   IVF-frozen=green,  ICSI-fresh=red, ICSI-frozen=purple
+
+
+length( Files_All_vector_children_g )
+length( Files_All_list_children_g )
+length( mySampleID_All_vector_children_g )
+length( mySampleID_All_list_children_g )
+length( myTreatment_All_vector_children_g )
+length( myTreatment_All_list_children_g )
+length( mySex_All_vector_children_g )
+length( mySex_All_list_children_g )
+length( myTech_All_vector_children_g )
+length( myTech_All_list_children_g )
+##################################################################################################################
+
+
+
+
+
+
+
+## Define the sample groups about parents
+##################################################################################################################
+
+Files_NC_parents_g <- c(
+  paste( inputDir_g,   "67_NC-E24-F-Father_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "68_E56F-father-NC_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "69_NC-E123-F-Father_Rep1.bismark.cov",  sep="/" ),
+  paste( inputDir_g,   "67_NC-E24-M-Mother_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "68_E56M-mother-NC_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "69_NC-E123-M-Mother-merge_Rep1.bismark.cov",  sep="/" ) 
+)
+
+mySampleID_NC_parents_g <- rep( x="NC", times=length(Files_NC_parents_g) )
+Tech_NC_parents_g <- mySampleID_NC_parents_g
+
+for(i in c(1:length(mySampleID_NC_parents_g)) ) {
+  mySampleID_NC_parents_g[i] = paste(mySampleID_NC_parents_g[i], i, sep="_")
+}
+
+myTreatment_NC_parents_g <- rep( x=0,  times=length(Files_NC_parents_g) )
+
+Sex_NC_parents_g = rep( x="father",  times=length(Files_NC_parents_g) )  
+for(i in c(1:length(Sex_NC_parents_g)) ) {
+  Sex_NC_parents_g[i] = "father"
+  if(i>=4) { Sex_NC_parents_g[i] = "mother" }
+}
+
+
+
+Files_IVF_fresh_parents_g <- c(
+  paste( inputDir_g,   "70_E113F-father-ART_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "71_ART-W58-F-Father_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "72_ART-W779-F-Father_Rep1.bismark.cov",   sep="/" ),
+  paste( inputDir_g,   "70_E113M-mother-ART_Rep3.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "71_ART-W58-M-Mother_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "72_ART-W779-M-Mother_Rep1.bismark.cov",    sep="/" ) 
+)
+
+mySampleID_IVF_fresh_parents_g <- rep( x="IVF_fresh", times=length(Files_IVF_fresh_parents_g) )
+Tech_IVF_fresh_parents_g <- mySampleID_IVF_fresh_parents_g
+
+for(i in c(1:length(mySampleID_IVF_fresh_parents_g)) ) {
+  mySampleID_IVF_fresh_parents_g[i] = paste(mySampleID_IVF_fresh_parents_g[i], i, sep="_")
+}
+
+myTreatment_IVF_fresh_parents_g <- rep( x=1,  times=length(Files_IVF_fresh_parents_g) )
+
+Sex_IVF_fresh_parents_g = rep( x="father",      times=length(Files_IVF_fresh_parents_g) ) 
+for(i in c(1:length(Sex_IVF_fresh_parents_g)) ) {
+  Sex_IVF_fresh_parents_g[i] = "father"
+  if(i>=4) { Sex_IVF_fresh_parents_g[i] = "mother" }
+}
+
+
+
+Files_IVF_frozen_parents_g <- c(
+  paste( inputDir_g,   "9_W1365F-father-IVF-frozen-merge_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "10_W1733F-father-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "11_W1398F-father-IVF-frozen_Rep1.bismark.cov",   sep="/" ),
+  paste( inputDir_g,   "9_Q1-W1365M-mother-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "10_W1733M-Mother-IVF-frozen_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "12_Q19-W1579M-mother-ICSI-fresh_Rep1.bismark.cov",    sep="/" ) 
+)
+
+mySampleID_IVF_frozen_parents_g <- rep( x="IVF_frozen", times=length(Files_IVF_frozen_parents_g) )
+Tech_IVF_frozen_parents_g <- mySampleID_IVF_frozen_parents_g
+
+for(i in c(1:length(mySampleID_IVF_frozen_parents_g)) ) {
+  mySampleID_IVF_frozen_parents_g[i] = paste(mySampleID_IVF_frozen_parents_g[i], i, sep="_")
+}
+
+myTreatment_IVF_frozen_parents_g <- rep( x=2,  times=length(Files_IVF_frozen_parents_g) )
+
+Sex_IVF_frozen_parents_g = rep( x="father",      times=length(Files_IVF_frozen_parents_g) )
+for(i in c(1:length(Sex_IVF_frozen_parents_g)) ) {
+  Sex_IVF_frozen_parents_g[i] = "father"
+  if(i>=4) { Sex_IVF_frozen_parents_g[i] = "mother" }
+}
+
+
+
+Files_ICSI_fresh_parents_g <- c(
+  paste( inputDir_g,   "12_Q18-W1579F-father-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "13_W1647F-father-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "14_W1719F-father-ICSI-fresh_Rep1.bismark.cov",   sep="/" ),
+  paste( inputDir_g,   "12_Q19-W1579M-mother-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "13_Q23-W1647M-mother-ICSI-fresh_Rep1.bismark.cov",    sep="/" ),
+  paste( inputDir_g,   "14_Q15-W1719M-mother-ICSI-fresh_Rep1.bismark.cov",    sep="/" ) 
+)
+
+mySampleID_ICSI_fresh_parents_g <- rep( x="ICSI_fresh", times=length(Files_ICSI_fresh_parents_g) )
+Tech_ICSI_fresh_parents_g <- mySampleID_ICSI_fresh_parents_g
+
+for(i in c(1:length(mySampleID_ICSI_fresh_parents_g)) ) {
+  mySampleID_ICSI_fresh_parents_g[i] = paste(mySampleID_ICSI_fresh_parents_g[i], i, sep="_")
+}
+
+myTreatment_ICSI_fresh_parents_g <- rep( x=3,  times=length(Files_ICSI_fresh_parents_g) )
+
+Sex_ICSI_fresh_parents_g = rep( x="father",      times=length(Files_ICSI_fresh_parents_g) )  
+for(i in c(1:length(Sex_ICSI_fresh_parents_g)) ) {
+  Sex_ICSI_fresh_parents_g[i] = "father"
+  if(i>=4) { Sex_ICSI_fresh_parents_g[i] = "mother" }
+}
+
+
+
+Files_ICSI_frozen_parents_g <- c(
+  paste( inputDir_g,   "15_Q7-W871F-father-ICSI-frozen_Rep1.bismark.cov",     sep="/" ),
+  paste( inputDir_g,   "15_Q10-W871M-mother-ICSI-frozen_Rep1.bismark.cov",    sep="/" ) 
+)
+
+mySampleID_ICSI_frozen_parents_g <- rep( x="ICSI_frozen", times=length(Files_ICSI_frozen_parents_g) )
+Tech_ICSI_frozen_parents_g <- mySampleID_ICSI_frozen_parents_g
+
+for(i in c(1:length(mySampleID_ICSI_frozen_parents_g)) ) {
+  mySampleID_ICSI_frozen_parents_g[i] = paste(mySampleID_ICSI_frozen_parents_g[i], i, sep="_")
+}
+
+myTreatment_ICSI_frozen_parents_g <- rep( x=4,  times=length(Files_ICSI_frozen_parents_g) )
+
+Sex_ICSI_frozen_parents_g = rep( x="father",      times=length(Files_ICSI_frozen_parents_g) )  
+for(i in c(1:length(Sex_ICSI_frozen_parents_g)) ) {
+  Sex_ICSI_frozen_parents_g[i] = "father"
+  if(i>=2) { Sex_ICSI_frozen_parents_g[i] = "mother" }
+}
+
+
+
+Files_All_vector_parents_g <- c(
+  Files_NC_parents_g,
+  Files_IVF_fresh_parents_g,
+  Files_IVF_frozen_parents_g,
+  Files_ICSI_fresh_parents_g,
+  Files_ICSI_frozen_parents_g  
+)
+Files_All_list_parents_g <- as.list( Files_All_vector_parents_g )
+
+
+mySampleID_All_vector_parents_g <- c( 
+  mySampleID_NC_parents_g,
+  mySampleID_IVF_fresh_parents_g,
+  mySampleID_IVF_frozen_parents_g,
+  mySampleID_ICSI_fresh_parents_g,
+  mySampleID_ICSI_frozen_parents_g  
+)
+mySampleID_All_list_parents_g <- as.list( mySampleID_All_vector_parents_g )
+
+
+myTreatment_All_vector_parents_g <- c( 
+  myTreatment_NC_parents_g,
+  myTreatment_IVF_fresh_parents_g,
+  myTreatment_IVF_frozen_parents_g,
+  myTreatment_ICSI_fresh_parents_g,
+  myTreatment_ICSI_frozen_parents_g 
+)       
+myTreatment_All_list_parents_g <- as.list( myTreatment_All_vector_parents_g )
+
+
+mySex_All_vector_parents_g <- c( 
+  Sex_NC_parents_g,
+  Sex_IVF_fresh_parents_g,
+  Sex_IVF_frozen_parents_g,
+  Sex_ICSI_fresh_parents_g,
+  Sex_ICSI_frozen_parents_g 
+)       
+mySex_All_list_parents_g <- as.list( mySex_All_vector_parents_g )
+
+
+myTech_All_vector_parents_g <- c( 
+  Tech_NC_parents_g,
+  Tech_IVF_fresh_parents_g,
+  Tech_IVF_frozen_parents_g,
+  Tech_ICSI_fresh_parents_g,
+  Tech_ICSI_frozen_parents_g 
+)       
+myTech_All_list_parents_g <- as.list( myTech_All_vector_parents_g )
+
+
+## boy=16, girl=17,  father=1, mother=2
+## NC=black,   IVF-fresh=blue,   IVF-frozen=green,  ICSI-fresh=red, ICSI-frozen=purple
+mySex_All_shape_parents_g  = c( "boy"=16, "girl"=17, "father"=1, "mother"=2 ) 
+myTech_All_color_parents_g = c( "NC"="black", "IVF_fresh"="blue", "IVF_frozen"="green",  "ICSI_fresh"="red", "ICSI_frozen"="purple" )
+mySex_All_shape_parents_g
+myTech_All_color_parents_g
+
+MySex_Shape_parents_g <- function(  mySex_vector   ) {
+  mySex_shape2  = mySex_vector
+  for(i in c(1:length(mySex_shape2)) ) {
+    if(mySex_shape2[i] == "boy")    { mySex_shape2[i] = c("boy"=16)   }
+    if(mySex_shape2[i] == "girl")   { mySex_shape2[i] = c("girl"=17)  }
+    if(mySex_shape2[i] == "father") { mySex_shape2[i] = c("father"=1) }
+    if(mySex_shape2[i] == "mother") { mySex_shape2[i] = c("mother"=2) }
+  }
+  mySex_shape2 = as.numeric(mySex_shape2)
+  names(mySex_shape2) = mySex_vector
+  return(mySex_shape2)
+}
+
+MyTech_color_parents_g <- function(  myTech_vector  ) {
+  myTech_color  = myTech_vector
+  for(i in c(1:length(myTech_color)) ) {
+    if(myTech_color[i] == "NC")          { myTech_color[i] = c("NC"="black") }
+    if(myTech_color[i] == "IVF_fresh")   { myTech_color[i] = c("IVF_fresh"="blue") }
+    if(myTech_color[i] == "IVF_frozen")  { myTech_color[i] = c("IVF_frozen"="green") }
+    if(myTech_color[i] == "ICSI_fresh")  { myTech_color[i] = c("ICSI_fresh"="red") }
+    if(myTech_color[i] == "ICSI_frozen") { myTech_color[i] = c("ICSI_frozen"="purple") }
+  }
+  names(myTech_color) = myTech_vector
+  return(myTech_color)
+}
+
+MySex_Shape_parents_g( mySex_All_vector_parents_g )
+MyTech_color_parents_g( myTech_All_vector_parents_g )
+## boy=16, girl=17,  father=1, mother=2
+## NC=black,   IVF-fresh=blue,   IVF-frozen=green,  ICSI-fresh=red, ICSI-frozen=purple
+
+
+length( Files_All_vector_parents_g )
+length( Files_All_list_parents_g )
+length( mySampleID_All_vector_parents_g )
+length( mySampleID_All_list_parents_g )
+length( myTreatment_All_vector_parents_g )
+length( myTreatment_All_list_parents_g )
+length( mySex_All_vector_parents_g )
+length( mySex_All_list_parents_g )
+length( myTech_All_vector_parents_g )
+length( myTech_All_list_parents_g )
+##################################################################################################################
+
+
+
+
+
+
+
+##################################################################################################################
+length( Files_All_vector_children_g )
+length( Files_All_list_children_g )
+length( mySampleID_All_vector_children_g )
+length( mySampleID_All_list_children_g )
+length( myTreatment_All_vector_children_g )
+length( myTreatment_All_list_children_g )
+length( mySex_All_vector_children_g )
+length( mySex_All_list_children_g )
+length( myTech_All_vector_children_g )
+length( myTech_All_list_children_g )
+
+length( Files_All_vector_parents_g )
+length( Files_All_list_parents_g )
+length( mySampleID_All_vector_parents_g )
+length( mySampleID_All_list_parents_g )
+length( myTreatment_All_vector_parents_g )
+length( myTreatment_All_list_parents_g )
+length( mySex_All_vector_parents_g )
+length( mySex_All_list_parents_g )
+length( myTech_All_vector_parents_g )
+length( myTech_All_list_parents_g )
+
+
+
+Files_All_vector_merge_g       = c(Files_All_vector_children_g,       Files_All_vector_parents_g)
+mySampleID_All_vector_merge_g  = c(mySampleID_All_vector_children_g,  mySampleID_All_vector_parents_g)
+myTreatment_All_vector_merge_g = c(myTreatment_All_vector_children_g, myTreatment_All_vector_parents_g)
+mySex_All_vector_merge_g       = c(mySex_All_vector_children_g,       mySex_All_vector_parents_g)
+myTech_All_vector_merge_g      = c(myTech_All_vector_children_g,      myTech_All_vector_parents_g)
+
+Files_All_list_merge_g        =  as.list( Files_All_vector_merge_g ) 
+mySampleID_All_list_merge_g   =  as.list( mySampleID_All_vector_merge_g ) 
+myTreatment_All_list_merge_g  =  as.list( myTreatment_All_vector_merge_g ) 
+mySex_All_list_merge_g        =  as.list( mySex_All_vector_merge_g )   
+myTech_All_list_merge_g       =  as.list( myTech_All_vector_merge_g ) 
+
+
+
+length( Files_All_vector_merge_g )
+length( Files_All_list_merge_g )
+length( mySampleID_All_vector_merge_g )
+length( mySampleID_All_list_merge_g )
+length( myTreatment_All_vector_merge_g )
+length( myTreatment_All_list_merge_g )
+length( mySex_All_vector_merge_g )
+length( mySex_All_list_merge_g )
+length( myTech_All_vector_merge_g )
+length( myTech_All_list_merge_g )
+
+##################################################################################################################
+
+
+
+
+
+
+
+## Read the files about children
+##################################################################################################################
+myOutDir_sub1_children_g = paste(outDir_g, "/1A_ReadRawFiles_children",  sep="") 
+if( ! file.exists(myOutDir_sub1_children_g) ) { dir.create(myOutDir_sub1_children_g, recursive = TRUE) }
+
+sink( file=paste(myOutDir_sub1_children_g, "1_length-variables.txt", sep="/") )
+length( Files_All_vector_children_g )
+length( Files_All_list_children_g )
+length( mySampleID_All_vector_children_g )
+length( mySampleID_All_list_children_g )
+length( myTreatment_All_vector_children_g )
+length( myTreatment_All_list_children_g )
+length( mySex_All_vector_children_g )
+length( mySex_All_list_children_g )
+length( myTech_All_vector_children_g )
+length( myTech_All_list_children_g )
+print( "#################### Files_All_vector_children_g ####################" )
+print( Files_All_vector_children_g )
+print( "#################### Files_All_list_children_g ####################" )
+print( Files_All_list_children_g )
+print( "#################### mySampleID_All_vector_children_g ####################" )
+print( mySampleID_All_vector_children_g )
+print( "#################### mySampleID_All_list_children_g ####################" )
+print( mySampleID_All_list_children_g )
+print( "#################### myTreatment_All_vector_children_g ####################" )
+print( myTreatment_All_vector_children_g )
+print( "#################### myTreatment_All_list_children_g ####################" )
+print( myTreatment_All_list_children_g )
+print( "#################### mySex_All_vector_children_g ####################" )
+print( mySex_All_vector_children_g )
+print( "#################### mySex_All_list_children_g ####################" )
+print( mySex_All_list_children_g )
+print( "#################### myTech_All_vector_children_g ####################" )
+print( myTech_All_vector_children_g )
+print( "#################### myTech_All_list_children_g ####################" )
+print( myTech_All_list_children_g )
 sink()
 
 
 # read the files to a methylRawList object: myobj
-sink( file=paste(myOutDir_sub1_g, "2_theLog-of-read-inputFiles.txt", sep="/") )
-myobj_g = methRead( Files_All_list_g,
-               sample.id = mySampleID_All_list_g,
-               assembly  = "hg38",
-               treatment = myTreatment_All_vector_g,
-               context   = "CpG",
-               pipeline  = "bismarkCoverage",
-               mincov    = 1,       ## >= n
-               header    = FALSE
+sink( file=paste(myOutDir_sub1_children_g, "2_theLog-of-read-inputFiles.txt", sep="/") )
+myobj_children_g = methRead( Files_All_list_children_g,
+                             sample.id = mySampleID_All_list_children_g,
+                             assembly  = "hg38",
+                             treatment = myTreatment_All_vector_children_g,
+                             context   = "CpG",
+                             pipeline  = "bismarkCoverage",
+                             mincov    = 1,       ## >= n
+                             header    = FALSE
 )
 sink()
 
 
-sink( file=paste(myOutDir_sub1_g, "3_all-rawFiles.txt", sep="/") )
-    print(Files_All_vector_g)
-    print("#########################")
-    print(myobj_g)
+sink( file=paste(myOutDir_sub1_children_g, "3_all-rawFiles.txt", sep="/") )
+print(Files_All_vector_children_g)
+print("#########################")
+print(myobj_children_g)
 sink()
 
 
-sink( file=paste(myOutDir_sub1_g, "4_dimensions-of-eachFile-eachCov.txt", sep="/")  )
-for( i in c(1:length(Files_All_vector_g)) ) {
+sink( file=paste(myOutDir_sub1_children_g, "4_dimensions-of-eachFile-eachCov.txt", sep="/")  )
+for( i in c(1:length(Files_All_vector_children_g)) ) {
   print( "######################" )
-  print(   Files_All_vector_g[i]  )
-  print(   dim(myobj_g[[i]])  )
+  print(   Files_All_vector_children_g[i]  )
+  print(   dim(myobj_children_g[[i]])  )
 }
 sink()
 
 
-sink( file=paste(myOutDir_sub1_g, "5_dimensions-of-eachCov.txt", sep="/")  )
-for( i in c(1:length(Files_All_vector_g)) ) {
-  print(   dim(myobj_g[[i]])  )
+sink( file=paste(myOutDir_sub1_children_g, "5_dimensions-of-eachCov.txt", sep="/")  )
+for( i in c(1:length(Files_All_vector_children_g)) ) {
+  print(   dim(myobj_children_g[[i]])  )
 }
 sink()
 
 
-continue_on_error_g <- function()  {
+continue_on_error_children_g <- function()  {
   print("NOTE: THERE WAS AN ERROR HERE. We are continuing because we have set 'options(error=continue_on_error())'")
 }
 # This is the key option
-options(error=continue_on_error_g) 
+options(error=continue_on_error_children_g) 
 
 
-myobj_nor_g <- myobj_g
-##myobj_nor_g <- normalizeCoverage(myobj_g)
+myobj_nor_children_g <- myobj_children_g
+##myobj_nor_children_g <- normalizeCoverage(myobj_children_g)
 ##################################################################################################################
 
 
 
 
 
-
-
-
-
-
-
+## Read the files about parents
 ##################################################################################################################
-myOutDir_sub1_parents_g = paste(outDir_g, "/1_ReadRawFiles_parents",  sep="") 
+myOutDir_sub1_parents_g = paste(outDir_g, "/1B_ReadRawFiles_parents",  sep="") 
 if( ! file.exists(myOutDir_sub1_parents_g) ) { dir.create(myOutDir_sub1_parents_g, recursive = TRUE) }
 
 sink( file=paste(myOutDir_sub1_parents_g, "1_length-variables.txt", sep="/") )
@@ -2498,12 +2886,105 @@ myobj_nor_parents_g <- myobj_parents_g
 
 
 
+
+## Read the files about parents
 ##################################################################################################################
-myOutDir_sub2_g = paste(outDir_g, "/2_SD_CV",  sep="") 
+myOutDir_sub1_merge_g = paste(outDir_g, "/1C_ReadRawFiles_allSamples",  sep="") 
+if( ! file.exists(myOutDir_sub1_merge_g) ) { dir.create(myOutDir_sub1_merge_g, recursive = TRUE) }
+
+sink( file=paste(myOutDir_sub1_merge_g, "1_length-variables.txt", sep="/") )
+length( Files_All_vector_merge_g )
+length( Files_All_list_merge_g )
+length( mySampleID_All_vector_merge_g )
+length( mySampleID_All_list_merge_g )
+length( myTreatment_All_vector_merge_g )
+length( myTreatment_All_list_merge_g )
+length( mySex_All_vector_merge_g )
+length( mySex_All_list_merge_g )
+length( myTech_All_vector_merge_g )
+length( myTech_All_list_merge_g )
+print( "#################### Files_All_vector_merge_g ####################" )
+print( Files_All_vector_merge_g )
+print( "#################### Files_All_list_merge_g ####################" )
+print( Files_All_list_merge_g )
+print( "#################### mySampleID_All_vector_merge_g ####################" )
+print( mySampleID_All_vector_merge_g )
+print( "#################### mySampleID_All_list_merge_g ####################" )
+print( mySampleID_All_list_merge_g )
+print( "#################### myTreatment_All_vector_merge_g ####################" )
+print( myTreatment_All_vector_merge_g )
+print( "#################### myTreatment_All_list_merge_g ####################" )
+print( myTreatment_All_list_merge_g )
+print( "#################### mySex_All_vector_merge_g ####################" )
+print( mySex_All_vector_merge_g )
+print( "#################### mySex_All_list_merge_g ####################" )
+print( mySex_All_list_merge_g )
+print( "#################### myTech_All_vector_merge_g ####################" )
+print( myTech_All_vector_merge_g )
+print( "#################### myTech_All_list_merge_g ####################" )
+print( myTech_All_list_merge_g )
+sink()
+
+
+# read the files to a methylRawList object: myobj
+sink( file=paste(myOutDir_sub1_merge_g, "2_theLog-of-read-inputFiles.txt", sep="/") )
+myobj_merge_g = methRead( Files_All_list_merge_g,
+                          sample.id = mySampleID_All_list_merge_g,
+                          assembly  = "hg38",
+                          treatment = myTreatment_All_vector_merge_g,
+                          context   = "CpG",
+                          pipeline  = "bismarkCoverage",
+                          mincov    = 1,       ## >= n
+                          header    = FALSE
+)
+sink()
+
+
+sink( file=paste(myOutDir_sub1_merge_g, "3_all-rawFiles.txt", sep="/") )
+print(Files_All_vector_merge_g)
+print("#########################")
+print(myobj_merge_g)
+sink()
+
+
+sink( file=paste(myOutDir_sub1_merge_g, "4_dimensions-of-eachFile-eachCov.txt", sep="/")  )
+for( i in c(1:length(Files_All_vector_merge_g)) ) {
+  print( "######################" )
+  print(   Files_All_vector_merge_g[i]  )
+  print(   dim(myobj_merge_g[[i]])  )
+}
+sink()
+
+
+sink( file=paste(myOutDir_sub1_merge_g, "5_dimensions-of-eachCov.txt", sep="/")  )
+for( i in c(1:length(Files_All_vector_merge_g)) ) {
+  print(   dim(myobj_merge_g[[i]])  )
+}
+sink()
+
+
+continue_on_error_merge_g <- function()  {
+  print("NOTE: THERE WAS AN ERROR HERE. We are continuing because we have set 'options(error=continue_on_error())'")
+}
+# This is the key option
+options(error=continue_on_error_merge_g) 
+
+
+myobj_nor_merge_g <- myobj_merge_g
+##myobj_nor_merge_g <- normalizeCoverage(myobj_merge_g)
+##################################################################################################################
+
+
+
+
+
+
+
+##################################################################################################################
+myOutDir_sub2_g = paste(outDir_g, "/2_SD_CV_children_parents",  sep="") 
 if( ! file.exists(myOutDir_sub2_g) ) { dir.create(myOutDir_sub2_g, recursive = TRUE) }
 
-
-tiles_2two_children_g = tileMethylCounts( myobj_nor_g,   win.size=1000,   step.size=1000,   cov.bases = 3  )    
+tiles_2two_children_g = tileMethylCounts( myobj_nor_children_g,   win.size=1000,   step.size=1000,   cov.bases = 3  )    
 meth_2two_children_g  = unite( tiles_2two_children_g, destrand=FALSE, mc.cores=16   )   ## 100% overlap
 mat_2two_children_g   = percMethylation( meth_2two_children_g )
 head(mat_2two_children_g)
@@ -2540,11 +3021,14 @@ write.table(sd_mean_cv_2two_children_g ,
 
 
 
+
+
+##############
 tiles_2two_parents_g = tileMethylCounts( myobj_nor_parents_g,   win.size=1000,   step.size=1000,   cov.bases = 3  )    
 meth_2two_parents_g  = unite( tiles_2two_parents_g, destrand=FALSE, mc.cores=16   )   ## 100% overlap
 mat_2two_parents_g   = percMethylation( meth_2two_parents_g )
-head(mat_2two_parents)
-dim(mat_2two_parents)
+head(mat_2two_parents_g)
+dim(mat_2two_parents_g)
 
 sd_2two_parents_g = rowSds(mat_2two_parents_g)
 length(sd_2two_parents_g)
@@ -2576,57 +3060,91 @@ write.table(sd_mean_cv_2two_parents_g ,
             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
             row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
+
+
+#################
 dim(sd_mean_cv_2two_children_g)
 dim(sd_mean_cv_2two_parents_g)
-
- 
 
 my_wdata_sd_g = data.frame( sd1 = c(sd_2two_children_g, sd_2two_parents_g),
                             type1 = factor( c(rep("children" , times=length(sd_2two_children_g)),
                                               rep("parents" ,  times=length(sd_2two_parents_g)) ) )
                           )
 
-
 pdf( file=paste(myOutDir_sub2_g, "3A_StandardDeviation-tiles.pdf", sep="/") , width=3, height=3 )
 ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", 
           alpha = 0.5, title = "Distribution of Standard Deviation", 
-          xlab = "Standard Deviation", ylab = "Density")  
+          xlab = "Standard Deviation (%)", ylab = "Density")  
 ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", 
           alpha = 0.5, title = "Distribution of Standard Deviation", 
-          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 20)
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 20)
 ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", 
           alpha = 0.5, title = "Distribution of Standard Deviation", 
-          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 10)
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 15)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 12.5)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 10)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 8)
 dev.off()
 
 
-pdf( file=paste(myOutDir_sub2_g, "3B_StandardDeviation-fill-tiles.pdf", sep="/"), width=3, height=3  )
+
+pdf( file=paste(myOutDir_sub2_g, "3B_StandardDeviation-fill-tiles.pdf", sep="/") , width=3, height=3 )
 ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
-          alpha = 0.5, title = "Distribution of Standard Deviation", 
-          xlab = "Standard Deviation", ylab = "Density")  
-ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1",  
-          alpha = 0.5, title = "Distribution of Standard Deviation", 
-          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 20)
-ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",   fill = "type1", 
-          alpha = 0.5, title = "Distribution of Standard Deviation", 
-          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 10)
-dev.off()
-
-
-pdf( file=paste(myOutDir_sub2_g, "3C_StandardDeviation-tiles.pdf", sep="/") , width=3, height=3 )
-ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
-          alpha = 0.5, title = "Distribution of Standard Deviation", 
-          xlab = "Standard Deviation", ylab = "Density")  
-ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
-          alpha = 0.5, title = "Distribution of Standard Deviation", 
-          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 20)
-ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
-          alpha = 0.5, title = "Distribution of Standard Deviation", 
-          xlab = "Standard Deviation", ylab = "Density") + xlim(0, 10)
+          alpha = 0.2, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density")  
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 20)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 15)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 12.5)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 10)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 8)
 dev.off()
 
 
 
+
+
+
+
+pdf( file=paste(myOutDir_sub2_g, "3C_StandardDeviation-fill-alpha0.1-tiles.pdf", sep="/") , width=3, height=3 )
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density")  
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 20)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 15)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 12.5)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 10)
+ggdensity(my_wdata_sd_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Standard Deviation", 
+          xlab = "Standard Deviation (%)", ylab = "Density") + xlim(0, 8)
+dev.off()
+
+
+
+ 
 
 pdf( file=paste(myOutDir_sub2_g, "4A_StandardDeviation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
 ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=1, 
@@ -2637,10 +3155,20 @@ ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=1,
        xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 20)
 ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
        title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 15)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 12)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Standard Deviation", 
        xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 10)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 8)
 dev.off()
 
 
+ 
 pdf( file=paste(myOutDir_sub2_g, "4B_StandardDeviation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
 ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2, 
        title = "Distribution of Standard Deviation", 
@@ -2650,21 +3178,39 @@ ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,
        xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 20)
 ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
        title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 15)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 12)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Standard Deviation", 
        xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 10)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 8)
 dev.off()
 
 
 
 pdf( file=paste(myOutDir_sub2_g, "4C_StandardDeviation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
-ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",    
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",   
        title = "Distribution of Standard Deviation", 
        xlab = "Standard Deviation", ylab = "CDF")  
-ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",   
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",     
        title = "Distribution of Standard Deviation", 
        xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 20)
 ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",     
        title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 15)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",     
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 12)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",     
+       title = "Distribution of Standard Deviation", 
        xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 10)
+ggecdf(my_wdata_sd_g, x = "sd1", color = "type1", linetype = "type1",    
+       title = "Distribution of Standard Deviation", 
+       xlab = "Standard Deviation", ylab = "CDF") + xlim(0, 8)
 dev.off()
 
 
@@ -2678,48 +3224,82 @@ dev.off()
 
 ##############
 my_wdata_cv_g = data.frame( sd1 = c(cv_2two_children_g, cv_2two_parents_g),
-                            type1 = factor( c(rep("children" , times=length(sd_2two_children_g)),
-                                              rep("parents" ,  times=length(sd_2two_parents_g)) ) )
+                            type1 = factor( c(rep("children" , times=length(cv_2two_children_g)),
+                                              rep("parents" ,  times=length(cv_2two_parents_g)) ) )
 )
 
 
 pdf( file=paste(myOutDir_sub2_g, "6A_CoefficientOfVariation-tiles.pdf", sep="/") , width=3, height=3 )
 ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", 
           alpha = 0.5, title = "Distribution of Coefficient of Variation", 
-          xlab = "Coefficient of Variation", ylab = "Density")  
+          xlab = "Coefficient of Variation (%)", ylab = "Density")  
 ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", 
           alpha = 0.5, title = "Distribution of Coefficient of Variation", 
-          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 1)
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 1)
 ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", 
           alpha = 0.5, title = "Distribution of Coefficient of Variation", 
-          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 0.5)
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.5)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.3)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.2)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", 
+          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.15)
 dev.off()
 
 
-pdf( file=paste(myOutDir_sub2_g, "6B_CoefficientOfVariation-fill-tiles.pdf", sep="/"), width=3, height=3  )
+
+pdf( file=paste(myOutDir_sub2_g, "6B_CoefficientOfVariation-fill-tiles.pdf", sep="/") , width=3, height=3 )
 ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
-          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
-          xlab = "Coefficient of Variation", ylab = "Density")  
-ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1",  
-          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
-          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 1)
-ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",   fill = "type1", 
-          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
-          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 0.5)
+          alpha = 0.2, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density")  
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 1)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.5)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.3)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.2)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.2, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.15)
 dev.off()
 
 
-pdf( file=paste(myOutDir_sub2_g, "6C_CoefficientOfVariation-tiles.pdf", sep="/") , width=3, height=3 )
-ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
-          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
-          xlab = "Coefficient of Variation", ylab = "Density")  
-ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
-          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
-          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 1)
-ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1", rug = TRUE,
-          alpha = 0.5, title = "Distribution of Coefficient of Variation", 
-          xlab = "Coefficient of Variation", ylab = "Density") + xlim(0, 0.5)
+
+
+
+
+
+pdf( file=paste(myOutDir_sub2_g, "6C_CoefficientOfVariation-fill-alpha0.1-tiles.pdf", sep="/") , width=3, height=3 )
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density")  
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 1)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.5)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.3)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.2)
+ggdensity(my_wdata_cv_g, x = "sd1",  add = "mean", color = "type1",  fill = "type1", 
+          alpha = 0.1, title = "Distribution of Coefficient of Variation", 
+          xlab = "Coefficient of Variation (%)", ylab = "Density") + xlim(0, 0.15)
 dev.off()
+
 
 
 
@@ -2734,7 +3314,17 @@ ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=1,
 ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
        title = "Distribution of Coefficient of Variation", 
        xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.5)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.3)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.2)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=1,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.15)
 dev.off()
+
 
 
 pdf( file=paste(myOutDir_sub2_g, "7B_CoefficientOfVariation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
@@ -2747,20 +3337,38 @@ ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,
 ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
        title = "Distribution of Coefficient of Variation", 
        xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.5)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.3)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.2)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",  size=0.2,  
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.15)
 dev.off()
 
 
 
 pdf( file=paste(myOutDir_sub2_g, "7C_CoefficientOfVariation-CDF-tiles.pdf", sep="/"), width=3, height=3 )
-ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",    
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",   
        title = "Distribution of Coefficient of Variation", 
        xlab = "Coefficient of Variation", ylab = "CDF")  
-ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",   
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",     
        title = "Distribution of Coefficient of Variation", 
        xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 1)
 ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",     
        title = "Distribution of Coefficient of Variation", 
        xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.5)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",     
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.3)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",     
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.2)
+ggecdf(my_wdata_cv_g, x = "sd1", color = "type1", linetype = "type1",    
+       title = "Distribution of Coefficient of Variation", 
+       xlab = "Coefficient of Variation", ylab = "CDF") + xlim(0, 0.15)
 dev.off()
 
 
@@ -2770,510 +3378,275 @@ ggqqplot(my_wdata_cv_g, x = "sd1", color = "type1")
 dev.off()
 
 
-###############################################
 
 
 
+##############
+dim(sd_mean_cv_2two_children_g)
+dim(sd_mean_cv_2two_parents_g)
+
+myAnnotation_1( includeRegions2 = sd_mean_cv_2two_children_g, 
+                path2 =  paste(myOutDir_sub2_g, "annotation_children", sep="/")
+              ) 
+
+myAnnotation_1( includeRegions2 = sd_mean_cv_2two_parents_g, 
+                path2 =  paste(myOutDir_sub2_g, "annotation_parents", sep="/")
+) 
 
 
-
-
-
-
-
-
-
-
-print("###########sign-2##########")
 ##################################################################################################################
-  dataFrame_temp2_A <- data.frame(
-    mysampleID  = c(mySampleID_NC_g,  mySampleID_IVF_fresh_g),
-    mytreatment = c(myTreatment_NC_g, myTreatment_IVF_fresh_g),
-    mysex       = c(Sex_NC_g,  Sex_IVF_fresh_g),
-    mytech      = c(Tech_NC_g, Tech_IVF_fresh_g)    
-  )
-  
  
-  ###
-  print("###########sign-2A##########")
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/2A-1_NC-vs-IVFfresh_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp2_A  )
-
-  print("###########sign-2B##########")
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/2B-3_NC-vs-IVFfresh_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp2_A  )
-  
-  print("###########sign-2C##########")
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/2C-5_NC-vs-IVFfresh_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp2_A  )   
-##################################################################################################################
 
 
 
-
-
-print("###########sign-3##########")
-##################################################################################################################
-  dataFrame_temp3_A <- data.frame(
-    mysampleID  = c(mySampleID_NC_g,  mySampleID_IVF_frozen_g),
-    mytreatment = c(myTreatment_NC_g, myTreatment_IVF_frozen_g),
-    mysex       = c(Sex_NC_g,  Sex_IVF_frozen_g),
-    mytech      = c(Tech_NC_g, Tech_IVF_frozen_g)    
-  )
-  
-  
-  ###
-  print("###########sign-3A##########")
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/3A-1_NC-vs-IVFfrozen_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp3_A  )
-  print("###########sign-3B##########") 
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/3B-3_NC-vs-IVFfrozen_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp3_A  )
-  print("###########sign-3C##########")
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/3C-5_NC-vs-IVFfrozen_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp3_A  )   
-##################################################################################################################
 
 
 
 
 
 ##################################################################################################################
-  dataFrame_temp4_A <- data.frame(
-    mysampleID  = c(mySampleID_NC_g,  mySampleID_ICSI_fresh_g),
-    mytreatment = c(myTreatment_NC_g, myTreatment_ICSI_fresh_g),
-    mysex       = c(Sex_NC_g,  Sex_ICSI_fresh_g),
-    mytech      = c(Tech_NC_g, Tech_ICSI_fresh_g)    
-  )
+myOutDir_sub3_g = paste(outDir_g, "/3_SD_CV_allSamples",  sep="") 
+if( ! file.exists(myOutDir_sub3_g) ) { dir.create(myOutDir_sub3_g, recursive = TRUE) }
+
+tiles_2two_merge_g = tileMethylCounts( myobj_nor_merge_g,   win.size=1000,   step.size=1000,   cov.bases = 3  )    
+meth_2two_merge_g  = unite( tiles_2two_merge_g, destrand=FALSE, mc.cores=16   )   ## 100% overlap
+mat_2two_merge_g   = percMethylation( meth_2two_merge_g )
+head(mat_2two_merge_g)
+dim(mat_2two_merge_g)
+
+sd_2two_merge_g = rowSds(mat_2two_merge_g)
+length(sd_2two_merge_g)
+head(sd_2two_merge_g)
+
+mean_2two_merge_g = rowMeans2(mat_2two_merge_g)
+length(mean_2two_merge_g)
+head(mean_2two_merge_g)
+
+cv_2two_merge_g = sd_2two_merge_g/mean_2two_merge_g
+length(cv_2two_merge_g)
+head(cv_2two_merge_g)
+
+sd_mean_cv_2two_merge_g  <- cbind(getData(meth_2two_merge_g)[,1:4], sd_2two_merge_g, mean_2two_merge_g, cv_2two_merge_g)               
+head(sd_mean_cv_2two_merge_g)
+
+
+write.table(meth_2two_merge_g , 
+            file = paste(myOutDir_sub3_g,   "1A_meth-tiles_merge.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+write.table(mat_2two_merge_g , 
+            file = paste(myOutDir_sub3_g,   "1B_mat-tiles_merge.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+write.table(sd_mean_cv_2two_merge_g , 
+            file = paste(myOutDir_sub3_g,   "1C_SD-Mean-CV_merge.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+
+
+
+##############
+dim(sd_mean_cv_2two_merge_g)
+
+myAnnotation_1( includeRegions2 = sd_mean_cv_2two_merge_g, 
+                path2 =  paste(myOutDir_sub3_g, "annotation_merge", sep="/")
+) 
+
+ 
+###########
+dim(mat_2two_merge_g)
+
+sd_2two_mergeParents_g = rowSds(mat_2two_merge_g[,27:52])
+length(sd_2two_mergeParents_g)
+head(sd_2two_mergeParents_g)
+
+mean_2two_mergeParents_g = rowMeans2(mat_2two_merge_g[,27:52])
+length(mean_2two_mergeParents_g)
+head(mean_2two_mergeParents_g)
+
+cv_2two_mergeParents_g = sd_2two_merge_g/mean_2two_merge_g
+length(cv_2two_mergeParents_g)
+head(cv_2two_mergeParents_g)
+
+sd_mean_cv_2two_mergeParents_g  <- cbind(getData(meth_2two_merge_g)[,1:4], sd_2two_mergeParents_g, 
+                                  mean_2two_mergeParents_g, cv_2two_mergeParents_g)               
+head(sd_mean_cv_2two_mergeParents_g)
+
+write.table(sd_mean_cv_2two_mergeParents_g , 
+            file = paste(myOutDir_sub3_g,   "2_SD-Mean-CV_mergeParents.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+
+
+###########
+dim(mat_2two_merge_g)
+
+sd_2two_mergeChildren_g = rowSds(mat_2two_merge_g[,1:26])
+length(sd_2two_mergeChildren_g)
+head(sd_2two_mergeChildren_g)
+
+mean_2two_mergeChildren_g = rowMeans2(mat_2two_merge_g[,1:26])
+length(mean_2two_mergeChildren_g)
+head(mean_2two_mergeChildren_g)
+
+cv_2two_mergeChildren_g = sd_2two_merge_g/mean_2two_merge_g
+length(cv_2two_mergeChildren_g)
+head(cv_2two_mergeChildren_g)
+
+sd_mean_cv_2two_mergeChildren_g  <- cbind(getData(meth_2two_merge_g)[,1:4], sd_2two_mergeChildren_g, 
+                                          mean_2two_mergeChildren_g, cv_2two_mergeChildren_g)               
+head(sd_mean_cv_2two_mergeChildren_g)
+
+write.table(sd_mean_cv_2two_mergeChildren_g , 
+            file = paste(myOutDir_sub3_g,   "3_SD-Mean-CV_mergeChildren.txt",  sep="/"), 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+
+
+############################
+
+
+
+MyScatterDiagram_1 <- function(vector2X,  vector2Y,  path2,   fileName2,   xLab2,   yLab2,  title2,  height2=4,  width2=4,  yMin2=0, yMax2=2, 
+                               xMin2=0, xMax2=2,  alpha2=0.5, diffThres2=1.5, colours2=c("red", "blue", "purple"))
   
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/4A-1_NC-vs-ICSIfresh_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp4_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/4B-3_NC-vs-ICSIfresh_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp4_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/4C-5_NC-vs-ICSIfresh_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp4_A  )   
+  MyScatterDiagram_2 <- function(vector2X,  vector2Y,  path2,   fileName2,   xLab2,   yLab2,  title2,  
+                                 height2=4,  width2=4,  yMin2=0, yMax2=2,  xMin2=0, xMax2=2 )
+    
+    
 ##################################################################################################################
 
 
 
 
 
-##################################################################################################################
-  dataFrame_temp5_A <- data.frame(
-    mysampleID  = c(mySampleID_NC_g,  mySampleID_ICSI_frozen_g),
-    mytreatment = c(myTreatment_NC_g, myTreatment_ICSI_frozen_g),
-    mysex       = c(Sex_NC_g,  Sex_ICSI_frozen_g),
-    mytech      = c(Tech_NC_g, Tech_ICSI_frozen_g)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/5A-1_NC-vs-ICSIfrozen_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp5_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/5B-3_NC-vs-ICSIfrozen_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp5_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/5C-5_NC-vs-ICSIfrozen_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp5_A  )   
-##################################################################################################################
 
-
-
-
-
-##################################################################################################################
-  dataFrame_temp6_A <- data.frame(
-    mysampleID  = c(mySampleID_IVF_fresh_g,  mySampleID_IVF_frozen_g),
-    mytreatment = c(myTreatment_IVF_fresh_g, myTreatment_IVF_frozen_g),
-    mysex       = c(Sex_IVF_fresh_g,         Sex_IVF_frozen_g),
-    mytech      = c(Tech_IVF_fresh_g,        Tech_IVF_frozen_g)    
-  )
+myTopPercent_1 <- function(matrixTemp2, sdParentsTemp2, pathTemp2, percentTemp2, sdMeanCV2) {
+  #matrixTemp2 =  mat_2two_merge_g
+  #sdParentsTemp2 = sd_2two_mergeParents_g
+  #pathTemp2 = paste(myOutDir_sub3_g,   "rmParetns",  sep="/")
+  #percentTemp2 = 0.01
+  #sdMeanCV2 = sd_mean_cv_2two_mergeParents_g
+  #dim(matrixTemp2)
+  #length(sdParentsTemp2)
+  if( ! file.exists(pathTemp2) ) { dir.create(pathTemp2, recursive = TRUE) }
+  
+  sdParentsTemp2_sorted <- sort( sdParentsTemp2, decreasing = TRUE )
+  threshMe <- sdParentsTemp2_sorted[length(sdParentsTemp2)*percentTemp2]
+  myBoole1 <- (sdParentsTemp2 <= threshMe)  ## will be kept
+  
+  write.table(sdParentsTemp2[!myBoole1] , 
+              file = paste(pathTemp2,   "1A_topSD_removed.txt",  sep="/"), 
+              append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+              row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+  
+  write.table(sdParentsTemp2[myBoole1] , 
+              file = paste(pathTemp2,   "1B_SD_kept.txt",  sep="/"), 
+              append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+              row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+  
+  write.table(matrixTemp2[!myBoole1,] , 
+              file = paste(pathTemp2,   "2A_topSD_removed_matrix.txt",  sep="/"), 
+              append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+              row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+  
+  write.table(matrixTemp2[myBoole1,] , 
+              file = paste(pathTemp2,   "2B_SD_kept_matrix.txt",  sep="/"), 
+              append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+              row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+  
+  write.table(sdMeanCV2[!myBoole1,] , 
+              file = paste(pathTemp2,   "3A_topSD_removed_sdMeanCV.txt",  sep="/"), 
+              append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+              row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+  
+  write.table(sdMeanCV2[myBoole1,] , 
+              file = paste(pathTemp2,   "3B_SD_kept_sdMeanCV.txt",  sep="/"), 
+              append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+              row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
   
   
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/6A-1_IVF_fresh_vs_IVF_frozen_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp6_A  )
+  matrixTemp2_children <- matrixTemp2[,1:26]
+  matrixTemp2_parents  <- matrixTemp2[,27:52]
   
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/6B-3_IVF_fresh_vs_IVF_frozen_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp6_A  )
+  matrixTemp2_children_removed <- matrixTemp2_children[!myBoole1,]
+  matrixTemp2_children_kept   <- matrixTemp2_children[myBoole1,]
   
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/6C-5_IVF_fresh_vs_IVF_frozen_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp6_A  )   
-##################################################################################################################
-
-
-
-
-
-##################################################################################################################
-  dataFrame_temp7_A <- data.frame(
-    mysampleID  = c(mySampleID_IVF_fresh_g,  mySampleID_ICSI_fresh_g),
-    mytreatment = c(myTreatment_IVF_fresh_g, myTreatment_ICSI_fresh_g),
-    mysex       = c(Sex_IVF_fresh_g,         Sex_ICSI_fresh_g),
-    mytech      = c(Tech_IVF_fresh_g,        Tech_ICSI_fresh_g)    
-  )
+  matrixTemp2_parents_removed <- matrixTemp2_parents[!myBoole1,]
+  matrixTemp2_parents_kept   <- matrixTemp2_parents[myBoole1,]
+  
+  children_removed_dir = paste(pathTemp2, "HierarchicalClustering_children_removed", sep="/")
+  if( ! file.exists(children_removed_dir) ) { dir.create(children_removed_dir, recursive = TRUE) }
+  myHierarchicalClustering_1_g(  mat_3three=matrixTemp2_children_removed,   
+                                 path_temp1=children_removed_dir,   dataFrame_temp1=NULL  ) 
+  
+  children_kept_dir = paste(pathTemp2, "HierarchicalClustering_children_kept", sep="/")
+  if( ! file.exists(children_kept_dir) ) { dir.create(children_kept_dir, recursive = TRUE) }
+  myHierarchicalClustering_1_g(  mat_3three=matrixTemp2_children_kept,   
+                                 path_temp1=children_kept_dir,   dataFrame_temp1=NULL  ) 
   
   
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/7A-1_IVF_fresh_vs_ICSI_fresh_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp7_A  )
+  parents_removed_dir = paste(pathTemp2, "HierarchicalClustering_parents_removed", sep="/")
+  if( ! file.exists(parents_removed_dir) ) { dir.create(parents_removed_dir, recursive = TRUE) }
+  myHierarchicalClustering_1_g(  mat_3three=matrixTemp2_parents_removed,   
+                                 path_temp1=parents_removed_dir,   dataFrame_temp1=NULL  ) 
   
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/7B-3_IVF_fresh_vs_ICSI_fresh_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp7_A  )
+  parents_kept_dir = paste(pathTemp2, "HierarchicalClustering_parents_kept", sep="/")
+  if( ! file.exists(parents_kept_dir) ) { dir.create(parents_kept_dir, recursive = TRUE) }
+  myHierarchicalClustering_1_g(  mat_3three=matrixTemp2_parents_kept,   
+                                 path_temp1=parents_kept_dir,   dataFrame_temp1=NULL  ) 
   
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/7C-5_IVF_fresh_vs_ICSI_fresh_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp7_A  )   
-##################################################################################################################
+}
 
-
-
-
-
-##################################################################################################################
-  dataFrame_temp8_A <- data.frame(
-    mysampleID  = c(mySampleID_IVF_fresh_g,  mySampleID_ICSI_frozen_g),
-    mytreatment = c(myTreatment_IVF_fresh_g, myTreatment_ICSI_frozen_g),
-    mysex       = c(Sex_IVF_fresh_g,         Sex_ICSI_frozen_g),
-    mytech      = c(Tech_IVF_fresh_g,        Tech_ICSI_frozen_g)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/8A-1_IVF_fresh_vs_ICSI_frozen_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp8_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/8B-3_IVF_fresh_vs_ICSI_frozen_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp8_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/8C-5_IVF_fresh_vs_ICSI_frozen_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp8_A  )   
-##################################################################################################################
 
 
 
 
 
 ##################################################################################################################
-  dataFrame_temp9_A <- data.frame(
-    mysampleID  = c(mySampleID_IVF_frozen_g,  mySampleID_ICSI_fresh_g),
-    mytreatment = c(myTreatment_IVF_frozen_g, myTreatment_ICSI_fresh_g),
-    mysex       = c(Sex_IVF_frozen_g,         Sex_ICSI_fresh_g),
-    mytech      = c(Tech_IVF_frozen_g,        Tech_ICSI_fresh_g)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/9A-1_IVF_frozen_vs_ICSI_fresh_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp9_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/9B-3_IVF_frozen_vs_ICSI_fresh_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp9_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/9C-5_IVF_frozen_vs_ICSI_fresh_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp9_A  )   
-##################################################################################################################
+myTopPercent_1(matrixTemp2 = mat_2two_merge_g, sdParentsTemp2 = sd_2two_mergeParents_g, 
+               pathTemp2 = paste(outDir_g,   "4_rmParetns_SD_top0.001",  sep="/"), 
+               percentTemp2 = 0.001, sdMeanCV2 = sd_mean_cv_2two_mergeParents_g)
+
+
+myTopPercent_1(matrixTemp2 = mat_2two_merge_g, sdParentsTemp2 = sd_2two_mergeParents_g, 
+               pathTemp2 = paste(outDir_g,   "5_rmParetns_SD_top0.01",  sep="/"), 
+               percentTemp2 = 0.01, sdMeanCV2 = sd_mean_cv_2two_mergeParents_g)
+
+
+myTopPercent_1(matrixTemp2 = mat_2two_merge_g, sdParentsTemp2 = sd_2two_mergeParents_g, 
+               pathTemp2 = paste(outDir_g,   "6_rmParetns_SD_top0.02",  sep="/"), 
+               percentTemp2 = 0.02, sdMeanCV2 = sd_mean_cv_2two_mergeParents_g)
 
 
 
+myTopPercent_1(matrixTemp2 = mat_2two_merge_g, sdParentsTemp2 = sd_2two_mergeParents_g, 
+               pathTemp2 = paste(outDir_g,   "7_rmParetns_SD_top0.03",  sep="/"), 
+               percentTemp2 = 0.03, sdMeanCV2 = sd_mean_cv_2two_mergeParents_g)
 
 
-##################################################################################################################
-  dataFrame_temp10_A <- data.frame(
-    mysampleID  = c(mySampleID_IVF_frozen_g,  mySampleID_ICSI_frozen_g),
-    mytreatment = c(myTreatment_IVF_frozen_g, myTreatment_ICSI_frozen_g),
-    mysex       = c(Sex_IVF_frozen_g,         Sex_ICSI_frozen_g),
-    mytech      = c(Tech_IVF_frozen_g,        Tech_ICSI_frozen_g)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/10A-1_IVF_frozen_vs_ICSI_frozen_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp10_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/10B-3_IVF_frozen_vs_ICSI_frozen_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp10_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/10C-5_IVF_frozen_vs_ICSI_frozen_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp10_A  )   
-##################################################################################################################
+myTopPercent_1(matrixTemp2 = mat_2two_merge_g, sdParentsTemp2 = sd_2two_mergeParents_g, 
+               pathTemp2 = paste(outDir_g,   "8_rmParetns_SD_top0.04",  sep="/"), 
+               percentTemp2 = 0.04, sdMeanCV2 = sd_mean_cv_2two_mergeParents_g)
 
 
+myTopPercent_1(matrixTemp2 = mat_2two_merge_g, sdParentsTemp2 = sd_2two_mergeParents_g, 
+               pathTemp2 = paste(outDir_g,   "9_rmParetns_SD_top0.05",  sep="/"), 
+               percentTemp2 = 0.05, sdMeanCV2 = sd_mean_cv_2two_mergeParents_g)
+
+
+
+myTopPercent_1(matrixTemp2 = mat_2two_merge_g, sdParentsTemp2 = sd_2two_mergeParents_g, 
+               pathTemp2 = paste(outDir_g,   "10_rmParetns_SD_top0.1",  sep="/"), 
+               percentTemp2 = 0.1, sdMeanCV2 = sd_mean_cv_2two_mergeParents_g)
 
 
 
 ##################################################################################################################
-  dataFrame_temp11_A <- data.frame(
-    mysampleID  = c(mySampleID_ICSI_fresh_g,  mySampleID_ICSI_frozen_g),
-    mytreatment = c(myTreatment_ICSI_fresh_g, myTreatment_ICSI_frozen_g),
-    mysex       = c(Sex_ICSI_fresh_g,         Sex_ICSI_frozen_g),
-    mytech      = c(Tech_ICSI_fresh_g,        Tech_ICSI_frozen_g)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/11A-1_ICSI_fresh_vs_ICSI_frozen_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp11_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/11B-3_ICSI_fresh_vs_ICSI_frozen_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp11_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/11C-5_ICSI_fresh_vs_ICSI_frozen_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp11_A  )   
-##################################################################################################################
 
 
 
 
-
-##################################################################################################################
-  mySampleID_temp12_IVF  <- c( mySampleID_IVF_fresh_g,  mySampleID_IVF_frozen_g )
-  myTreatment_temp12_IVF <- c( myTreatment_IVF_fresh_g,  myTreatment_IVF_frozen_g )
-  Sex_temp12_IVF         <- c( Sex_IVF_fresh_g,  Sex_IVF_frozen_g )
-  Tech_temp12_IVF        <- c( Tech_IVF_fresh_g,  Tech_IVF_frozen_g )
-
-  for(i in c(1:length(mySampleID_temp12_IVF)) ) {
-    myTreatment_temp12_IVF[i] = 1
-  }
-
-  dataFrame_temp12_A <- data.frame(
-    mysampleID  = c(mySampleID_NC_g,  mySampleID_temp12_IVF),
-    mytreatment = c(myTreatment_NC_g, myTreatment_temp12_IVF),
-    mysex       = c(Sex_NC_g,         Sex_temp12_IVF),
-    mytech      = c(Tech_NC_g,        Tech_temp12_IVF)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/12A-1_NC_vs_IVF_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp12_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/12B-3_NC_vs_IVF_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp12_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/12C-5_NC_vs_IVF_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp12_A  )   
-##################################################################################################################
-
-
-
-
-
-##################################################################################################################
-  mySampleID_temp13_ICSI  <- c( mySampleID_ICSI_fresh_g,  mySampleID_ICSI_frozen_g )
-  myTreatment_temp13_ICSI <- c( myTreatment_ICSI_fresh_g,  myTreatment_ICSI_frozen_g )
-  Sex_temp13_ICSI         <- c( Sex_ICSI_fresh_g,  Sex_ICSI_frozen_g )
-  Tech_temp13_ICSI        <- c( Tech_ICSI_fresh_g,  Tech_ICSI_frozen_g )
-
-  for(i in c(1:length(mySampleID_temp13_ICSI)) ) {
-    myTreatment_temp13_ICSI[i] = 1
-  }
-
-  dataFrame_temp13_A <- data.frame(
-    mysampleID  = c(mySampleID_NC_g,  mySampleID_temp13_ICSI),
-    mytreatment = c(myTreatment_NC_g, myTreatment_temp13_ICSI),
-    mysex       = c(Sex_NC_g,         Sex_temp13_ICSI),
-    mytech      = c(Tech_NC_g,        Tech_temp13_ICSI)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/13A-1_NC_vs_ICSI_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp13_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/13B-3_NC_vs_ICSI_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp13_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/13C-5_NC_vs_ICSI_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp13_A  )   
-##################################################################################################################
-
-
-
-
-
-##################################################################################################################
-  mySampleID_temp14_fresh  <- c( mySampleID_IVF_fresh_g,  mySampleID_ICSI_fresh_g )
-  myTreatment_temp14_fresh <- c( myTreatment_IVF_fresh_g,  myTreatment_ICSI_fresh_g )
-  Sex_temp14_fresh         <- c( Sex_IVF_fresh_g,  Sex_ICSI_fresh_g )
-  Tech_temp14_fresh        <- c( Tech_IVF_fresh_g,  Tech_ICSI_fresh_g )
-
-  for(i in c(1:length(mySampleID_temp14_fresh)) ) {
-    myTreatment_temp14_fresh[i] = 1
-  }
-
-  dataFrame_temp14_A <- data.frame(
-    mysampleID  = c(mySampleID_NC_g,  mySampleID_temp14_fresh),
-    mytreatment = c(myTreatment_NC_g, myTreatment_temp14_fresh),
-    mysex       = c(Sex_NC_g,         Sex_temp14_fresh),
-    mytech      = c(Tech_NC_g,        Tech_temp14_fresh)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/14A-1_NC_vs_fresh_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp14_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/14B-3_NC_vs_fresh_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp14_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/14C-5_NC_vs_fresh_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp14_A  )   
-##################################################################################################################
-
-
-
-
-
-##################################################################################################################
-  mySampleID_temp15_frozen  <- c( mySampleID_IVF_frozen_g,  mySampleID_ICSI_frozen_g )
-  myTreatment_temp15_frozen <- c( myTreatment_IVF_frozen_g,  myTreatment_ICSI_frozen_g )
-  Sex_temp15_frozen         <- c( Sex_IVF_frozen_g,  Sex_ICSI_frozen_g )
-  Tech_temp15_frozen        <- c( Tech_IVF_frozen_g,  Tech_ICSI_frozen_g )
-
-  for(i in c(1:length(mySampleID_temp15_frozen)) ) {
-    myTreatment_temp15_frozen[i] = 1
-  }
-
-  dataFrame_temp15_A <- data.frame(
-    mysampleID  = c(mySampleID_NC_g,  mySampleID_temp15_frozen),
-    mytreatment = c(myTreatment_NC_g, myTreatment_temp15_frozen),
-    mysex       = c(Sex_NC_g,         Sex_temp15_frozen),
-    mytech      = c(Tech_NC_g,        Tech_temp15_frozen)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/15A-1_NC_vs_frozen_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp15_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/15B-3_NC_vs_frozen_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp15_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/15C-5_NC_vs_frozen_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp15_A  )   
-##################################################################################################################
-
-
-
-
-
-##################################################################################################################
-  mySampleID_temp16_ART  <- c(mySampleID_IVF_fresh_g,  mySampleID_ICSI_fresh_g , mySampleID_IVF_frozen_g,  mySampleID_ICSI_frozen_g )
-  myTreatment_temp16_ART <- c(myTreatment_IVF_fresh_g,  myTreatment_ICSI_fresh_g,  myTreatment_IVF_frozen_g,  myTreatment_ICSI_frozen_g )
-  Sex_temp16_ART         <- c(Sex_IVF_fresh_g,  Sex_ICSI_fresh_g,  Sex_IVF_frozen_g,  Sex_ICSI_frozen_g )
-  Tech_temp16_ART        <- c(Tech_IVF_fresh_g,  Tech_ICSI_fresh_g,  Tech_IVF_frozen_g,  Tech_ICSI_frozen_g )
-
-  for(i in c(1:length(mySampleID_temp16_ART)) ) {
-    myTreatment_temp16_ART[i] = 1
-  }
-
-  dataFrame_temp16_A <- data.frame(
-    mysampleID  = c(mySampleID_NC_g,  mySampleID_temp16_ART),
-    mytreatment = c(myTreatment_NC_g, myTreatment_temp16_ART),
-    mysex       = c(Sex_NC_g,         Sex_temp16_ART),
-    mytech      = c(Tech_NC_g,        Tech_temp16_ART)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/16A-1_NC_vs_ART_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp16_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/16B-3_NC_vs_ART_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp16_A  )
-
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/16C-5_NC_vs_ART_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp16_A  )
-##################################################################################################################
-
-
-
-
-
-##################################################################################################################
-  mySampleID_temp17_IVF  <- c(mySampleID_IVF_fresh_g,   mySampleID_IVF_frozen_g )
-  myTreatment_temp17_IVF <- c(myTreatment_IVF_fresh_g,   myTreatment_IVF_frozen_g )
-  Sex_temp17_IVF         <- c(Sex_IVF_fresh_g,  Sex_IVF_frozen_g )
-  Tech_temp17_IVF        <- c(Tech_IVF_fresh_g,   Tech_IVF_frozen_g )
-
-  mySampleID_temp17_ICSI  <- c( mySampleID_ICSI_fresh_g ,  mySampleID_ICSI_frozen_g )
-  myTreatment_temp17_ICSI <- c( myTreatment_ICSI_fresh_g,   myTreatment_ICSI_frozen_g )
-  Sex_temp17_ICSI         <- c( Sex_ICSI_fresh_g,   Sex_ICSI_frozen_g )
-  Tech_temp17_ICSI        <- c( Tech_ICSI_fresh_g,   Tech_ICSI_frozen_g )
-
-  for(i in c(1:length(mySampleID_temp17_IVF)) ) {
-    myTreatment_temp17_IVF[i] = 0
-  }
-
-  for(i in c(1:length(mySampleID_temp17_ICSI)) ) {
-    myTreatment_temp17_ICSI[i] = 1
-  }
-
-  dataFrame_temp17_A <- data.frame(
-    mysampleID  = c(mySampleID_temp17_IVF,  mySampleID_temp17_ICSI),
-    mytreatment = c(myTreatment_temp17_IVF, myTreatment_temp17_ICSI),
-    mysex       = c(Sex_temp17_IVF,         Sex_temp17_ICSI),
-    mytech      = c(Tech_temp17_IVF,        Tech_temp17_ICSI)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/17A-1_IVF_vs_ICSI_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp17_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/17B-3_IVF_vs_ICSI_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp17_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/17C-5_IVF_vs_ICSI_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp17_A  )   
-##################################################################################################################
-
-
-
-
-
-##################################################################################################################
-  mySampleID_temp18_fresh  <- c(mySampleID_IVF_fresh_g,  mySampleID_ICSI_fresh_g   )
-  myTreatment_temp18_fresh <- c(myTreatment_IVF_fresh_g,  myTreatment_ICSI_fresh_g  )
-  Sex_temp18_fresh         <- c(Sex_IVF_fresh_g,  Sex_ICSI_fresh_g )
-  Tech_temp18_fresh        <- c(Tech_IVF_fresh_g,  Tech_ICSI_fresh_g )
-
-  mySampleID_temp18_frozen  <- c(  mySampleID_IVF_frozen_g,  mySampleID_ICSI_frozen_g )
-  myTreatment_temp18_frozen <- c(  myTreatment_IVF_frozen_g,  myTreatment_ICSI_frozen_g )
-  Sex_temp18_frozen         <- c(  Sex_IVF_frozen_g,  Sex_ICSI_frozen_g )
-  Tech_temp18_frozen        <- c(  Tech_IVF_frozen_g,  Tech_ICSI_frozen_g )
-
-  for(i in c(1:length(mySampleID_temp18_fresh)) ) {
-    myTreatment_temp18_fresh[i] = 0
-  }
-
-  for(i in c(1:length(mySampleID_temp18_frozen)) ) {
-    myTreatment_temp18_frozen[i] = 1
-  }
-
-  dataFrame_temp18_A <- data.frame(
-    mysampleID  = c(mySampleID_temp18_fresh,  mySampleID_temp18_frozen),
-    mytreatment = c(myTreatment_temp18_fresh, myTreatment_temp18_frozen),
-    mysex       = c(Sex_temp18_fresh,         Sex_temp18_frozen),
-    mytech      = c(Tech_temp18_fresh,        Tech_temp18_frozen)    
-  )
-  
-  
-  ###
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/18A-1_fresh_vs_frozen_1kb_1bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 1, dataFrame_temp1 = dataFrame_temp18_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/18B-3_fresh_vs_frozen_1kb_3bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 3, dataFrame_temp1 = dataFrame_temp18_A  )
-  
-  myMainFunction_1_g(  myobj_temp1 = myobj_nor_g,   path_temp1 = paste(outDir_g, "/18C-5_fresh_vs_frozen_1kb_5bases",  sep="") ,   
-                       binSize_temp1 = 1000,   binBases_temp1 = 5, dataFrame_temp1 = dataFrame_temp18_A  )   
-##################################################################################################################
 
 
 
