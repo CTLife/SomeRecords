@@ -83,8 +83,7 @@
     查看已经添加的channels：
         conda config --get channels
    
-   
-   
-   
+7. Using Bioconductor
+    conda install -c bioconda bioconductor-biocinstaller    
    
 
