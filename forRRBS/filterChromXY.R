@@ -44,6 +44,8 @@ write.table(matrix_1C, file = paste(outPath3, inputFile, sep="/"), append = FALS
 write.table(matrix_1D, file = paste(outPath4, inputFile, sep="/"), append = FALSE, quote = FALSE, sep = "\t",
             eol = "\n", na = "NA", dec = ".", row.names =  FALSE,   col.names =  FALSE)
 
+
+
 sink( file = paste(outPath5, "/",  "1-dimensions-", inputFile, sep="")  )
 print("raw:")
 print( dim(matrix_1) )
