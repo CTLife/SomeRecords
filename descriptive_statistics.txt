@@ -1,0 +1,6 @@
+minimum(quartile0), quartile25, median(quartile50), quartile75, maximum(quartile100),                    
+InterquartileRange (IQR, quartile75-quartile25), range(maximum-minimum) ,  trimean (TM, quartile25/4+quartile50/2+quartile75/4)       
+Harmonic mean, Geometric mean, Arithmetic mean, Quadratic mean, Generalized mean          
+variance, standard deviation(SD), coefficient of variation (CV=SD/mean)                  
+
+
