@@ -1,0 +1,23 @@
+1. Install Anaconda2：
+　　bash  Anaconda2-5.2.0-Linux-x86_64.sh　　
+　　logout
+  
+　　which python
+　　which pip
+　　python -V
+   which python2
+   
+   
+   2. conda search blas
+   
+     添加channels, 安装bioconda
+        conda config --add channels conda-forge
+        conda config --add channels r
+        conda config --add channels bioconda
+        conda config --add channels defaults
+    查看已经添加的channels：
+    conda config --get channels
+
+
+3. conda install r-ggplot2
+
