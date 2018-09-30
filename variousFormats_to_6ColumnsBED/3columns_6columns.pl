@@ -76,6 +76,9 @@ sub myMakeDir  {
     if ( !( -e $path) )  { mkdir $path  ||  die;       }
 }
 &myMakeDir($outDir_g);
+&myMakeDir("$outDir_g/BED");
+&myMakeDir("$outDir_g/BED_withHeader");
+
 opendir(my $DH_input_g, $input_g)  ||  die;
 my @inputFiles_g = readdir($DH_input_g);
 ###################################################################################################################################################################################################
@@ -96,10 +99,11 @@ for ( my $i=0; $i<=$#inputFiles_g; $i++ ) {
         say   "\t...... $temp " ;
         $temp =~ s/.bed$// or die;
         open(INPUT1_FH,   "<",   "$input_g/$temp.bed" )      or   die "$!"; 
-        open(OUTPUT_FH,  ">",   "$outDir_g/$temp.bed" )      or   die "$!"; 
+        open(OUTPUT1_FH,  ">",   "$outDir_g/BED/$temp.bed" )      or   die "$!"; 
+        open(OUTPUT2_FH,  ">",   "$outDir_g/BED_withHeader/$temp.bed" )      or   die "$!"; 
 
         my @lines1 = <INPUT1_FH>; 
-        print  OUTPUT_FH   "chr\tstart\tend\tstrand\tname\tstrength\n";
+        print  OUTPUT2_FH   "chrom\tchromStart\tchromEnd\tname\tscore\tstrand\n";
 
         for (my $j=0; $j<=$#lines1; $j++) {
             my $temp1 = $lines1[$j];
@@ -110,8 +114,8 @@ for ( my $i=0; $i<=$#inputFiles_g; $i++ ) {
             my $strand = "*";
             my $name   = $name_g."_".$temp."_".$j;
             my $strength = "1";
-
-            print  OUTPUT_FH   "$chr\t$start\t$end\t$strand\t$name\t$strength\n";
+            print  OUTPUT1_FH   "$chr\t$start\t$end\t$name\t$strength\t$strand\n";
+            print  OUTPUT2_FH   "$chr\t$start\t$end\t$name\t$strength\t$strand\n";
 
         }
 
