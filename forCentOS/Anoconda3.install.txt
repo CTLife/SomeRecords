@@ -1,0 +1,69 @@
+1. Install CentOS 6.
+
+2. Install Anaconda3：
+　　bash Anaconda3-4.4.0-Linux-x86_64.sh　　　
+　　logout
+　　which python
+　　which pip
+　　python -V
+   Creat symbol link for pip3, conda3, anaconda3:
+         cd /home/pengyong/anaconda3/bin 
+         ln -s pip pip3 　## 对空格数目敏感。
+         ln -s conda conda3
+         ln -s anaconda anaconda3
+   
+
+3. Install Anaconda2:
+   bash Anaconda2-4.4.0-Linux-x86_64.sh   -b   -p  $HOME/anaconda3/envs/Anaconda2
+   logout
+   which python
+   which python3
+   which pip
+   which pip3
+   which conda
+   which conda3
+   which anaconda
+   which anaconda3
+   
+
+４. Change the versions of Anaconda and python:
+   conda info --envs    # conda info -e
+   source activate  Anaconda2
+   source deactivate  Anaconda2
+   which pip/pip2
+   which python/python2
+   which conda/conda2
+   which anaconda/anaconda2
+   ln -s ~/anaconda3/envs/Anaconda2/bin/pip ~/anaconda3/envs/Anaconda2/bin/pip2     
+
+5. Install some softwares by using anaconda3:
+   conda install cmake unzip    
+   anaconda3 search -t conda gcc
+   anaconda  show  msarahan/gcc-5
+   anaconda  show  msarahan/libgcc
+   conda install --channel https://conda.anaconda.org/msarahan gcc-5
+   conda install --channel https://conda.anaconda.org/msarahan libgcc
+                   
+   conda install  openssl  make autoconf  automake  
+    
+   
+6. Seeting for anaconda3:   
+    which conda
+    conda -V
+    conda 
+    conda help
+    查看已安装软件：
+        conda list
+    更新指定软件：
+        conda update 软件名
+        conda update --prefix /home/yp/anaconda3 anaconda
+    卸载指定软件：
+        conda remove 软件名
+
+    添加channels, 安装bioconda
+        conda config --add channels conda-forge
+        conda config --add channels r
+        conda config --add channels bioconda
+        conda config --add channels defaults
+    查看已经添加的channels：
+conda config --get channels
