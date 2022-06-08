@@ -90,6 +90,35 @@ distance = c(distance_1, distance_2, distance_3, distance_4, distance_5, distanc
 types = c(  rep("A_to_C", length(distance_1)) , rep("A_to_G", length(distance_2)) ,rep("A_to_T", length(distance_3)) ,
             rep("C_to_A", length(distance_4)) , rep("C_to_G", length(distance_5)) ,rep("C_to_T", length(distance_6))  )
 
+
+type1 = c(  "A_to_C", "A_to_G" ,"A_to_T",
+            "C_to_A", "C_to_G" ,"C_to_T"  )
+            
+number1 = c(  length(distance_1) ,  length(distance_2), length(distance_3),
+              length(distance_4) ,  length(distance_5), length(distance_6)  )
+            
+            
+rawMatrix_1A = data.frame(V2=type1, V1=number1 )
+
+p0 <- ggplot(rawMatrix_1A, aes(x=V2, y=V1, label=V1, fill="red") ) + geom_bar(stat="identity", color="black", position=position_dodge( )) +
+        geom_text( size = 2, position = position_stack(vjust = 0.5)  ) + 
+        labs(x = "Mutation type", y="Number of mutation sites") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+MySaveGgplot2_1_g(ggplot2Figure1=p0, path1=outDir_g, fileName1="barPlot", height1=4, width1=4)
+
+
+p0 <- ggplot(rawMatrix_1A, aes(x=V2, y=V1, fill="red") ) + geom_bar(stat="identity", color="black", position=position_dodge( )) +
+        geom_text(aes(label=V1), size = 2,  position=position_dodge(width=0.9), vjust=-0.25) + 
+        labs(x = "Mutation type", y="Number of mutation sites") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+MySaveGgplot2_1_g(ggplot2Figure1=p0, path1=outDir_g, fileName1="barPlot2", height1=4, width1=4)
+
+
+
+
+
+
+
+
+
 distance[distance>2000] = 2000
 dataframeB = data.frame( xAxis=distance,  sampleType=types )
 
@@ -134,7 +163,6 @@ p1 <- ggplot(data=dataframeB, aes(x=xAxis,  colour=sampleType) )   +  xlab("dist
   scale_colour_manual( values= c("red", "orange", "blue", "grey80", "grey40", "grey20")   ) +
   scale_x_continuous(breaks= seq(from = 0, to = 500, by =100 ) )
 MySaveGgplot2_1_g(ggplot2Figure1=p1, path1=outDir_g , fileName1="4.density", height1=3.5, width1=7)
-
 
 
 
