@@ -1,0 +1,184 @@
+
+
+
+####################### Add By Yong Peng #######################
+MyProgramFiles="/media/yp/1one/MyProgramFiles"
+
+
+
+## 1_Pre-align
+export  PATH=$MyProgramFiles/1_Pre-align/adapterremoval/build:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/auto_barcode:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/biobloomtools/bin:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/bustools:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/csvtk:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/defastq:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/falco/bin:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/FaQCs:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/fasten/target/release:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/fastp:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/fastq-multx:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/fastq-scan:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/FastQ-Screen:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/fastq-tools/bin:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/fastq_utils/bin:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/FastQC:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/FASTQuick/bin:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/fastv:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/fastx_toolkit/bin:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/KMC3/bin:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/kmer-db:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/MinIONQC:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/MutScan:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/prinseq-lite:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/prinseq-plus-plus:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/QC3:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/seqkit:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/seqtk:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/seqyclean/bin:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/sratoolkit/bin:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/TrimGalore:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/Trimmomatic:$PATH
+export  PATH=$MyProgramFiles/1_Pre-align/unikmer:$PATH
+
+
+
+## 2_Aligners
+export  PATH=$MyProgramFiles/2_Aligners/abismal/bin:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/Arioc/bin:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/bbmap:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/biscuit:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/Bismark:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/bowtie:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/bowtie2:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/bwa:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/bwa-mem2:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/gem3/bin:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/gmap/bin:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/graphmap:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/HiCUP:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/hisat-3n:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/kallisto:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/last/bin:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/minigraph/:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/minimap2:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/miniwfa:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/RSEM/bin:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/salmon/bin:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/salmon/SalmonTools/scripts:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/seqan3:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/snap:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/SNPsplit:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/STAR:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/subread/bin:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/subread/bin/utilities:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/UNCALLED:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/WASP/snp2h5:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/WFA2-lib/bin:$PATH
+export  PATH=$MyProgramFiles/2_Aligners/Winnowmap/bin:$PATH
+
+
+
+
+## 3_BAM_QC
+export  PATH=$MyProgramFiles/3_BAM_QC/bam-qc-metrics/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/bamstats:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/BamTools/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/bamUtil:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/bcftools/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/biobambam2/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/BUSCO/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/ChAsE:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/fgbio:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/goleft:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/htslib/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/iSeqQC:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/mosdepth:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/mrin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/phantompeakqualtools:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/picard:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/preseq/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/QoRTs:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/qualimap:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/quast/bin:$PATH
+export  RNAQCChain=$MyProgramFiles/3_BAM_QC/RNA-QC-Chain
+export  PATH=$MyProgramFiles/3_BAM_QC/RNA-QC-Chain/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/rnaseqc:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/sambamba:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/samstat/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/SAMstats/bin:$PATH
+export  PATH=$MyProgramFiles/3_BAM_QC/samtools/bin:$PATH
+export  PYTHONPATH=$MyProgramFiles/3_BAM_QC/bam-qc-metrics/lib/python3.9/site-packages:$PYTHONPATH
+export  PYTHONPATH=$MyProgramFiles/3_BAM_QC/BUSCO/lib/python3.9/site-packages:$PYTHONPATH
+export  PYTHONPATH=$MyProgramFiles/3_BAM_QC/quast/lib/python3.9/site-packages:$PYTHONPATH
+export  PYTHONPATH=$MyProgramFiles/3_BAM_QC/SAMstats/lib/python3.9/site-packages:$PYTHONPATH
+
+
+
+
+
+## 4_Post-align
+export  PATH=$MyProgramFiles/4_Post-align/bedops/bin:$PATH
+export  PATH=$MyProgramFiles/4_Post-align/bedtk:$PATH
+export  PATH=$MyProgramFiles/4_Post-align/bedtools:$PATH
+export  PATH=$MyProgramFiles/4_Post-align/cgmaptools/bin:$PATH
+export  PATH=$MyProgramFiles/4_Post-align/cgmaptools:$PATH
+export  PATH=$MyProgramFiles/4_Post-align/genometools/bin:$PATH
+export  PATH=$MyProgramFiles/4_Post-align/gfatools:$PATH
+export  PATH=$MyProgramFiles/4_Post-align/HOMER/bin:$PATH
+export  PATH=$MyProgramFiles/4_Post-align/UCSC_Utilities:$PATH
+export  PATH=$MyProgramFiles/4_Post-align/UCSC_Utilities/blat:$PATH
+
+
+
+
+## 5_For_Figures
+export  PATH=$MyProgramFiles/5_For_Figures/methpipe/bin:$PATH
+
+
+
+## 6_XWAS_xQTY
+export  PATH=$MyProgramFiles/6_XWAS_xQTY/Echtvar:$PATH
+export  PATH=$MyProgramFiles/6_XWAS_xQTY/gatk:$PATH
+export  PATH=$MyProgramFiles/6_XWAS_xQTY/octopus/bin:$PATH
+export  PATH=$MyProgramFiles/6_XWAS_xQTY/VarScan:$PATH
+export  PATH=$MyProgramFiles/6_XWAS_xQTY/vcftools/bin:$PATH
+export  PATH=$MyProgramFiles/6_XWAS_xQTY/VG:$PATH
+
+
+
+## 15_Others
+export  PATH=$MyProgramFiles/15_Others/go/bin:$PATH
+export  PATH=$MyProgramFiles/15_Others/julia/bin:$PATH
+
+
+
+HTSlib_INCLUDE_DIR=$MyProgramFiles/3_BAM_QC/htslib/include
+HTSlib_LIBRARY=$MyProgramFiles/3_BAM_QC/htslib/lib
+HTSLIB_ROOT=$MyProgramFiles/3_BAM_QC/htslib
+
+
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/yp/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/yp/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/yp/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/yp/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+. "$HOME/.cargo/env"
+
+
+
+export LD_LIBRARY_PATH=/home/yp/anaconda3/lib:$LD_LIBRARY_PATH
+
+
