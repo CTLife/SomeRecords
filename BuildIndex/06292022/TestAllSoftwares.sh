@@ -1,3 +1,7 @@
+conda update --all
+pip install pip-review
+pip-review --local --auto
+ 
 sudo apt install openjdk-11-jdk
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh   ##install rustc
 rustc  --version
