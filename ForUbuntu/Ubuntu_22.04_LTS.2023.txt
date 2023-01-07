@@ -1,0 +1,253 @@
+###############################################################################################################################################################
+################################################# 1. Download, Burn Image, Install and Check Ubuntu OS ########################################################
+###############################################################################################################################################################
+	Backup data for installing new OS.  Download Ubuntu LTS from http://www.ubuntu.com
+	Remove all removable drivers.
+	Burn Image Ubuntu into USB by using UltraISO.   
+	Install Ubuntu by using USB directly.   
+	                
+	After Install Ubuntu:
+     		Check OS and Internet,  Clear Home dir, setting time and workspace, and so on.
+                Keep 3 folders in the home directory: snap, Downloads and Templates. 
+                And creat two files under the folder "Templates": sh.sh and txt.txt
+                Fix the Terminal to the launcher and set it.
+     		Setting gedit:   Text Editor ---> Preferences
+
+	sudo  passwd  root    #set root password  
+	su
+
+     	sudo apt update         ##更新软件源. 这个命令，会访问源列表里的每个网址，并读取软件列表，然后保存在本地电脑。我们在新立得软件包管理器里看到的软件列表，都是通过update命令更新的。                                     
+     	sudo apt upgrade        ##这个命令，会把本地已安装的软件，与刚下载的软件列表里对应软件进行对比，如果发现已安装的软件版本太低，就会提示你更新。  
+     	sudo apt dist-upgrade   ##更新所有软件。
+
+	Solve the problem of  "E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)":
+        	sudo killall apt
+        	sudo killall synaptic
+
+	Install 6 softwares by Ubuntu software center (optional): 
+	Inkscape Vector Graphics Editor, LyX, GIMP Image Editor, Atom. 
+	Open them to check.
+	
+	Install Google Chrome, Sublime text, Filezilla
+	https://www.sublimetext.com/docs/linux_repositories.html
+	sudo apt install filezilla
+
+        # sudo  apt   autoremove
+        # sudo  apt   update  --fix-missing
+        # sudo  apt   clean
+        # sudo  apt   update
+        # sudo  dpkg  --configure  -a
+        # sudo  apt   install  -f
+        # sudo  apt   upgrade
+        # sudo  apt   dist-upgrade
+
+
+       #远程登录设置
+                sudo apt install openssh-server
+                启动sshserver命令：sudo service ssh start  或者 sudo /etc/init.d/ssh  start
+                关闭sshserver命令：service ssh stop
+                重启sshserver命令：service ssh restart
+                默认端口是22
+       Ubuntu开启IPV6:  sudo apt install miredo
+       Ubuntu txt 中文乱码 解决办法： gedit  --encoding=GB18030   filename.txt
+###############################################################################################################################################################
+
+
+
+ 
+
+###############################################################################################################################################################
+################################################# 2. Install Basic Packages ##################################################################################
+###############################################################################################################################################################
+        ## sudo apt search  xxx
+	sudo apt  install    vpnc  git  cmake  qtcreator  build-essential  aptitude  gcc  g++  gfortran   gccgo   vim    
+	sudo apt  install    unace unrar lunzip lzip zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller 
+	sudo apt  install    edgy-wallpapers  feisty-wallpapers  gutsy-wallpapers   qconf  tclcurl    gnupg    libxt-dev          
+	sudo apt  install    libssl-dev libssl-doc  gcc-multilib  g++-multilib  libtk-img libtk-img-dev libxt-dev tk tk-dev tk-doc libmotif-common libmotif-dev  
+        sudo apt  install    cairo-dock  cairo-dock-dev  cairo-dock-core   giza-dev   libcairo-gobject-perl    python3-cairo  python3-cairo-dev
+        sudo apt  install    libreadline-dev     curl libxmu-dev libxmuu-dev texlive-full   gawk    zsh   fish   ## cat /etc/shells
+        sudo apt  install    libxt-dev tcl-dev tk-dev libicu-dev liblzma-dev   libjpeg-dev     tcl tk tcl-dev tk-dev libffi-dev libssl-dev 
+        sudo apt  install    bzip2  bzip2-doc  lbzip2  libarchive-dev  libbz2-dev  xz-utils   liblzma-dev  xzdec  libarchive-dev  7zip plzip  rzip 
+        sudo apt  install    libhts-dev  libhts3  libseqlib-dev  libtabixpp-dev  tabix  htslib-test  libbio-db-hts-perl          
+        sudo apt  install    libkaz-dev    liblz-dev     libmng-dev  zlib-gst    libghc-zlib-dev  zziplib-bin  libhpptools-dev  
+        sudo apt  install    tclcurl   libssl-dev  libcrypto++-dev   libcrypto++-utils   liblz-dev  libmng-dev  libzzip-dev
+        sudo apt  install    ncurses-base   ncurses-bin  autoconf  autoconf-archive  autoconf-doc  autotools-dev   libtool
+
+        sudo apt    install   libgd-perl  libfreetype-dev   tk-dev    libatlas-base-dev  libopenblas-base libopenblas-dev   ## apt search  blas 
+        sudo apt    install   libblas-test   libblas-dev  libblasr-dev  libatlas-base-dev  libatlas-base-dev   libatlas-doc  libatlas-test    
+        sudo apt    install   liblapack-dev   liblapack-doc     liblapacke  liblapacke-dev   liblapack-pic     liblapack-test   libblas-test    ## apt search  lapack   
+        sudo apt    install   libarmadillo-dev  libatlas-base-dev  libatlas-cpp-doc               ## apt search  atlas    
+        sudo apt    install   libatlas-base-dev   libatlas-doc  libatlas-test     libblas-test  libopenblas-base   libopenblas-dev                                                                                         
+        sudo apt    install   libssl-dev libevent-dev libjpeg-dev libffi8   libffi-dev openssl libssl-dev  libssl-doc libpng++-dev  libpng-dev libpnglite-dev libpng-tools    tkpng  
+        sudo apt    install   libpnglite-dev   pngquant  libicu-dev   libboost-all-dev   libboost-dev    libboost-atomic-dev  libboost-iostreams-dev  libboost-log-dev
+        sudo apt    install   libboost-doc   libboost-context-dev  libboost-date-time-dev   libboost-exception-dev libboost-fiber-dev  libboost-filesystem-dev  libboost-graph-dev  
+        sudo apt    install   python3-setuptools  python3-pip   
+
+        sudo apt  install  libmotif-dev    libmotif-common  libgtextutils-dev  libmeep-openmpi-dev openmpi-bin  openmpi-doc libopenmpi-dev
+        sudo apt  install  mpi-default-dev  libicu-dev   libboost-mpi-dev  libboost-dev  libboost-atomic-dev  
+        sudo apt  install  libboost-all-dev  htslib-test   libhts-dev    libgd-dev  libgd3  libgdl-3-dev
+        sudo apt  install  libgd-dev  libgd-graph-perl    libgd-perl  libgd-text-perl  libgdata-common  libgd-svg-perl  libgd-tools   libgdm-dev  ##apt search libgd
+        sudo apt  install  fontconfig   libfreetype6  libfreetype6-dev  libxft-dev  libtiff5-dev  libtiff5     pngtools  libtiff-dev 
+        sudo apt  install  libpng++-dev   libpnglite-dev  tkpng python3-libtiff  libtiff-tools libtiff-opengl 
+        sudo apt  install  libjpeg-dev    libjpeg8  libjpeg8-dbg  libjpeg8-dev libxpm-dev    bonnie++  gnuplot  gnuplot-doc  gnuplot-mode 
+        sudo apt  install  glibc-doc  glibc-doc-reference   libbsd-dev linux-libc-dev  libeigen3-dev  perl-doc
+        sudo apt  install  libboost-dev  libboost-doc libboost-filesystem-dev  libboost-log-dev   libboost-system-dev  libboost-thread-dev
+        sudo apt  install  libboost-all-dev    libboost-atomic-dev    libboost-chrono-dev    libboost-context-dev    libboost-locale-dev   libboost-math-dev
+        sudo apt  install  libgsl-dbg  libgsl-dev    gsl-doc-info gsl-doc-pdf gsl-bin gsl-ref-html gsl-ref-psdoc 
+        sudo apt  install  liblzma-dev  liblzma-doc  libcrypto++-utils  sphinx-doc  libtool  glibc-doc  manpages-posix-dev    jellyfish   
+        sudo apt  install  virtualenv libtool   libboost-all-dev  sphinx-doc     minitube   libhdf5-serial-dev hdf5-tools  cpanminus  libhts-dev  rename 
+        sudo apt  install  mpi-default-bin  mpi-default-dev  mpich  mpich-doc  libcrack2-dev  libcrcutil-dev libssl-dev libssl-doc   
+        sudo apt  install  zlib1g-dev libbz2-dev libboost-dev libgomp1  libgd-dev libltdl-dev  libghc-zlib-dev  libhts-dev
+        sudo apt  install  libexpat1-dev  zlib1g-dev  autoconf  automake  libtool  zlib1g-dev  libgtextutils-dev
+        sudo apt  install  codequery libqgpsmm-dev qconf   git   
+        sudo apt  install  git make   libqt5xmlpatterns5-dev libqt5sql5-mysql git   libbz2-dev liblzma-dev  
+        sudo apt  install   libreadline-dev   libxt-dev   libxml2 libxml2-dev  libxmlb-dev  tcl-dev tk-dev  libicu-dev liblzma-dev   libjpeg-dev libtiff-dev                            
+        sudo apt  install   libxmu-dev libxmuu-dev libcairo2  libcairo2-dev     libxt-dev  libudunits2-0   libudunits2-data   libudunits2-dev   libtesseract-dev libleptonica-dev
+        sudo apt  install   gcc make autoconf zlib1g-dev libbz2-dev  libssl-dev ruby   libpoppler-cpp-dev  libmagick++-dev   libleptonica-dev   tesseract-ocr-eng
+        sudo apt  install   libv8-dev cargo  tcl tk  tcl-dev tk-dev  libffi-dev libssl-dev libwebp-dev  libavfilter-dev r-cran-rgdal libgdal-dev gdal-bin libcairo2-dev
+###############################################################################################################################################################
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 3. Install python3 packages ################################################################################# 
+###############################################################################################################################################################
+       ## install anaconda:  	  bash  Anaconda3-2022.10-Linux-x86_64.sh  
+       ## logout    
+       ## gcc -v, g++ -v, gfortran -v, gccgo -v, perl -v, python -V, python3 -V, java --version, javac --version, vim	
+
+       pip3  install  pyopenssl ndg-httpsclient   cython  six   pysam  numpy scipy matplotlib   sklearn                                    
+       pip3  install  nose  virtualenv   theano     multiqc   deeptools    macs3   htseq   
+       pip3   install --upgrade   cython   pytest progressbar2   tqdm  khmer   six  pysam  numpy   scipy  matplotlib   sklearn  nose  virtualenv   theano    multiqc   deeptools    macs3   htseq
+
+       pip3  install mictools     ##A practical tool for Maximal Information Coefficient (MIC) analysis 
+       pip3  install pysam   coverage eta swalign  pyBigWig  bio_utils CrossMap    jellyfish  illuminate
+       pip3  install   fastqp   fastools  MultiQC  editdistance pysam  coverage  eta   swalign   Atropos  
+       pip3  install   MACS2   PePr   toolshed   RSeQC  bx-python  bx  cutadapt fastqp  fastools   kPAL
+       pip3  install   pybedtools  Pandas  Seaborn intervene rpy2   deeptools multiqc htseq       
+       pip3  install   setuptools  pyparsing cython numpy PyYAML alignlib-lite biopython drmaa  hgapi  matplotlib-venn   matplotlib  networkx   openpyxl   pandas pysam  rdflib 
+       pip3  install   psycopg2    ruffus  scipy  bx-python  sphinx  sphinxcontrib-programoutput  sqlalchemy  threadpool  web.py  weblogo  xlwt  pybedtools  pep8  CGATReport  cgat
+
+       pip3  install  --upgrade   setuptools  pyparsing cython numpy  PyYAML alignlib-lite biopython drmaa  hgapi   networkx   openpyxl   pandas pysam  rdflib 
+       pip3  install  --upgrade   psycopg2    ruffus  scipy  bx-python  sphinx  sphinxcontrib-programoutput  sqlalchemy  threadpool  web.py  weblogo  xlwt  pybedtools  pep8  CGATReport  cgat
+       
+    	验证BLAS是否安装成功。由于numpy是依赖BLAS的，如果BLAS没有安装成功，虽然numpy亦可以安装，但是无法使用BLAS的加速。
+    	验证numpy是否真的成功依赖BLAS编译，用以下代码试验： 
+   		>>> import   six,numpy,scipy,matplotlib,sklearn,nose,theano,multiqc,deeptools,macs3,htseq
+    		>>> id(numpy.dot) == id(numpy.core.multiarray.dot) 
+    		False 
+    	结果为False表示成功依赖了BLAS加速，如果是Ture则表示用的是python3自己的实现并没有加速。
+###############################################################################################################################################################    
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 4. Packages for installing R (Before install R, as root)#####################################################
+###############################################################################################################################################################
+        ##### Install R:
+       		whereis    tclConfig.sh
+       		whereis    tkConfig.sh
+
+       		Logout
+       		./configure   --with-tcltk   --with-tcl-config=/usr/lib/tclConfig.sh     --with-tk-config=/usr/lib/tkConfig.sh       --with-cairo    --with-x   --enable-R-shlib                        
+       		make
+       		make  pdf
+       		make  info
+       		sudo  make install
+       		sudo  make install-pdf
+       		sudo  make install-info
+
+       	sudo R:
+              	install.packages("ggplot2") 
+              	install.packages("svglite") 
+              	if (!requireNamespace("BiocManager", quietly = TRUE))  { install.packages("BiocManager") }
+                BiocManager::install("preprocessCore")
+              	library(ggplot2)
+              	library(svglite)
+              	library(preprocessCore)
+
+                install.packages( c("udunits2" , "units", "ggforce", "ggraph",  "V8", "pdftools",  "av",  "magick", "cowplot", "reshape2",  "optparse", "pheatmap", "heatmaply" ), dep=T)                                     
+                if (!requireNamespace("BiocManager", quietly = TRUE))  { install.packages("BiocManager") }      
+              	BiocManager::install( c("ComplexHeatmap", "EnrichedHeatmap", "enrichplot", "GenomicFeatures", "GenomicRanges", "clusterProfiler", "graphite" )  )
+              	BiocManager::install( c("ReactomePA", "ChIPseeker", "DOSE", "topGO",  "TxDb.Hsapiens.UCSC.hg38.knownGene", "org.Hs.eg.db",  "org.Mm.eg.db")  )   
+              	BiocManager::install( c("genomation", "methylKit", "DSS", "minfi", "RnBeads",  "corrplot", "PerformanceAnalytics", "Hmisc" , "factoextra")  )
+              	BiocManager::install( c("MASS", "ggrepel", "psych", "rdiversity", "plot3D",  "dendextend", "ggfortify", "cluster", "lfda",  "magrittr" , "dplyr", "rgl"  )  ) 
+              	BiocManager::install(c("quantmod",  "xts", "roxygen2",  "devtools", "extrafont", "ggpubr", "fpc", "FactoMineR",  "scatterplot3d", "chromswitch", "gdata" ))      
+
+       install.packages(c("UpSetR", "corrplot", "Cairo", "gplots", "tcltk2", "httpuv" ))
+       install.packages(c("shiny",  "VennDiagram", "RColorBrewer",  "xtable",  "RMySQL", "quadprog",   "pracma"))
+       if (!requireNamespace("BiocManager", quietly = TRUE))  { install.packages("BiocManager") }      
+       BiocManager::install(c("affy", "limma", "RColorBrewer", "sem", "ALL", "XML", "genefilter", "annotate",   "AnnotationDbi",  "gcrma", "latticeExtra",  "MantelCorr"))
+       BiocManager::install( c( "matrixStats", "DelayedArray", "SummarizedExperiment") )     
+       BiocManager::install( c( "oligoClasses", "oligo", "oligo",  "affyPLM", "affyio", "gcrma", "simpleaffy") )
+       BiocManager::install( c( "ensembldb", "ChIPpeakAnno", "AnnotationFilter" ,  "idr2d") )   ## IDRfilter in package ChIPpeakAnno
+       BiocManager::install(c("GenomicRanges", "ChIPpeakAnno", "biomaRt", "GSEABase", "GO.db", "GOstats",  "TxDb.Mmusculus.UCSC.mm39.refGene"))  
+       BiocManager::install(c( "TxDb.Hsapiens.UCSC.hg38.knownGene", "org.Hs.eg.db", "org.Mm.eg.db",  "interactiveDisplayBase"))                       
+       BiocManager::install( c("affycoretools",  "genefilter", "annotate", "GOstats", "goseq", "BiocStyle" , "BBmisc") )
+       BiocManager::install( c("DESeq", "DESeq2", "EDASeq", "XBSeq", "DEXSeq", "limma", "edgeR" ) )
+       BiocManager::install(c("Rqc", "ShortRead", "seqTools", "QuasR", "systemPipeR", "Rsubread", "LOLA"))
+       BiocManager::install( c("BSgenome", "Rsamtools", "ShortRead", "BatchQC", "sva") )
+       BiocManager::install( c("normr", "chromstaR", "GenoGAM", "DMRcaller", "bsseq", "alpine", "seq2pathway", "DiffBind", "ChIPComp", "csaw") )
+       
+       install.packages( "minerva" )  ## Wrapper for 'minepy' implementation of Maximal Information-based Nonparametric Exploration statistics (MIC and MINE family). 
+       install.packages( c('rprojroot', 'bookdown', 'rmarkdown' ) )  
+       install.packages( c(  'brew', 'fail', 'sendmailR', 'rjson', 'pheatmap', 'BatchJobs' ) )
+       install.packages( c('zoo', 'TH.data', 'sandwich', 'mnormt', 'extrafontdb', 'Rttf2pt1', 'modeltools', 'mvtnorm', 'multcomp') )
+       install.packages( c("reshape2", "RColorBrewer", "gplots", "KernSmooth", "psych", "minerva",  "matrixStats", "extrafont", "coin", "knitr") )
+       install.packages( c('Cairo', 'RColorBrewer' , "doMC", "caTools", "spp", "preseqR", "snow", "snowfall", "bitops") )
+       install.packages( c("robustreg", "R.methodsS3", "R.oo", "flexclust") )       ## flexclust::kcca 
+       install.packages(c("R.basic"), contriburl="http://www.braju.com/R/repos/")
+       
+       ## Install R packages from GitHub: 
+       ## sudo apt install  gnupg   libcurl4-doc    libcurl4-openssl-dev  libghc-curl-dev  tclcurl libxml2-dev   libssl-dev
+       sudo  R
+       install.packages("R6")
+       install.packages(  c("curl",  "httr"))
+       install.packages("devtools")
+       library(devtools)
+       install_github("PF2-pasteur-fr/SARTools", build_opts="--no-resave-data")  
+       devtools::install_github("databio/MIRA")  ## R package for Methylation-based Inference of Regulatory Activity   
+###############################################################################################################################################################
+
+
+
+
+
+###############################################################################################################################################################
+################################################# 5. Install Perl packages ###################################################################### 
+###############################################################################################################################################################
+       ##for perl5:
+       sudo cpan    install  Module::Build
+       sudo cpan    install  GD  (or Download it from http://search.cpan.org/~lds/GD-2.56/lib/GD.pm:  such as GD-2.56.tar.gz    and Install)    
+       (You can use "sudo perl -MCPAN -e shell"  or  "sudo cpan    install ")
+       sudo cpan    install  PerlIO::gzip
+       sudo cpan    install  YAML
+       sudo cpan    install  GD::Graph  Digest::MD5::File
+       sudo cpan    install  GD::Graph::bars   File::pushd  MooseX::Params::Validate    
+       sudo cpan    install  DateTime File::Slurp HPCI
+       sudo cpan    install  Getopt::Long Pod::Usage  File::Temp  Fcntl  Digest::MD5  Cwd  List::Util  JSON  Cairo  Statistics::PCA  MIME::Base64
+       sudo cpan    install  File::Basename  FindBin  Getopt::Long  HTML::Template   threads threads::shared  Set::IntervalTree  DocSet 
+       sudo cpan    install  Parallel::ForkManager  String::Approx
+       sudo cpan    install  Getopt::Long   Pod::Usage   File::Temp   Fcntl   Digest::MD5   Cwd   List::Util  File::Path IO::Uncompress::AnyUncompress
+       sudo cpan    install  JSON   Cairo   Statistics::PCA   MIME::Base64  CGI LWP::Simple  File::Basename
+       sudo cpan    install  FindBin Getopt::Long HTML::Template threads threads::shared 
+       sudo cpan    install  Math::CDF  IO::Uncompress::Gunzip  XML::DOM  XML::XPath 
+       sudo cpan    install  MouseX::Types  MouseX::Foreign   MooseX::AttributeHelpers  MooseX 
+       sudo cpan    install  Pod::Coverage::Moose  Declare::Constraints::Simple
+       sudo cpan    install  Getopt::Long::Subcommand  XML::DOM::XPath  Bio::SeqIO  BioPerl 
+       sudo cpan    install  Getopt::Long Pod::Usage File::Temp Fcntl Digest::MD5 Cwd List::Util
+       sudo cpan    install  XML::Compile::SOAP11  XML::Compile::WSDL11  XML::Compile::Transport::SOAPHTTP
+###############################################################################################################################################################
+
+
+   
+           
+###############################################################################################################################################################
+Java TreeView, IGV, IGB, GSEA, GenePattern, Rstudio, cluster3.0 (has been installed by apt install), MeV, SeqMonk.
+
+
+
